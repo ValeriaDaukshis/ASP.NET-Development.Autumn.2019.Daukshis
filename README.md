@@ -4,7 +4,7 @@
  
 | Task | Task Status | Additional/Comments |
 | -------- | -------- | --------|  
-| [Lections Day 1](https://drive.google.com/drive/folders/0B7WmjuqYed3AWXFzc1Mtcnk3d1k) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
+| [Lections Day 1](https://drive.google.com/drive/folders/0B7WmjuqYed3AWXFzc1Mtcnk3d1k) | ![*Link to .cs-file here*](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
 | [Lections Day 2](https://drive.google.com/drive/folders/1_B9ncAWoJtoDvG6vQkxyAvMuXDdqXRAw) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
 | [Lections Day 3](https://drive.google.com/drive/folders/1j17L1jUOa9wB1OibGtCuYdsV28kvstr-) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
 | [Lections Day 4](https://drive.google.com/drive/folders/1G_Nlntl2BTH0ugKjMVdflPtyQUcUL4Gx) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
