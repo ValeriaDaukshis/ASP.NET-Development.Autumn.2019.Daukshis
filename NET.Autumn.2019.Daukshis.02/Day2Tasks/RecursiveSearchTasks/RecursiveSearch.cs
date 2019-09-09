@@ -8,6 +8,13 @@ namespace RecursiveSearchTasks
 {
     public static class RecursiveSearch
     {
+        /// <summary>
+        /// find biggest number
+        /// </summary>
+        /// <param name="array">init array</param>
+        /// <returns>
+        /// biggest number in array
+        /// </returns>
         public static int FindBiggestNumber(int[] array)
         {
             CheckInput(array);

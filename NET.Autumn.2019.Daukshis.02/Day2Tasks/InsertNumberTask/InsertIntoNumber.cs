@@ -32,6 +32,13 @@ namespace InsertNumberTask
             return initialNum | insertedNum;
         }
 
+        /// <summary>
+        /// Check input
+        /// </summary>
+        /// <param name="number1">first number</param>
+        /// <param name="number2">second number</param>
+        /// <param name="i">start position</param>
+        /// <param name="j">final position</param>
         private static void CheckInput(int number1, int number2, int i, int j)
         {
             if (number1 > 16 & number1 < 0)

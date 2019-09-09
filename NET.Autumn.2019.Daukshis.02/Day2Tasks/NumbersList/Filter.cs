@@ -6,6 +6,14 @@ namespace NumbersList
 {
     public class Filter
     {
+        /// <summary>
+        /// Filter array by key
+        /// </summary>
+        /// <param name="numbers">list of numbers</param>
+        /// <param name="value">value which we need to find</param>
+        /// <returns>
+        /// List of numbers, which contains value
+        /// </returns>
         public static ArrayList FilterArrayByKey(int[] numbers, int value)
         {
             if (numbers.Length == 0)
