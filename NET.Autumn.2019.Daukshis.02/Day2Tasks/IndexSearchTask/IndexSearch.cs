@@ -2,18 +2,17 @@
 
 namespace IndexSearchTask
 {
-    public static class SearchElement
+    public static class IndexSearch
     {
         public static object FindIndex(int[] array)
         {
             CheckInput(array);
-            FindMiddleElement(array);
-            return 0;
+            return FindMiddleElement(array); 
         }
 
         private static object FindMiddleElement(int[] array)
         {
-            for (int i = 1 ; i < array.Length; i++)
+            for (int i = 1 ; i < array.Length - 1; i++)
                 if (ElementsSum(array, 0, i - 1) == ElementsSum(array, i + 1, array.Length - 1))
                     return array[i];
             return null;
@@ -27,7 +26,7 @@ namespace IndexSearchTask
                 throw new ArgumentException("Low index is more than high index");
 
             int sum = 0;
-            for (int i = low; i < high; i++)
+            for (int i = low; i <= high; i++)
                 sum += array[i];
             
             return sum;

@@ -2,7 +2,7 @@
 
 namespace InsertNumberTask
 {
-    public class Number
+    public class InsertIntoNumber
     {
         /// <summary>
         /// Insert number

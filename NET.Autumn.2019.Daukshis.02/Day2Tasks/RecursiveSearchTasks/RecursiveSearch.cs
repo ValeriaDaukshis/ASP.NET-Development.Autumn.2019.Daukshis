@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace RecursiveSearchTasks
 {
-    public static class SearchClass
+    public static class RecursiveSearch
     {
         public static int FindBiggestNumber(int[] array)
         {
             CheckInput(array);
-            return FindBiggestNumberRecursive(array, array[0], array[0]); 
+            return FindBiggestNumberRecursive(array, array[0], 0); 
         }
 
         private static int FindBiggestNumberRecursive(int[] array, int biggestNumber, int nextIndex)
@@ -22,7 +22,7 @@ namespace RecursiveSearchTasks
             if (array[nextIndex] == array[array.Length - 1])
                 return biggestNumber;
             
-            return FindBiggestNumberRecursive(array, biggestNumber, array[nextIndex + 1]);
+            return FindBiggestNumberRecursive(array, biggestNumber, nextIndex + 1);
             
         }
 
