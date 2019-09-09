@@ -1,11 +1,12 @@
+https://core2.me/me/?cv=28d.2u
 # .NET-Training.-Autumn-2019
 
 ## Self-study stage (05.08.2019 - 15.09.2019)
  
 | Task | Task Status | Additional/Comments |
 | -------- | -------- | --------|  
-| [Lections Day 1](https://drive.google.com/drive/folders/0B7WmjuqYed3AWXFzc1Mtcnk3d1k) | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png)|
-| [Lections Day 2](https://drive.google.com/drive/folders/1_B9ncAWoJtoDvG6vQkxyAvMuXDdqXRAw) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
+| [Lections Day 1](https://drive.google.com/drive/folders/0B7WmjuqYed3AWXFzc1Mtcnk3d1k) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)| 
+| [Lections Day 2](https://drive.google.com/drive/folders/1_B9ncAWoJtoDvG6vQkxyAvMuXDdqXRAw) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|Array.Copy
 | [Lections Day 3](https://drive.google.com/drive/folders/1j17L1jUOa9wB1OibGtCuYdsV28kvstr-) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
 | [Lections Day 4](https://drive.google.com/drive/folders/1G_Nlntl2BTH0ugKjMVdflPtyQUcUL4Gx) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
 | [Lections Day 5](https://drive.google.com/drive/folders/1Eq-C6_EtSlrAgadR-HOyrxUAvqDiw_gM) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
@@ -41,7 +42,7 @@
 | Task | Solution Status | Solution Link | MS Test Status | MS Test Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- | -------- | -------- |    
 | 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET/blob/master/NET.Autumn.2019.LastName.01/ArraySortings/ArrayExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to MS Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET/blob/master/NET.Autumn.2019.LastName.01/Day1Solutions/SortingsMSUnitTests/ArrayExtensionTests.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET/blob/master/NET.Autumn.2019.LastName.01/Day1Solutions/SortingsNUnitTest/ArrayExtensionTests.cs) | [*Link to Tests Generator code - cs-file - Optional*](#)
-| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to Assembly - dll-file here*](#) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [Link to report.md-file here*](#) |  |  | 
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to Assembly - dll-file here*](#) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [Link to report.md-file here*](https://github.com/ValeriaDaukshis/ASP.NET/blob/master/NET.Autumn.2019.Daukshis.01/REPORT.md) |  |  | 
 | 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to docunemtation - chm-file here*](#) |  |  |  |  | 
 
 ---
