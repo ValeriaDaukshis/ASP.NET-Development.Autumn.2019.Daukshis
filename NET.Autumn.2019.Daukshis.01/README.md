@@ -2,7 +2,7 @@
 
 ![Done](http://s1.iconbird.com/ico/0512/C9d/w24h241337874507check.png) 1. Реализовать методы быстрой сортировки и сортировки слиянием для целочисленного массива (методы поместить в статический класс ArrayExtension, тип проекта Class Library). Протестировать работу методов с использованием тестовых фреймворков NUnit и MS Tests (для каждого фреймворка создать отдельный проект). Рассмотреть вариант тестирования массивов большой размерности, элементы которых сгенерированны случайным образом.
 
-DONE | [Solution](https://github.com/ValeriaDaukshis/ASP.NET/blob/master/NET.Autumn.2019.Daukshis.01/ArraySortings/ArrayExtension.cs) | [Tests] (https://github.com/ValeriaDaukshis/ASP.NET/tree/master/NET.Autumn.2019.Daukshis.01/Day1Solutions)
+DONE | [Solution](https://github.com/ValeriaDaukshis/ASP.NET/blob/master/NET.Autumn.2019.Daukshis.01/ArraySortings/ArrayExtension.cs) | [Tests](https://github.com/ValeriaDaukshis/ASP.NET/tree/master/NET.Autumn.2019.Daukshis.01/Day1Solutions)
 
 ## Задачи
 
@@ -12,5 +12,5 @@ DONE | [Solution](https://github.com/ValeriaDaukshis/ASP.NET/blob/master/NET.Aut
 
 ## Задачи
 
-![Done](#) 3. Используя Sandcastle - Documentation Compiler for Managed Class Libraries создать техническую документацию в стиле MSDN по заданной сборке.
+3. Используя Sandcastle - Documentation Compiler for Managed Class Libraries создать техническую документацию в стиле MSDN по заданной сборке.
 
