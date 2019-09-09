@@ -1,3 +1,4 @@
+https://core2.me/me/?cv=28d.2u
 # .NET-Training.-Autumn-2019
 
 ## Self-study stage (05.08.2019 - 15.09.2019)
