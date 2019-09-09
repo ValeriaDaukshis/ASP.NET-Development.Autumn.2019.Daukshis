@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{93809577-B292-402B-8E6E-DC087D996671}</ProjectGuid>
+    <ProjectGuid>{0426C4D0-5375-4B4C-9487-A00F1A71532A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RecursiveSearchTasks</RootNamespace>
-    <AssemblyName>RecursiveSearchTasks</AssemblyName>
+    <RootNamespace>IndexSearchTask</RootNamespace>
+    <AssemblyName>IndexSearchTask</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SearchClass.cs" />
+    <Compile Include="SearchElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
