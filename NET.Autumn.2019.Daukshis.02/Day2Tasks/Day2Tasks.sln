@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertNumberTask", "InsertNumberTask\InsertNumberTask.csproj", "{2C40BD4C-E838-4DDD-A72B-6CBB2D3AB683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveSearchTasks", "RecursiveSearchTasks\RecursiveSearchTasks.csproj", "{93809577-B292-402B-8E6E-DC087D996671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C40BD4C-E838-4DDD-A72B-6CBB2D3AB683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C40BD4C-E838-4DDD-A72B-6CBB2D3AB683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C40BD4C-E838-4DDD-A72B-6CBB2D3AB683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C40BD4C-E838-4DDD-A72B-6CBB2D3AB683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93809577-B292-402B-8E6E-DC087D996671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93809577-B292-402B-8E6E-DC087D996671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93809577-B292-402B-8E6E-DC087D996671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93809577-B292-402B-8E6E-DC087D996671}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {844F45DA-2883-4493-B2E8-B07359D383D2}
+	EndGlobalSection
+EndGlobal
