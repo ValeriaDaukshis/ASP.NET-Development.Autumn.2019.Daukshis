@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RecursiveSearchTasks
 {
@@ -21,6 +17,15 @@ namespace RecursiveSearchTasks
             return FindBiggestNumberRecursive(array, array[0], 0); 
         }
 
+        /// <summary>
+        /// Find Biggest Number Recursive
+        /// </summary>
+        /// <param name="array">init array</param>
+        /// <param name="biggestNumber">current biggest number</param>
+        /// <param name="nextIndex">next element index</param>
+        /// <returns>
+        /// biggest number
+        /// </returns>
         private static int FindBiggestNumberRecursive(int[] array, int biggestNumber, int nextIndex)
         {
             if (array[nextIndex] > biggestNumber)
