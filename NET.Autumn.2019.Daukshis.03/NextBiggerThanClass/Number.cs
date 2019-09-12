@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections.Generic; 
 
 namespace NextBiggerThanClass
 {
@@ -9,17 +8,16 @@ namespace NextBiggerThanClass
         /// <summary>
         /// FindNextBiggerNumber
         /// </summary>
-        /// <param name="number">initial number</param>
+        /// <param name="number">initialNumber number</param>
         /// <returns>
-        /// Next bigger number from digits of initial number
+        /// Next bigger number from digits of initialNumber number
         /// </returns>
         public static int  FindNextBiggerNumber(int number)
         {
-            CheckInput(number); // 1241233
+            CheckInput(number); 
             if (number == Int32.MaxValue)
                 return -1;
-            int[] initialArray = GetArrayFromNumber(number);
-            // initialArray.Reverse();
+            int[] initialArray = GetArrayFromNumber(number); 
             int difference = GenerateNumbers(initialArray, number);
             if (difference != Int32.MaxValue & number != Int32.MaxValue)
                 return difference + number;
@@ -28,9 +26,9 @@ namespace NextBiggerThanClass
         }
 
         /// <summary>
-        /// 
+        /// Check Input data
         /// </summary>
-        /// <param name="number"></param>
+        /// <param name="number">initial number</param>
         private static void CheckInput(int number)
         {
             if (Math.Abs(number) / 10 < 1)
@@ -43,16 +41,17 @@ namespace NextBiggerThanClass
                 throw new ArgumentOutOfRangeException("Write bigger number");
         }
 
-         
-        private static int GenerateNumbers(int[] number, int initial)
-        {
-            var uniqueNumbers = new List<int>();
-            var uniqueNumbersBool = new List<Boolean>();
-            //uniqueNumbers.Add(number); 
-            int minDifference = Int32.MaxValue;
-            int iterations = Factorial(number.Length) - 1;
+        /// <summary>
+        /// Generate Numbers
+        /// </summary>
+        /// <param name="number"> initial array</param>
+        /// <param name="initialNumber">initial number</param>
+        /// <returns>min difference between initialNumber and all generated</returns>
+        private static int GenerateNumbers(int[] number, int initialNumber)
+        { 
+            int minDifference = Int32.MaxValue; 
             Array.Sort(number);
-            for (int i = 0; i < iterations; i++)
+            for (;;)
             {
                 int pointer = -1;
                 for (int j = number.Length - 1; j > 0; j--)
@@ -75,65 +74,47 @@ namespace NextBiggerThanClass
                     }
                 Swap(number, pointer, pos);
 
-                int numCopy = ReserveArrayToInt(number);
-                uniqueNumbersBool.Add(uniqueNumbers.Contains(numCopy));
-                uniqueNumbers.Add(numCopy);
-
-                CompareNumbers(numCopy, initial, ref minDifference);
-
-                //ReverceArr(number, pointer); 
+                int numCopy = ParseArrayToInt(number);  
+                CompareNumbers(numCopy, initialNumber, ref minDifference); 
+                 
                 Array.Reverse(number, pointer+1, number.Length-pointer-1);
-                numCopy = ReserveArrayToInt(number);
-                uniqueNumbersBool.Add(uniqueNumbers.Contains(numCopy));
-                uniqueNumbers.Add(numCopy);
-
-                CompareNumbers(numCopy, initial, ref minDifference);
-            }
-
-            int n = uniqueNumbers.Count();
-            uniqueNumbers.Contains(1241233);
-            return minDifference;
-
+                numCopy = ParseArrayToInt(number);  
+                CompareNumbers(numCopy, initialNumber, ref minDifference);
+            }  
         }
 
-        private static void ReverceArr(int[] arr, int start)
-        {
-            for (int i = start; i < (arr.Length - start) / 2; i++)
-            {
-                int tmp = arr[i];
-                arr[i] = arr[arr.Length - i - 1];
-                arr[arr.Length - i - 1] = tmp;
-            }
-        }
-
+        /// <summary>
+        /// Compare Numbers
+        /// </summary>
+        /// <param name="currentNumber">first number</param>
+        /// <param name="initial">second number</param>
+        /// <param name="minDifference">difference between numbers</param>
         private static void CompareNumbers(int currentNumber, int initial, ref int minDifference)
         {
             if (currentNumber - initial < minDifference & currentNumber - initial > 0)
                 minDifference = currentNumber - initial;
         }
 
-        private static int ReserveArrayToInt(int[] current)
+        /// <summary>
+        /// Parse Array To Int
+        /// </summary>
+        /// <param name="number">init array</param>
+        /// <returns>parsed integer number from array</returns>
+        private static int ParseArrayToInt(int[] number)
         {
             int currentNumber = 0;
-            for (int i = 0; i < current.Length; i++)
-                currentNumber = currentNumber * 10 + current[i];
+            for (int i = 0; i < number.Length; i++)
+                currentNumber = currentNumber * 10 + number[i];
 
             return currentNumber;
-        }
-
-        private static int Pow(int number, int pow)
-        {
-            int result = 1;
-            for (int i = 0; i < pow; i++)
-                result *= number;
-            return result;
-        }
+        } 
+         
         /// <summary>
-        /// 
+        /// Swap
         /// </summary>
-        /// <param name="number"></param>
-        /// <param name="i"></param>
-        /// <param name="j"></param>
+        /// <param name="number">init array</param>
+        /// <param name="i">first position</param>
+        /// <param name="j">second position</param>
         private static void Swap(int[] number, int i, int j)
         {
             int tmp = number[i];
@@ -141,22 +122,11 @@ namespace NextBiggerThanClass
             number[j] = tmp;
         }
 
-        private static int Factorial(int numberLength)
-        {
-            int numberFactorial = 1;
-            for (int i = 1; i <= numberLength; i++)
-            {
-                numberFactorial *= i;
-            }
-
-            return numberFactorial;
-        }
-
         /// <summary>
-        /// 
+        /// GetArrayFromNumber
         /// </summary>
-        /// <param name="number"></param>
-        /// <returns></returns>
+        /// <param name="number">init number</param>
+        /// <returns>Array of number's digits</returns>
         private static int[] GetArrayFromNumber(int number)
         {
             List<int> digit = new List<int>();
