@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NextBiggerThanClass
 {
@@ -12,20 +13,16 @@ namespace NextBiggerThanClass
         /// <returns>
         /// Next bigger number from digits of initial number
         /// </returns>
-        public static int FindNextBiggerNumber(int number)
+        public static int  FindNextBiggerNumber(int number)
         {
-            CheckInput(number);
-            List<int> digit = GetArrayFromNumber(number);
-            int minDifference = number;
-            int nextBiggerNum = number;
-            while (GenerateNumber(digit, digit.Count))
-                nextBiggerNum = CompareNumbers(number, digit, ref minDifference, nextBiggerNum);
+            CheckInput(number); // 1241233
+            int[] initialArray = GetArrayFromNumber(number);
+            // initialArray.Reverse();
+            int difference = GenerateNumbers(initialArray, number);
+            if (difference != Int32.MaxValue & number != Int32.MaxValue)
+                return difference + number;
 
-            if (nextBiggerNum == number)
-                return -1;
-
-            return nextBiggerNum;
-
+            return -1;
         }
 
         /// <summary>
@@ -44,57 +41,59 @@ namespace NextBiggerThanClass
                 throw new ArgumentOutOfRangeException("Write bigger number");
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="initialNum"></param>
-        /// <param name="digits"></param>
-        /// <param name="minDifference"></param>
-        /// <param name="nextBiggerNumber"></param>
-        /// <returns></returns>
-        private static int CompareNumbers(int initialNum, List<int> digits, ref int minDifference, int nextBiggerNumber)
-        {
-            int generatedNumber = 0;
-            for (int i = 0; i < digits.Count; i++)
+         
+        private static int GenerateNumbers(int[] number, int initial)
+        { 
+            var uniqueNumbers = new List<int>();
+            var uniqueNumbersBool = new List<Boolean>();
+            //uniqueNumbers.Add(number);
+            int pointer = number.Length-1; //digit pointer
+            int minDifference = Int32.MaxValue;
+            int iterations = Factorial(number.Length) - 1;
+            for (int i = 0; i < iterations; i++)
             {
-                generatedNumber = generatedNumber * 10 + digits[i];
+                //Swap(number, pointer, pointer - 1);
+                //if (pointer == number.Length - 1)
+                //    pointer = number.Length - 2;
+                //else if (pointer == number.Length)
+                //    pointer = number.Length - 2;
+
+                if (pointer == 1)
+                {
+                    Swap(number, 0, number.Length - 1);
+                    pointer = number.Length - 1;
+                }
+                else
+                {
+                    Swap(number, pointer, pointer - 1);
+                    pointer -= 1;
+                }
+                int numCopy = ReserveArrayToInt(number);
+                uniqueNumbersBool.Add(uniqueNumbers.Contains(numCopy));
+                uniqueNumbers.Add(numCopy);
+
+                CompareNumbers(numCopy, initial, ref minDifference);
             }
 
-            if (generatedNumber - initialNum > 0 && generatedNumber - initialNum < minDifference)
-            {
-                nextBiggerNumber = generatedNumber;
-                minDifference = generatedNumber - initialNum;
-            }
-
-            return nextBiggerNumber;
+            int n = uniqueNumbers.Count();
+            uniqueNumbers.Contains(1241233);
+            return minDifference;
 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="number"></param>
-        /// <param name="N"></param>
-        /// <returns></returns>
-        private static Boolean GenerateNumber(List<int> number, int N)
+        private static void CompareNumbers(int currentNumber, int initial, ref int minDifference)
         {
-            int i = N - 2;
-            while (i != -1 && number[i] >= number[i + 1])
-                i--;
-            if (i == -1)
-                return false;
+            if (currentNumber - initial < minDifference & currentNumber - initial > 0)
+                minDifference = currentNumber - initial;
+        }
 
-            int k = N - 1;
-            while (number[i] >= number[k])
-                k--;
+        private static int ReserveArrayToInt(int[] current)
+        {
+            int currentNumber = 0;
+            for (int i = 0; i < current.Length; i++)
+                currentNumber = currentNumber * 10 + current[i];
 
-            Swap(number, i, k);
-            int left = i + 1;
-            int right = N - 1;
-            while (left < right)
-                Swap(number, left++, right--);
-            return true;
-
+            return currentNumber;
         }
 
         /// <summary>
@@ -103,11 +102,22 @@ namespace NextBiggerThanClass
         /// <param name="number"></param>
         /// <param name="i"></param>
         /// <param name="j"></param>
-        private static void Swap(List<int> number, int i, int j)
+        private static void Swap(int[] number, int i, int j)
         {
             int tmp = number[i];
             number[i] = number[j];
             number[j] = tmp;
+        }
+
+        private static int Factorial(int numberLength)
+        {
+            int numberFactorial = 1;
+            for (int i = 1; i <= numberLength; i++)
+            {
+                numberFactorial *= i;
+            }
+
+            return numberFactorial;
         }
 
         /// <summary>
@@ -115,15 +125,15 @@ namespace NextBiggerThanClass
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        private static List<int> GetArrayFromNumber(int number)
+        private static int[] GetArrayFromNumber(int number)
         {
             List<int> digit = new List<int>();
             while (number > 0)
             {
-                digit.Add(number % 10);
+                digit.Insert(0,number % 10);
                 number /= 10;
             }
-            return digit;
+            return digit.ToArray();
         }
     }
 }
