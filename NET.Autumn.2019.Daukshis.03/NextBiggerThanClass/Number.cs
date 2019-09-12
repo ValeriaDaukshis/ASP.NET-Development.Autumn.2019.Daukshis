@@ -16,6 +16,8 @@ namespace NextBiggerThanClass
         public static int  FindNextBiggerNumber(int number)
         {
             CheckInput(number); // 1241233
+            if (number == Int32.MaxValue)
+                return -1;
             int[] initialArray = GetArrayFromNumber(number);
             // initialArray.Reverse();
             int difference = GenerateNumbers(initialArray, number);
@@ -43,32 +45,45 @@ namespace NextBiggerThanClass
 
          
         private static int GenerateNumbers(int[] number, int initial)
-        { 
+        {
             var uniqueNumbers = new List<int>();
             var uniqueNumbersBool = new List<Boolean>();
-            //uniqueNumbers.Add(number);
-            int pointer = number.Length-1; //digit pointer
+            //uniqueNumbers.Add(number); 
             int minDifference = Int32.MaxValue;
             int iterations = Factorial(number.Length) - 1;
+            Array.Sort(number);
             for (int i = 0; i < iterations; i++)
             {
-                //Swap(number, pointer, pointer - 1);
-                //if (pointer == number.Length - 1)
-                //    pointer = number.Length - 2;
-                //else if (pointer == number.Length)
-                //    pointer = number.Length - 2;
+                int pointer = -1;
+                for (int j = number.Length - 1; j > 0; j--)
+                    if (number[j] > number[j - 1])
+                    {
+                        pointer = j-1;
+                        break;
+                    }
 
-                if (pointer == 1)
-                {
-                    Swap(number, 0, number.Length - 1);
-                    pointer = number.Length - 1;
-                }
-                else
-                {
-                    Swap(number, pointer, pointer - 1);
-                    pointer -= 1;
-                }
+                if (pointer == -1)
+                    return minDifference;
+
+                int difference = 10;
+                int pos = -1;
+                for (int j = pointer+1; j < number.Length; j++)
+                    if (number[pointer] < number[j] & number[j] - number[pointer] < difference)
+                    {
+                        difference = number[j] - number[pointer];
+                        pos = j; 
+                    }
+                Swap(number, pointer, pos);
+
                 int numCopy = ReserveArrayToInt(number);
+                uniqueNumbersBool.Add(uniqueNumbers.Contains(numCopy));
+                uniqueNumbers.Add(numCopy);
+
+                CompareNumbers(numCopy, initial, ref minDifference);
+
+                //ReverceArr(number, pointer); 
+                Array.Reverse(number, pointer+1, number.Length-pointer-1);
+                numCopy = ReserveArrayToInt(number);
                 uniqueNumbersBool.Add(uniqueNumbers.Contains(numCopy));
                 uniqueNumbers.Add(numCopy);
 
@@ -79,6 +94,16 @@ namespace NextBiggerThanClass
             uniqueNumbers.Contains(1241233);
             return minDifference;
 
+        }
+
+        private static void ReverceArr(int[] arr, int start)
+        {
+            for (int i = start; i < (arr.Length - start) / 2; i++)
+            {
+                int tmp = arr[i];
+                arr[i] = arr[arr.Length - i - 1];
+                arr[arr.Length - i - 1] = tmp;
+            }
         }
 
         private static void CompareNumbers(int currentNumber, int initial, ref int minDifference)
@@ -96,6 +121,13 @@ namespace NextBiggerThanClass
             return currentNumber;
         }
 
+        private static int Pow(int number, int pow)
+        {
+            int result = 1;
+            for (int i = 0; i < pow; i++)
+                result *= number;
+            return result;
+        }
         /// <summary>
         /// 
         /// </summary>
