@@ -1,8 +1,11 @@
-﻿using System;  
+﻿using System;
+using System.Diagnostics;
+using System.Reflection;
+using NODClass;
 
 namespace GcdClass
 {
-    public static class Gcd
+    public class Gcd : IGcd
     {
         /// <summary>
         /// Evklid Method
@@ -12,7 +15,7 @@ namespace GcdClass
         /// <returns>
         /// GCD of 2 numbers
         /// </returns>
-        public static int EvklidMethod(int num1, int num2)
+        public int EvklidMethod(int num1, int num2)
         {
             if (num1 == 0 & num2 != 0)
                 return Math.Abs(num2);
@@ -40,11 +43,11 @@ namespace GcdClass
         /// <param name="num2">number 2</param>
         /// <param name="num3">number 3</param>
         /// <returns>GCD of 3 numbers</returns>
-        public static int EvklidMethod(int num1, int num2, int num3)
+        public int EvklidMethod(int num1, int num2, int num3)
         {
             int[] array = { Math.Abs(num1), Math.Abs(num2), Math.Abs(num3) };
             Array.Sort(array);
-            Array.Reverse(array); 
+            Array.Reverse(array);
 
             if (array[0] == 0)
                 return 0;
@@ -64,7 +67,7 @@ namespace GcdClass
                     r1 = array[i] - q1 * r0;
                     r2 = r0;
                     r0 = r1;
-                    
+
                 }
                 else
                     break;
@@ -77,10 +80,10 @@ namespace GcdClass
         /// Evklid Method
         /// </summary>
         /// <param name="array">array of numbers</param>
-        /// <returns>GCD of numbers</returns>
-        public static int EvklidMethod(params int[] array)
+        /// <returns>v</returns>  
+        public int EvklidMethod(params int[] array)
         {
-            if(array.Length == 0)
+            if (array.Length == 0)
                 throw new ArgumentException("Array has zero length");
 
             for (int i = 0; i < array.Length; i++)
@@ -99,13 +102,13 @@ namespace GcdClass
                         break;
                     }
             }
-            else 
+            else
                 return 0;
 
             int r0 = array[1];
             int r2 = 0;
             int r1 = 0;
-            
+
             for (int i = 0; i < fixedLength; i++)
             {
                 int q1;
@@ -113,14 +116,14 @@ namespace GcdClass
                 {
                     q1 = array[i];
                     r1 = array[i] - q1;
-                    r2 = q1; 
+                    r2 = q1;
                 }
                 else
                 {
                     q1 = array[i] / r0;
                     r1 = array[i] - q1 * r0;
                     r2 = r0;
-                } 
+                }
                 r0 = r1;
 
             }
@@ -135,7 +138,7 @@ namespace GcdClass
         /// <returns>
         /// GCD of 2 numbers
         /// </returns>
-        public static int BinaryGcdMethod(int number1, int number2)
+        public int BinaryMethod(int number1, int number2)
         {
             number1 = Math.Abs(number1);
             number2 = Math.Abs(number2);
@@ -176,13 +179,13 @@ namespace GcdClass
         /// <param name="number2">number 2</param>
         /// <param name="number3">number 3</param>
         /// <returns>GCD of 3 numbers</returns>
-        public static int BinaryGcdMethod(int number1, int number2, int number3)
+        public int BinaryMethod(int number1, int number2, int number3)
         {
             number1 = Math.Abs(number1);
             number2 = Math.Abs(number2);
             number3 = Math.Abs(number3);
             int[] array = { Math.Abs(number1), Math.Abs(number2), Math.Abs(number3) };
-            
+
             int k = 1;
             while (array[0] != 0 & array[1] != 0 & array[2] != 0)
             {
@@ -195,13 +198,13 @@ namespace GcdClass
                 }
                 while (array[0] % 2 == 0) array[0] >>= 1;
                 while (array[1] % 2 == 0) array[1] >>= 1;
-                while (array[2] % 2 == 0) array[2] >>= 1; 
+                while (array[2] % 2 == 0) array[2] >>= 1;
                 Array.Sort(array);
                 Array.Reverse(array);
 
                 array[0] = array[0] - array[1];
             }
-            return k*array[2];
+            return k * array[2];
         }
 
         /// <summary>
@@ -211,7 +214,7 @@ namespace GcdClass
         /// <returns>
         /// GCD of numbers
         /// </returns>
-        public static int BinaryGcdMethod(params int[] array)
+        public int BinaryMethod(params int[] array)
         {
             if (array.Length == 0)
                 throw new ArgumentException("Array has zero length");
@@ -220,7 +223,7 @@ namespace GcdClass
                 array[i] = Math.Abs(array[i]);
 
             int k = 1;
-            while (ZeroNumbers(array))
+            while (Gcd.ZeroNumbers(array))
             {
                 while (EvenNumbers(array))
                 {
@@ -239,7 +242,7 @@ namespace GcdClass
 
                 array[0] = array[0] - array[1];
             }
-            return k * array[array.Length-1];
+            return k * array[array.Length - 1];
         }
 
         /// <summary>
@@ -270,6 +273,27 @@ namespace GcdClass
                 if (array[i] % 2 != 0)
                     return false;
             return true;
+        }
+
+        public static long Timer(string methodName, params object[] countOfParams)
+        {
+            Type[] type = new Type[countOfParams.Length];
+            for (int i = 0; i < countOfParams.Length; i++)
+                type[i] = typeof(int);
+            MethodInfo info;
+            
+            info = typeof(IGcd).GetMethod(methodName,
+                    BindingFlags.Public | BindingFlags.Instance,
+                    null,
+                    CallingConventions.Any,
+                    type,
+                    null); 
+
+            var time = new Stopwatch();
+            time.Start();
+            info.Invoke(new Gcd(), countOfParams);
+            time.Stop();
+            return time.ElapsedMilliseconds;
         }
 
     }
