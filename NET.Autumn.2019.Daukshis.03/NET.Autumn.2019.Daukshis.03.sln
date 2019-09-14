@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextBiggerThanClass", "NextBiggerThanClass\NextBiggerThanClass.csproj", "{6A71DFE7-2414-43B6-BFAA-816E799C4E37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NODClass", "NODClass\NODClass.csproj", "{5C6D833B-4903-4C1D-96CB-5D3B06903E5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GcdClass", "NODClass\GcdClass.csproj", "{5C6D833B-4903-4C1D-96CB-5D3B06903E5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Tests", "Root.Tests\Root.Tests.csproj", "{427CD9E8-A4DF-4926-A5F7-CF74DD12A020}"
 EndProject

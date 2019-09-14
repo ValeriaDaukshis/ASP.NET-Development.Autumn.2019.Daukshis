@@ -54,9 +54,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NODClass\NODClass.csproj">
+    <ProjectReference Include="..\NODClass\GcdClass.csproj">
       <Project>{5c6d833b-4903-4c1d-96cb-5d3b06903e5d}</Project>
-      <Name>NODClass</Name>
+      <Name>GcdClass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

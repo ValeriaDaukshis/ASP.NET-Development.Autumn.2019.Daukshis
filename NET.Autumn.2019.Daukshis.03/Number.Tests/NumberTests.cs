@@ -1,5 +1,4 @@
-﻿using System;
-using Number;
+﻿
 using NUnit.Framework;
 
 namespace Number.Tests

@@ -1,6 +1,5 @@
 ﻿using System;
 using NUnit.Framework; 
-using FindNthRootClass;
 
 namespace Root.Tests
 {
@@ -15,7 +14,6 @@ namespace Root.Tests
         [TestCase(0.0279936, 7, 0.0001, ExpectedResult = 0.6)]
         [TestCase(0.0081, 4, 0.1, ExpectedResult = 0.3)]
         [TestCase(-0.008, 3, 0.1, ExpectedResult = -0.2)]
-        //[TestCase(0.004241979, 9, 0.00000001, ExpectedResult = 0.545)] 
         public double FindNthRoot_RootExpected(double number, int root, double accuracy)
              => FindNthRootClass.Root.FindNthRoot(number, root, accuracy);
 
