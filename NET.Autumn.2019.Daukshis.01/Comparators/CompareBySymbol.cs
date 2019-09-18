@@ -18,6 +18,12 @@ namespace Task1
             _symbol = symbol;
         }
 
+        /// <summary>
+        /// Compares the specified number1.
+        /// </summary>
+        /// <param name="number1">The number1.</param>
+        /// <param name="number2">The number2.</param>
+        /// <returns>comparison result</returns>
         public int Compare(int number1, int number2)
         {
             string convertedNumber1 = Converter.ConvertToBase(number1, _toBase);
@@ -29,6 +35,11 @@ namespace Task1
             return counter1.CompareTo(counter2);
         }
 
+        /// <summary>
+        /// Counters the specified number.
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>number of occurrences of an element</returns>
         private int Counter(string number)
         {
             int counter = 0;

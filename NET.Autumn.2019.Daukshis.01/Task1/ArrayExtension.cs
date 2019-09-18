@@ -36,7 +36,9 @@ namespace Task1
         public static void MergeSort(int[] array, IComparer<int> compareCriterion, IIndexer indexer)
         {
             CheckInput(array, compareCriterion, indexer);
-            MergeSortRecursive(array, 0, array.Length - 1);
+            int start = indexer.First;
+            int finish = indexer.Last;
+            MergeSortRecursive(array, start, finish, compareCriterion, indexer);
         }
 
         /// <summary>
@@ -55,7 +57,7 @@ namespace Task1
                 {
                     if (j == -1 || i == -1)
                         return;
-                    else if (compareCriterion.Compare(array[i], array[j]) == 1)
+                    if (compareCriterion.Compare(array[i], array[j]) == 1)
                     {
                         int temp = array[i];
                         array[i] = array[j];
@@ -74,11 +76,10 @@ namespace Task1
         { 
             int i = low;
             int j = indexer.GetHeigherElem(high);
-            int medium = array[indexer.GetMedium(j, i)];
-            int compareResult = 0;
+            int medium = array[indexer.GetMedium(j, i)]; 
             do
             {
-                while (j != -1 && i != -1 && array[i] < medium)
+                while (compareCriterion.Compare( array[i], medium) == -1 )
                 {
                     i = indexer.GetNext(i);
                     if (i == -1)
@@ -86,21 +87,20 @@ namespace Task1
                         i = indexer.GetPrev(i);
                         break;
                     }
-                       
+
                 }
 
-                while (j != -1 && i != -1 && array[j] > medium)
+                while (compareCriterion.Compare(array[j], medium) == 1)
                 {
                     j = indexer.GetPrev(j);
                     if (j == -1)
                     {
                         j = indexer.GetNext(j);
                         break;
-                    }   
+                    }
                 }
 
-                compareResult = compareCriterion.Compare(array[i], array[j]);
-                if (compareResult == 1)
+                if (i <= j)
                 {
                     int buffer = array[i];
                     array[i] = array[j];
@@ -110,13 +110,7 @@ namespace Task1
                     j = indexer.GetPrev(j);
                 }
 
-                //if (compareResult == 0)
-                //{
-                //    i = indexer.GetNext(i);
-                //    j = indexer.GetPrev(j);
-                //}
-
-            } while (i <= j && j != -1 && i != -1 && compareResult != 0);
+            } while (i <= j && j != -1 && i != -1 );
 
             if (i < high & i != -1)
                 QuickSort(array, i, high, compareCriterion, indexer);
@@ -130,15 +124,15 @@ namespace Task1
         /// <param name="array">unsorted array</param>
         /// <param name="left">left- side index</param>
         /// <param name="right">right- side index</param>
-        private static void MergeSortRecursive(int[] array, int left, int right)
+        private static void MergeSortRecursive(int[] array, int left, int right, IComparer<int> compareCriterion, IIndexer indexer)
         {
             if (left < right)
             {
-                int medium = (left + right) / 2;
+                int medium = array[indexer.GetMedium(left, right)]; 
 
-                MergeSortRecursive(array, left, medium);
-                MergeSortRecursive(array, medium + 1, right);
-                Merge(array, left, medium, right);
+                MergeSortRecursive(array, left, medium, compareCriterion, indexer);
+                MergeSortRecursive(array, medium + 1, right, compareCriterion, indexer);
+                Merge(array, left, medium, right, compareCriterion, indexer);
             }
 
         }
@@ -150,7 +144,7 @@ namespace Task1
         /// <param name="left">left- side index</param>
         /// <param name="middle">middle index</param>
         /// <param name="right">right- side index</param>
-        private static void Merge(int[] array, int left, int middle, int right)
+        private static void Merge(int[] array, int left, int middle, int right, IComparer<int> compareCriterion, IIndexer indexer)
         {
             int side1 = left;
             int side2 = middle + 1;

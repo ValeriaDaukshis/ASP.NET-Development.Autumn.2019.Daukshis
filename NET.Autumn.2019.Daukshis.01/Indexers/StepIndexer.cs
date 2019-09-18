@@ -19,6 +19,28 @@ namespace Task1
             _step = step; 
         }
 
+        /// <summary>
+        /// Checks the input.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="first">The first.</param>
+        /// <param name="last">The last.</param>
+        /// <param name="step">The step.</param>
+        /// <exception cref="Exception">Array is empty</exception>
+        /// <exception cref="NullReferenceException">Array is null</exception>
+        /// <exception cref="ArgumentException">
+        /// Step is less than zero
+        /// or
+        /// Step is larger than array length
+        /// or
+        /// Start index is less than zero
+        /// or
+        /// Start index is larger than array length
+        /// or
+        /// Finish index is less than first index
+        /// or
+        /// Finish index is larger than array length
+        /// </exception>
         private void CheckInput(int[] array, int first, int last, int step)
         {
             if (array.Length == 0)
@@ -27,11 +49,11 @@ namespace Task1
                 throw new NullReferenceException("Array is null");
             if (step <= 0)
                 throw new ArgumentException("Step is less than zero");
-            if (step >= array.Length)
+            if (step > array.Length)
                 throw new ArgumentException("Step is larger than array length");
             if (first < 0)
                 throw new ArgumentException("Start index is less than zero");
-            if (first >= array.Length)
+            if (first > array.Length)
                 throw new ArgumentException("Start index is larger than array length");
             if (last < first)
                 throw new ArgumentException("Finish index is less than first index");
@@ -39,6 +61,11 @@ namespace Task1
                 throw new ArgumentException("Finish index is larger than array length");
         }
 
+        /// <summary>
+        /// Gets the next.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns>Next element</returns>
         public int GetNext(int index)
         {
             if(index + _step <= Last)
@@ -46,6 +73,11 @@ namespace Task1
             return -1;
         }
 
+        /// <summary>
+        /// Gets the previous.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns>Prev element</returns>
         public int GetPrev(int index)
         {
             if (index - _step >= First)
@@ -53,6 +85,11 @@ namespace Task1
             return -1;
         }
 
+        /// <summary>
+        /// GetHeigherElem
+        /// </summary>
+        /// <param name="high">The high.</param>
+        /// <returns>Gets the heigher elem</returns>
         public int GetHeigherElem(int high)
         {
             int maxElement = 0;
@@ -61,6 +98,12 @@ namespace Task1
             return maxElement;
         }
 
+        /// <summary>
+        /// Gets the medium.
+        /// </summary>
+        /// <param name="high">The high.</param>
+        /// <param name="low">The low.</param>
+        /// <returns>middle index in array</returns>
         public int GetMedium(int high, int low)
         {
             int medium = (high + low)/2;

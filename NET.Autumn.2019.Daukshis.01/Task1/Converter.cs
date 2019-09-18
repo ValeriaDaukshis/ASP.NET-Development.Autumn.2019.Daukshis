@@ -5,6 +5,12 @@ namespace Task1
 {
     public static class Converter
     {
+        /// <summary>
+        /// Converts to base.
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <param name="toBase">To base.</param>
+        /// <returns>Converted number</returns>
         public static string ConvertToBase(int number, int toBase)
         {
             StringBuilder convertedNumber = new StringBuilder();
