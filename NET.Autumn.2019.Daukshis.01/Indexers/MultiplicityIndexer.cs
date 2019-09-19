@@ -76,7 +76,7 @@ namespace Task1
         /// <returns>Prev index</returns>
         public int GetPrev(int index)
         {
-            for (int i = index - 1; i >= First; i--)
+            for (int i = index - 1; i >= First; i = GetPrev(i))
                 if (array[i] % _multiplicity == 0)
                     return i;
             return -1;
@@ -90,8 +90,11 @@ namespace Task1
         public int GetHeigherElem(int last)
         {
             int maxElement = 0;
-            for (int i = First; i <= last; i += GetNext(i))
-                maxElement = i;
+            for (int i = First; i <= last; i = GetNext(i))
+                if (i == -1)
+                    break;
+                else
+                    maxElement = i;
             return maxElement;
         }
 

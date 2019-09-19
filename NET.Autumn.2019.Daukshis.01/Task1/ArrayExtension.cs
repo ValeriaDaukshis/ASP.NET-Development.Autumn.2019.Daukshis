@@ -153,7 +153,7 @@ namespace Task1
 
             while (side1 <= middle && side2 <= right)
             {
-                if (array[side1] < array[side2])
+                if (compareCriterion.Compare(array[side1], array[side2]) == -1)
                 {
                     resultArray[side3++] = array[side1++];
                 }

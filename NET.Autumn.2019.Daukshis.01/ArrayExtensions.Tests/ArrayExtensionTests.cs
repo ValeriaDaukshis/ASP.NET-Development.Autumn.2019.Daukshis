@@ -55,9 +55,18 @@ namespace ArrayExtensions.Tests
         public void QSort_CompareElementsFrom2IndexWhicnMultiplies5_SortedArray()
         {
             int[] actual = { 10, 68, 8, 25, 5, 34, 26, 3 };
-            int[] expected = { 10, 68, 8, 5, 25, 34, 26, 3 };
-            ArrayExtension.QSort(actual, new CompareByValue(), new MultiplicityIndexer(actual, actual.Length - 1, 2, 5));
+            int[] expected = { 5, 68, 8, 10, 25, 34, 26, 3 };
+            ArrayExtension.QSort(actual, new CompareByValue(), new MultiplicityIndexer(actual, actual.Length - 1,multiplicity: 5));
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void MergeSort_CompareElementsFromZeroIndexWithStep2In2Notation_SortedArray()
+        {
+            int[] actual = { 5, 1, 8, 3, 11, 6 };
+            int[] expected = { 8, 1, 5, 3, 11, 6 };
+            ArrayExtension.MergeSort(actual, new CompareBySymbol(2, '1'), new StepIndexer(actual, actual.Length - 1, step: 2));
+            Assert.AreEqual(actual, expected);
         }
 
     }

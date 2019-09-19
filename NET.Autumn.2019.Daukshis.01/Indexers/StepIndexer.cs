@@ -107,7 +107,7 @@ namespace Task1
         public int GetMedium(int high, int low)
         {
             int medium = (high + low)/2;
-            for (int i = low; i <= high; i = GetNext(i))
+            for (int i = low; i <= high; i += _step)
             {
                 if (i == medium)
                     return medium;
