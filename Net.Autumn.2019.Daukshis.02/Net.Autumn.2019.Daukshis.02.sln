@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaxRecursive", "FindMax
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaximumItem.Tests", "FindMaximumItem.Tests\FindMaximumItem.Tests.csproj", "{D5864E8A-2F6F-432C-9CAF-B9AD80E04DA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertNumber", "InsertNumber\InsertNumber.csproj", "{EDA88FD7-27D8-43E7-B62D-5E92CFBBF737}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertNumberIntoAnother.Tests", "InsertNumberIntoAnother.Tests\InsertNumberIntoAnother.Tests.csproj", "{C8AFFD74-DC92-4906-82E5-4A33C9EE6EDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{D5864E8A-2F6F-432C-9CAF-B9AD80E04DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5864E8A-2F6F-432C-9CAF-B9AD80E04DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5864E8A-2F6F-432C-9CAF-B9AD80E04DA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA88FD7-27D8-43E7-B62D-5E92CFBBF737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA88FD7-27D8-43E7-B62D-5E92CFBBF737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA88FD7-27D8-43E7-B62D-5E92CFBBF737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA88FD7-27D8-43E7-B62D-5E92CFBBF737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8AFFD74-DC92-4906-82E5-4A33C9EE6EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8AFFD74-DC92-4906-82E5-4A33C9EE6EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8AFFD74-DC92-4906-82E5-4A33C9EE6EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8AFFD74-DC92-4906-82E5-4A33C9EE6EDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
