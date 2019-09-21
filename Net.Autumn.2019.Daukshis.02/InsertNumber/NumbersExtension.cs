@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InsertNumber
 {
@@ -25,6 +21,7 @@ namespace InsertNumber
            
             for (int k = i; k <= j; k++) 
                 initialNum = initialNum & (~(1 << k));  
+
             return insertedNumWithMask | initialNum;
         }
 
@@ -35,9 +32,7 @@ namespace InsertNumber
             if (i < 0)
                 throw new ArgumentOutOfRangeException("Index i is less than 0"); 
             if(i >= 32 || j >= 32)
-                throw new ArgumentOutOfRangeException("Index is greater than 32");
-
-
+                throw new ArgumentOutOfRangeException("Index is greater than 32"); 
         }
     }
 }

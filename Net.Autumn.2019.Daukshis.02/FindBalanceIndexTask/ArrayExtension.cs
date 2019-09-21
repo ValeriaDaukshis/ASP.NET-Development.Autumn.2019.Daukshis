@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FindBalanceIndexTask
 {
@@ -48,7 +44,7 @@ namespace FindBalanceIndexTask
 
             int sum = 0;
             for (int i = low; i <= high; i++)
-                sum += array[i];
+                sum += array[i]; 
 
             return sum;
         }
@@ -60,14 +56,9 @@ namespace FindBalanceIndexTask
         private static void CheckInput(int[] array)
         {
             if (array == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            if (array.Length == 0)
-            {
-                throw new ArgumentException("Array has zero length");
-            }
+                throw new ArgumentNullException(); 
+            if (array.Length == 0) 
+                throw new ArgumentException("Array has zero length"); 
         }
     }
 }
