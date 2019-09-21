@@ -15,6 +15,20 @@ namespace FindMaximumItem.Tests
             => ArrayExtension.FindMaximumItem(actual);
 
         [Test]
+        public void FindMaximumItem_BigLengthArray_MaxNumberExpected()
+        {
+            int[] array = new int[10001];
+            Random rand = new Random();
+            for (int i = 0; i < 10001; i++) 
+                array[i] = rand.Next(0, 10000);  
+
+            array[rand.Next(0, 10000)] = 101010100;
+            int actual = ArrayExtension.FindMaximumItem(array);
+            int expected = 101010100;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
         public void FindMaximumItem_ZeroLengthArray_ArgumentException()
         {
             Assert.Throws(typeof(ArgumentException),
