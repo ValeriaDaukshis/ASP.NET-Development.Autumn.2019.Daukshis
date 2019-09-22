@@ -11,7 +11,7 @@ namespace FindBalanceIndexTask
         /// <returns>
         /// Middle element, where the sum of elements in the left side equals to sum of the elements in the right side
         /// </returns>
-        public static object FindBalanceIndex(int[] array)
+        public static int? FindBalanceIndex(int[] array)
         {
             CheckInput(array);
             for (int i = 1; i < array.Length - 1; i++)

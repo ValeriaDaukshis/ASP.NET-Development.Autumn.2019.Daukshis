@@ -17,14 +17,14 @@ namespace FindMaximumItem.Tests
         [Test]
         public void FindMaximumItem_BigLengthArray_MaxNumberExpected()
         {
-            int[] array = new int[10001];
+            int[] array = new int[100_000_000];
             Random rand = new Random();
-            for (int i = 0; i < 10001; i++) 
+            for (int i = 0; i < 100_000_000; i++) 
                 array[i] = rand.Next(0, 10000);  
 
-            array[rand.Next(0, 10000)] = 101010100;
+            array[rand.Next(100, 100_000_000)] = 1010101; 
             int actual = ArrayExtension.FindMaximumItem(array);
-            int expected = 101010100;
+            int expected = 1010101;
             Assert.AreEqual(expected, actual);
         }
 

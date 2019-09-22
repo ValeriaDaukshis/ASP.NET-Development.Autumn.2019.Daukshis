@@ -15,18 +15,32 @@ namespace FindMaxRecursive
         {
             CheckInput(array);
             if (array.Length == 1)
-                return array[0]; 
-            return FindBiggestNumberRecursive(array[0], 1);
+                return array[0];
+            int count = 1;
+            
+            if (array.Length > 100_000) 
+                count = 10_000; 
 
-            int FindBiggestNumberRecursive(int biggestNumber, int nextIndex)
+            int maxValue = -1;
+            int nextElement = 0;
+            for (int i = 0; i < count; i++)
+            {
+                int subArrayLength = array.Length / count;
+                if (i == count - 1)
+                    subArrayLength = array.Length - nextElement - 1 ;
+                FindBiggestNumberRecursive(ref maxValue, nextElement+1, subArrayLength, 1);
+                nextElement = array.Length / count * (i + 1) + 1;
+            } 
+            return maxValue;
+
+            int FindBiggestNumberRecursive(ref int biggestNumber, int nextIndex, int subArrayLength, int currentIndex)
             {
                 if (array[nextIndex] > biggestNumber)
                     biggestNumber = array[nextIndex];
-
-                if (array[nextIndex] == array[array.Length - 1])
+                if (currentIndex == subArrayLength)
                     return biggestNumber;
 
-                return FindBiggestNumberRecursive(biggestNumber, nextIndex + 1);
+                return FindBiggestNumberRecursive(ref biggestNumber, nextIndex + 1, subArrayLength, ++currentIndex);
             }
         }
 
