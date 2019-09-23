@@ -14,13 +14,15 @@ namespace FindBalanceIndexTask
         public static int? FindBalanceIndex(int[] array)
         {
             CheckInput(array);
+            long leftSum = array[0];
+            long rightSum = ElementsSum(array, 2, array.Length - 1);
             for (int i = 1; i < array.Length - 1; i++)
             {
-                int leftSum = ElementsSum(array, 0, i - 1);
-                int rightSum = ElementsSum(array, i + 1, array.Length - 1);
                 if (leftSum == rightSum)
                     return i;
-                if (leftSum + array[i] > rightSum + array[i])
+                leftSum = leftSum + array[i];
+                rightSum = rightSum - array[i+1]; 
+                if (leftSum  > rightSum )
                     return null;
             }
             return null;
@@ -35,14 +37,14 @@ namespace FindBalanceIndexTask
         /// <returns>
         /// Sum of elements from low to high positions
         /// </returns>
-        private static int ElementsSum(int[] array, int low, int high)
+        private static long ElementsSum(int[] array, int low, int high)
         {
             if (low < 0 || high > array.Length - 1)
                 throw new ArgumentOutOfRangeException();
             if (low > high)
                 throw new ArgumentException("Low index is more than high index");
 
-            int sum = 0;
+            long sum = 0;
             for (int i = low; i <= high; i++)
                 sum += array[i]; 
 

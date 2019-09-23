@@ -98,7 +98,7 @@ https://core2.me/me/?cv=28d.2u
 - [Methods in details](https://github.com/EPM-RD-NETLAB/.NET-Framework-modules/tree/master/M4.%20Methods%20in%20details)
 
 #### Задачи
-1. **(deadline - ##.09.2019, ##.##)** Реализовать алгоритм, позволяющий вычислять корень **n**-ой степени ( n ∈ N ) из вещественного числа **а** методом Ньютона с заданной точностью. Решение оформить  в виде статического метода **FindNthRoot** статического класса **MathExtension**.
+1. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 24.09.2019, 24.00)** Реализовать алгоритм, позволяющий вычислять корень **n**-ой степени ( n ∈ N ) из вещественного числа **а** методом Ньютона с заданной точностью. Решение оформить  в виде статического метода **FindNthRoot** статического класса **MathExtension**.
     - Разработать модульные тесты. Примерные тест кейсы:
       - [TestCase(1, 5, 0.0001,ExpectedResult = 1)]
       - [TestCase(8, 3, 0.0001,ExpectedResult = 2)]
@@ -113,8 +113,7 @@ https://core2.me/me/?cv=28d.2u
       - [a = 0.001, n = -2, accurancy = 0.0001] <- ArgumentException
       - [a = 0.01, n = 2, accurancy = -1] <- ArgumentException	
       - ...
-2. **(deadline - ##.09.2019, ##.##)** Реализовать метод, который для данного положительное целого число находит ближайшее наименьшее целое, состоящее из цифр исходного числа, если такое число существует. Решение оформить  в виде статического метода **FindPreviousLessThan** статического класса **NumbersExtension** (Day 1. п. 2). Разработать модульные тесты для тестирования метода.  
-3. **(deadline - ##.09.2019, ##.##)** В статический класс **MathExtension** (п. 1) добавть **FindGcdByEuclidean**-методы которого позволяют выполнять вычисления НОД по алгоритму Евклида для двух, трех и т.д. целых чисел (http://en.wikipedia.org/wiki/Euclidean_algorithm , https://habrahabr.ru/post/205106/, https://habrahabr.ru/post/205106/). Добавить методы, которые помимо вычисления НОД, предоставляют дополнительную возможность определения значение времени, необходимое для выполнения расчета. К разработанному классу добавить **FindGcdByStein**-методы, реализующие алгоритм Стейна (бинарный алгоритм Евклида) для расчета НОД двух, трех и т.д. целых чисел (http://en.wikipedia.org/wiki/Binary_GCD_algorithm, https://habrahabr.ru/post/205106/ ), а также методы,  предоставляющие дополнительную возможность определения значение времени, необходимое для выполнения расчета. Рассмотреть различные возможности реализации методов, возвращающих время вычисления НОД. Разработать модульные тесты.
+2. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 25.09.2019, 24.00)** Реализовать метод, который для данного положительное целого число находит ближайшее наименьшее целое, состоящее из цифр исходного числа, если такое число существует. Решение оформить  в виде статического метода **FindPreviousLessThan** статического класса **NumbersExtension** (Day 1. п. 2). Разработать модульные тесты для тестирования метода.  
 
 #### Task Status
 
@@ -122,7 +121,6 @@ https://core2.me/me/?cv=28d.2u
 | -------- | -------- | --------| --------|  -------- |  -------- |  
 | 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
 | 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
-| 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
 
 ---
 ### Day 4. 23.09.2019
@@ -146,7 +144,7 @@ https://core2.me/me/?cv=28d.2u
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |  
-| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Palindromous.md) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Palindromous.md) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
 | 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
 
 ### Day 5. 24.09.2019
