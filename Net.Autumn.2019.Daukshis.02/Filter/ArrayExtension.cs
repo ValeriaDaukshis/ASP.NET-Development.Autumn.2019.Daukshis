@@ -5,25 +5,26 @@ using System.Text.RegularExpressions;
 namespace Filter
 {
     public static class ArrayExtension
-    {
-        /// <summary>
-        /// Filter array by key
-        /// </summary>
-        /// <param name="numbers">list of numbers</param>
-        /// <param name="value">value which we need to find</param>
-        /// <returns>
-        /// List of numbers, which contains value
-        /// </returns>
-        public static int[] FilterArrayByKey(int[] numbers, int value)
+    { 
+        public static int[] FilterArrayByKey(int[] numbers, int value = 0, Boolean palindrome = false, Boolean key = true )
         {
             CheckInput(numbers, value);
 
             var regex = new Regex(@"[" + value + "]");
             var filtered = new List<int>();
-
+            int countOfDigits = 0;
+            Boolean isPalindrome = false;
+            if (!key)
+                countOfDigits = 1;
+            if (!palindrome)
+                isPalindrome = true;
             for (int i = 0; i < numbers.Length; i++)
-            {
-                if (regex.Matches(numbers[i].ToString()).Count > 0)
+            { 
+                if (key)
+                    countOfDigits = regex.Matches(numbers[i].ToString()).Count;
+                if (palindrome)
+                    isPalindrome = numbers.IsPalindrome(numbers[i], 0, numbers.Length / 2);
+                if (countOfDigits > 0 & isPalindrome)
                     filtered.Add(numbers[i]);
             }
             return filtered.ToArray();
@@ -42,5 +43,21 @@ namespace Filter
             if (value < 0)
                 throw new ArgumentOutOfRangeException("value is less than zero");
         }
+    }
+
+    public static class Extension
+    {
+        public static Boolean IsPalindrome(this int[] numbers, int array, int i, int count)
+        {
+            if (count == 0)
+                return true;
+            if (array.ToString()[i] == array.ToString()[array.ToString().Length - 1 - i] & count > 0)
+            {
+                count--;
+                return numbers.IsPalindrome( array, i + 1, count);
+            }
+            return false;
+        }
+
     }
 }
