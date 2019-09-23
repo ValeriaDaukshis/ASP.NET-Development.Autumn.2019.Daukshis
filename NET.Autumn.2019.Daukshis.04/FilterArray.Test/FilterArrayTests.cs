@@ -15,9 +15,9 @@ namespace FilterArray.Test
         public int[] FilterArray_ArrayAndValue_FilteredArrayExpected(int[] array, int num)
             => ArrayExtension.FilterArray(array, new FilterByKey(num));
 
-        [TestCase(new[] { 121, 1405644, -1236672 }, ExpectedResult = new[] { 1405644 })]
+        [TestCase(new[] { 121, 1405644, -1236672 }, ExpectedResult = new[] { 121 })]
         [TestCase(new[] { 53, 71, -24, 1001, 32, 1005, 111 }, ExpectedResult = new[] { 1001, 111 })]
-        [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, ExpectedResult = new int[0])]
+        [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, ExpectedResult = new[] { 7, 2, 5, 5, -1, -1, 2 })]
         public int[] FilterArray_Array_ArrayWithPalindromValuesExpected(int[] array)
             => ArrayExtension.FilterArray(array, new FilterByPalindrome());
 

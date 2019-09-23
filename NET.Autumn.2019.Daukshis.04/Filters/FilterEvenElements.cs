@@ -17,7 +17,7 @@ namespace Filters
         /// </returns>
         public bool IsMatch(int value)
         {
-            return value % 2 == 0 ? true : false;
+            return value % 2 == 0;
         }
     }
 }

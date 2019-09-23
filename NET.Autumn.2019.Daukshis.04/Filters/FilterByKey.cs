@@ -23,9 +23,10 @@ namespace Filters
         /// </returns>
         public bool IsMatch(int number)
         {
+            number = Math.Abs(number);
             while (number > 0)
             {
-                if (number % 10 == number)
+                if (number % 10 == _key)
                     return true;
                 number /= 10;
             }

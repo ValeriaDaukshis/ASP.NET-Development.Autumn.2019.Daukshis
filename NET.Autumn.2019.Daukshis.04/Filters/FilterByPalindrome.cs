@@ -17,7 +17,9 @@ namespace Filters
         /// </returns>
         public bool IsMatch(int number)
         {
-            string value = number.ToString();
+            string value = Math.Abs(number).ToString();
+            if (value.Length == 1)
+                return true;
             return IsPalindrome(value, 0, value.Length / 2);
         }
         /// <summary>
