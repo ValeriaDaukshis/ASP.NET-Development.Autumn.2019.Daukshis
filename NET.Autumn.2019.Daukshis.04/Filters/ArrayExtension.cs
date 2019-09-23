@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Filter
+namespace Filters
 {
     public class ArrayExtension
     {
-        public static int[] FilterArray(int[] numbers, IIndex filter)
+        /// <summary>
+        /// Filters the array.
+        /// </summary>
+        /// <param name="numbers">The numbers.</param>
+        /// <param name="filter">The filter.</param>
+        /// <returns>filtered array</returns>
+        public static int[] FilterArray(int[] numbers, IPredicate filter)
         {
             CheckInput(numbers);
             var filteredArray = new List<int>(capacity: numbers.Length);
             for (int i = 0; i < numbers.Length; i++)
-                if(filter.IsMatch(numbers[i]))
-                    filteredArray.Add(numbers[i]); 
-            
+                if (filter.IsMatch(numbers[i]))
+                    filteredArray.Add(numbers[i]);
+
             return filteredArray.ToArray();
         }
 

@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A9996C0-0514-43E7-838C-21798BB7E967}</ProjectGuid>
+    <ProjectGuid>{785AF90C-E471-42D9-B0B0-B97F50ED54B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FindBalanceIndex.Tests</RootNamespace>
-    <AssemblyName>FindBalanceIndex.Tests</AssemblyName>
+    <RootNamespace>FilterArray.Test</RootNamespace>
+    <AssemblyName>FilterArray.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FindBalanceIndexTests.cs" />
+    <Compile Include="FilterArrayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Filters\Filters.csproj">
+      <Project>{f7267704-fd4b-4895-90a0-f48c04d492a8}</Project>
+      <Name>Filters</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FindBalanceIndexTask\FindBalanceIndexTask.csproj">
-      <Project>{9abf18cd-a78d-4e2e-902c-b9f7808ade95}</Project>
-      <Name>FindBalanceIndexTask</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
