@@ -119,7 +119,7 @@ https://core2.me/me/?cv=28d.2u
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |  
-| 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.03/FindNthRootClass/MathExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.03/Root.Tests/MathExtensionTests.cs)
 | 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
 
 ---
