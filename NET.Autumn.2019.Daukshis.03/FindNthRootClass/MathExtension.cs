@@ -27,13 +27,7 @@ namespace FindNthRootClass
             }
             
             double result = (int) (x1 / accuracy) * accuracy;
-            int eps = 0;
-            while (accuracy != 1)
-            {
-                accuracy *= 10;
-                eps++;
-            }
-            return Math.Round(result, eps);
+            return result; 
         }
 
         /// <summary>

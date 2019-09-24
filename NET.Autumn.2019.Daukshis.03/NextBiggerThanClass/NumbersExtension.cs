@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace NextBiggerThanClass
 {
+    //не смотреть) в процессе)
     public class NumbersExtension
     {
         /// <summary>
@@ -12,17 +13,17 @@ namespace NextBiggerThanClass
         /// <returns>
         /// Next bigger number from digits of initialNumber number
         /// </returns>
-        public static int  FindNextBiggerNumber(int number)
+        public static int? FindNextBiggerNumber(int number)
         {
             CheckInput(number); 
             if (number == Int32.MaxValue)
-                return -1;
+                return null;
             int[] initialArray = GetArrayFromNumber(number); 
             int difference = GenerateNumbers(initialArray, number);
             if (difference != Int32.MaxValue & number != Int32.MaxValue)
                 return difference + number;
 
-            return -1;
+            return null;
         }
 
         /// <summary>
@@ -51,7 +52,9 @@ namespace NextBiggerThanClass
         { 
             int minDifference = Int32.MaxValue; 
             Array.Sort(number);
-            for (;;)
+            List<int> a = new List<int>();
+            bool limit = false;
+            while (!limit)
             {
                 int pointer = -1;
                 for (int j = number.Length - 1; j > 0; j--)
@@ -74,13 +77,16 @@ namespace NextBiggerThanClass
                     }
                 Swap(number, pointer, pos);
 
-                int numCopy = ParseArrayToInt(number);  
-                CompareNumbers(numCopy, initialNumber, ref minDifference); 
-                 
+                //int numCopy = ParseArrayToInt(number);  
+                limit = CompareNumbers(number, initialNumber, ref minDifference); 
+                 a.Add(ParseArrayToInt(number));
                 Array.Reverse(number, pointer+1, number.Length-pointer-1);
-                numCopy = ParseArrayToInt(number);  
-                CompareNumbers(numCopy, initialNumber, ref minDifference);
-            }  
+                //numCopy = ParseArrayToInt(number);  
+                limit = CompareNumbers(number, initialNumber, ref minDifference);
+                a.Add(ParseArrayToInt(number));
+            }
+
+            return minDifference;
         }
 
         /// <summary>
@@ -89,10 +95,25 @@ namespace NextBiggerThanClass
         /// <param name="currentNumber">first number</param>
         /// <param name="initial">second number</param>
         /// <param name="minDifference">difference between numbers</param>
-        private static void CompareNumbers(int currentNumber, int initial, ref int minDifference)
+        private static bool CompareNumbers(int[] number, int initial, ref int minDifference)
         {
-            if (currentNumber - initial < minDifference & currentNumber - initial > 0)
+            int currentNumber = ArrayToInt(number);
+            if (initial > currentNumber)
+                return false;
+            if (initial - currentNumber < minDifference)
                 minDifference = currentNumber - initial;
+            return false;
+        }
+
+        private static int ArrayToInt(int[] array)
+        {
+            int parsedNumber = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                parsedNumber = parsedNumber * (i + 1) + array[i];
+            }
+
+            return parsedNumber;
         }
 
         /// <summary>
