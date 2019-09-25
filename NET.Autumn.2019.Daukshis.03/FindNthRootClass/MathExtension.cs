@@ -17,7 +17,7 @@ namespace FindNthRootClass
         {
             CheckInput(number, root, accuracy);
 
-            double x0 = number / root;
+            double x0 = number;
             double x1 = 1 / (double)root * ((root - 1) * x0 + number / Pow(x0, root - 1));
 
             while (Math.Abs(x1 - x0) > accuracy)

@@ -3,27 +3,47 @@ using System.Collections.Generic;
 
 namespace NextBiggerThanClass
 {
-    //не смотреть) в процессе)
-    public class NumbersExtension
+    // код максимально некрасивый
+    // описание в методе GenerateNumbers
+    public static class NumbersExtension
     {
         /// <summary>
         /// FindNextBiggerNumber
         /// </summary>
         /// <param name="number">initialNumber number</param>
+        /// <param name="previous">The previous.</param>
+        /// <param name="compare">The compare.</param>
         /// <returns>
-        /// Next bigger number from digits of initialNumber number
+        /// Next less number from digits of initial number
         /// </returns>
-        public static int? FindNextBiggerNumber(int number)
+        public static int? FindPreviousLessThan(int number,IPrevious previous, IComparer<int> compare)
         {
-            CheckInput(number); 
-            if (number == Int32.MaxValue)
+            CheckInput(number);
+            int[] initialArray = GetArrayFromNumber(number);
+            if (!CheckNumber(initialArray))
                 return null;
-            int[] initialArray = GetArrayFromNumber(number); 
-            int difference = GenerateNumbers(initialArray, number);
-            if (difference != Int32.MaxValue & number != Int32.MaxValue)
-                return difference + number;
+            
+            int minDifference = GenerateNumbers(initialArray, number, previous, compare);
+            
+            if (minDifference != int.MaxValue)
+                return  number - minDifference ;
 
             return null;
+        }
+
+        /// <summary>
+        /// Checks the number.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <returns>
+        /// false if there is no less number from digits of initial number
+        /// </returns>
+        private static bool CheckNumber(int[] array)
+        {
+            for (int i = 0 ; i < array.Length-1; i++)
+                if (array[i] > array[i + 1])
+                    return true;
+            return false;
         }
 
         /// <summary>
@@ -32,102 +52,136 @@ namespace NextBiggerThanClass
         /// <param name="number">initial number</param>
         private static void CheckInput(int number)
         {
-            if (Math.Abs(number) / 10 < 1)
-                throw new Exception("Write bigger number");
-
-            if (number > Int32.MaxValue)
-                throw new ArgumentOutOfRangeException("Write smaller number");
-
-            if (number < Int32.MinValue)
-                throw new ArgumentOutOfRangeException("Write bigger number");
+            if(number < 10)
+                throw new ArgumentException("Number is less than 10"); 
         }
 
         /// <summary>
         /// Generate Numbers
         /// </summary>
-        /// <param name="number"> initial array</param>
+        /// <param name="number">initial array</param>
         /// <param name="initialNumber">initial number</param>
-        /// <returns>min difference between initialNumber and all generated</returns>
-        private static int GenerateNumbers(int[] number, int initialNumber)
-        { 
-            int minDifference = Int32.MaxValue; 
-            Array.Sort(number);
-            List<int> a = new List<int>();
-            bool limit = false;
-            while (!limit)
+        /// <param name="previous">The previous.</param>
+        /// <param name="compare">The compare.</param>
+        /// <returns>
+        /// min difference between initialNumber and all generated
+        /// </returns> 
+        private static int GenerateNumbers(int[] number, int initialNumber,IPrevious previous, IComparer<int> compare)
+        // этап 1
+        // меняем 2 последние цифры числа
+        // если получившееся число > исходного => откат
+        // этап 2
+        // переходим на след разряд (передвигаем pointer)
+        // этап 3
+        // просматриваем цифры, находящиеся правее pointer
+        // среди цифр меньше, чем указатель ищем максимальное
+        //   3.1
+        //   если такого нет, передвигаем указатель, переходим к этапу 3
+        //   3.2 
+        //   такого нет + указатель на 0 элементе => сортируем подмассив начиная со 2 несовпадающего элемента с исходным числом, выход
+        //   3.3
+        //   есть + указатель на 0 элементе
+        //   свап указатель и найденное число
+        //   сортируем подмассив начиная со 2 несовпадающего элемента с исходным числом, выход
+        //   3.4
+        //   есть + указатель НЕ на 0 элементе
+        //   свап, переходим к этапу 1
+        {
+            int minDifference = int.MaxValue;
+            int numOfIterations = 0;
+            while (true)
             {
-                int pointer = -1;
-                for (int j = number.Length - 1; j > 0; j--)
-                    if (number[j] > number[j - 1])
+                numOfIterations++;
+                int[] copiedNumber = new int[number.Length]; 
+                Array.Copy(number, copiedNumber, number.Length);
+                
+                int pointer = number.Length - 2;
+                Swap(number, pointer + 1, pointer);
+
+                bool isNumberLess = previous.CompareNumbers(number, initialNumber, ref minDifference);
+                if (!isNumberLess)
+                    number = copiedNumber; 
+                else if (numOfIterations == 1)
+                    return minDifference;
+                pointer--;
+                
+                int nextLessDigitPosition = 0;
+                while(nextLessDigitPosition != -1 || pointer >= 0)
+                {
+                    nextLessDigitPosition = FindNextLessDigit(number, -1, pointer);
+
+                    if (nextLessDigitPosition == -1 & pointer == 0)
                     {
-                        pointer = j-1;
+                        SortSubArray(number, initialNumber, compare);
+                        previous.CompareNumbers(number, initialNumber, ref minDifference);
+                        return minDifference;
+                    }
+                    
+                    if (nextLessDigitPosition == -1 )
+                        pointer--;
+
+                    if (nextLessDigitPosition != -1 & pointer == 0)
+                    {
+                        Swap(number, nextLessDigitPosition, pointer);
+                        SortSubArray(number, initialNumber, compare);
+                        previous.CompareNumbers(number, initialNumber, ref minDifference);
+                        return minDifference;
+                    }
+
+                    if (nextLessDigitPosition != -1)
+                    {
+                        Swap(number, nextLessDigitPosition, pointer);
+                        previous.CompareNumbers(number, initialNumber, ref minDifference);
                         break;
                     }
-
-                if (pointer == -1)
-                    return minDifference;
-
-                int difference = 10;
-                int pos = -1;
-                for (int j = pointer+1; j < number.Length; j++)
-                    if (number[pointer] < number[j] & number[j] - number[pointer] < difference)
-                    {
-                        difference = number[j] - number[pointer];
-                        pos = j; 
-                    }
-                Swap(number, pointer, pos);
-
-                //int numCopy = ParseArrayToInt(number);  
-                limit = CompareNumbers(number, initialNumber, ref minDifference); 
-                 a.Add(ParseArrayToInt(number));
-                Array.Reverse(number, pointer+1, number.Length-pointer-1);
-                //numCopy = ParseArrayToInt(number);  
-                limit = CompareNumbers(number, initialNumber, ref minDifference);
-                a.Add(ParseArrayToInt(number));
-            }
-
-            return minDifference;
+                } 
+            } 
         }
 
         /// <summary>
-        /// Compare Numbers
+        /// Finds the next less digit.
         /// </summary>
-        /// <param name="currentNumber">first number</param>
-        /// <param name="initial">second number</param>
-        /// <param name="minDifference">difference between numbers</param>
-        private static bool CompareNumbers(int[] number, int initial, ref int minDifference)
+        /// <param name="number">The number.</param>
+        /// <param name="nextLessDigitPosition">The next less digit position.</param>
+        /// <param name="pointer">The pointer.</param>
+        /// <returns>
+        ///  next Less Digit Position
+        /// </returns>
+        private static int FindNextLessDigit(int[] number, int nextLessDigitPosition, int pointer)
         {
-            int currentNumber = ArrayToInt(number);
-            if (initial > currentNumber)
-                return false;
-            if (initial - currentNumber < minDifference)
-                minDifference = currentNumber - initial;
-            return false;
+            int difference = 10; 
+            for (int j = pointer + 1; j < number.Length; j++)
+                if (number[pointer] > number[j] & number[pointer] - number[j] < difference)
+                {
+                    difference = number[pointer] - number[j];
+                    nextLessDigitPosition = j;
+                }
+
+            return nextLessDigitPosition;
         }
 
-        private static int ArrayToInt(int[] array)
+        /// <summary>
+        /// Sorts the sub array.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="initial">The initial.</param>
+        /// <param name="compare">The compare.</param>
+        private static void SortSubArray(int[] array, int initial, IComparer<int> compare)
         {
-            int parsedNumber = 0;
-            for (int i = 0; i < array.Length; i++)
+            //compare each digit
+            int pointer = (int)Math.Pow(10, array.Length-1);
+            int lowPosition = 0;
+            for(int i = 0 ; i < array.Length; i++)
             {
-                parsedNumber = parsedNumber * (i + 1) + array[i];
+                if (array[i] != initial / pointer % 10)
+                {
+                    lowPosition = i + 1;
+                    break; 
+                }
+
+                pointer /= 10;
             }
-
-            return parsedNumber;
-        }
-
-        /// <summary>
-        /// Parse Array To Int
-        /// </summary>
-        /// <param name="number">init array</param>
-        /// <returns>parsed integer number from array</returns>
-        private static int ParseArrayToInt(int[] number)
-        {
-            int currentNumber = 0;
-            for (int i = 0; i < number.Length; i++)
-                currentNumber = currentNumber * 10 + number[i];
-
-            return currentNumber;
+            Array.Sort(array, lowPosition, array.Length - lowPosition, compare);
         } 
          
         /// <summary>
@@ -150,13 +204,23 @@ namespace NextBiggerThanClass
         /// <returns>Array of number's digits</returns>
         private static int[] GetArrayFromNumber(int number)
         {
-            List<int> digit = new List<int>();
+            int numberLength = 0;
+            int numberCopy = number;
+            for (int i = 10; numberCopy > 0; numberLength++)
+            {
+                numberCopy /= i;
+            }
+            
+            int[] array = new int[numberLength];
+            int j = numberLength - 1;
             while (number > 0)
             {
-                digit.Insert(0,number % 10);
+                array[j] = number % 10;
                 number /= 10;
+                j--;
             }
-            return digit.ToArray();
+
+            return array;
         }
     }
 }

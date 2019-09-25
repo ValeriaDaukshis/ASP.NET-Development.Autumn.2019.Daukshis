@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtension.Tests", "Root
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindNthRootClass", "FindNthRootClass\FindNthRootClass.csproj", "{49050642-78C3-4ACA-B654-9991729114F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Number.Tests", "Number.Tests\Number.Tests.csproj", "{D86F3645-9C11-4742-8893-A8D318CE91A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumbersExtension.Tests", "Number.Tests\NumbersExtension.Tests.csproj", "{D86F3645-9C11-4742-8893-A8D318CE91A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
