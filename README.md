@@ -137,7 +137,7 @@ https://core2.me/me/?cv=28d.2u
 	- Предложить вариант общей формулировки решенных задач.  
 	- Полученный методы (методы) оформить как метод (методы) расширения для целочисленных массивов. 
  	
-2. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - ##.09.2019, ##.##)** 
+2. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 27.09.2019, 15.00)** 
 	- В статический класс **MathExtension** (п. 1) добавть **FindGcdByEuclidean**-методы которого позволяют выполнять вычисления НОД по алгоритму Евклида для двух, трех и т.д. целых чисел (http://en.wikipedia.org/wiki/Euclidean_algorithm , https://habrahabr.ru/post/205106/, https://habrahabr.ru/post/205106/). Добавить методы, которые помимо вычисления НОД, предоставляют дополнительную возможность определения значение времени, необходимое для выполнения расчета. К разработанному классу добавить **FindGcdByStein**-методы, реализующие алгоритм Стейна (бинарный алгоритм Евклида) для расчета НОД двух, трех и т.д. целых чисел (http://en.wikipedia.org/wiki/Binary_GCD_algorithm, https://habrahabr.ru/post/205106/ ), а также методы,  предоставляющие дополнительную возможность определения значение времени, необходимое для выполнения расчета. Рассмотреть различные возможности реализации методов, возвращающих время вычисления НОД. Разработать модульные тесты.
 
 #### Task Status
@@ -147,6 +147,8 @@ https://core2.me/me/?cv=28d.2u
 | 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.04/Filters/ArrayExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.04/FilterArray.Test/FilterArrayTests.cs)
 | 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
 
+--- 
+
 ### Day 5. 24.09.2019
 #### Читать
 
@@ -154,13 +156,73 @@ https://core2.me/me/?cv=28d.2u
 
 #### Задачи
   
-1. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - ##.09.2019, ##.##)**  
-2. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - ##.09.2019, ##.##)**  
-
+1. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) ) **
+ Разработать систему типов для описания работы с банковским счетом. Состояние счета определяется его номером, данными о владельце счета (имя, фамилия, e-mail), суммой на счете, его текущим состоянием (активен, закрыт, заморожен ...) и некоторыми бонусными баллами, которые увеличиваются каждый раз при пополнении счета/списании со счета на величины различные для пополнения и списания и рассчитываемые в зависимости от некоторых значений величин «стоимости» баланса и «стоимости» пополнения. Величины «стоимости» баланса и «стоимости» пополнения являются целочисленными значениями и зависят от типа счета, который может быть, Base, Silver, Gold. Для работы со счетом реализовать следующие возможности:
+	- пополнение на счет;
+	- списание со счета (для счетов выше Base, возможен списание в кредит, размер кредита зависит от статуса счета);
+	- перевод суммы с одного счета на другой счет;
+	- создание нового счета;
+	- закрытие счета.
+Работу типов продемонстрировать на примере консольного приложения.
 #### Task Status
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |  
 | 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
+
+---
+
+### Day 6. 26.09.2019
+
+#### Задачи
+
+1. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 25.09.2019, 24.00 ) **
+Реализовать экземплярный класс Transformer, экземплярный метод TransformToWords которого выполняет преобразование любого вешественного (System.Double) числа в его "словестный формат". Разработать модульные тесты. Примерные тест-кейсы
+	- [TestCase(double.NaN, ExpectedResult = "Not a number")]
+	- [TestCase(double.NegativeInfinity, ExpectedResult = "Negative infinity")]
+	- [TestCase(double.PositiveInfinity, ExpectedResult = "Positive infinity")]
+	- [TestCase(-0.0d, ExpectedResult = "zero")]
+	- [TestCase(0.0d, ExpectedResult = "zero")]
+	- [TestCase(0.1d, ExpectedResult = "zero point one")]
+	- [TestCase(-23.809d, ExpectedResult = "minus two three point eight zero nine")]
+	- [TestCase(-0.123456789d, ExpectedResult = "minus zero point one two three four five six seven eight nine")]
+	- [TestCase(1.23333e308d, ExpectedResult = "one point two three three three three E plus three zero eight")]
+	- [TestCase(double.Epsilon, ExpectedResult = "four point nine four zero six five six four five eight four one two four seven E minus three two four")]
+		и т.д. для double.MaxValue, double.MaxValue.
+		
+2. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 28.09.2019, 24.00 ) **
+Расширить функциональную возможность типа System.Double, реализовав возможность получения строкового представления вещественного числа в формате IEEE 754. Готовые классы-конверторы не использовать. Разработать модульные тесты. Примерные тест-кейсы (для тестирования специальных значений вещественных чисел возможны варианты).
+	- [TestCase(-255.255, ExpectedResult = "1100000001101111111010000010100011110101110000101000111101011100")]
+	- [TestCase(255.255, ExpectedResult = "0100000001101111111010000010100011110101110000101000111101011100")]
+	- [TestCase(4294967295.0, ExpectedResult = "0100000111101111111111111111111111111111111000000000000000000000")]
+	- [TestCase(double.MinValue, ExpectedResult = "1111111111101111111111111111111111111111111111111111111111111111")]
+	- [TestCase(double.MaxValue, ExpectedResult = "0111111111101111111111111111111111111111111111111111111111111111")]
+	- [TestCase(double.Epsilon, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000001")]
+	- [TestCase(double.NaN, ExpectedResult = "1111111111111000000000000000000000000000000000000000000000000000")]
+	- [TestCase(double.NegativeInfinity, ExpectedResult = "1111111111110000000000000000000000000000000000000000000000000000")]
+	- [TestCase(double.PositiveInfinity, ExpectedResult = "0111111111110000000000000000000000000000000000000000000000000000")]
+	- [TestCase(-0.0, ExpectedResult = "1000000000000000000000000000000000000000000000000000000000000000")]
+	- [TestCase(0.0, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000000")]
+
+3. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 30.09.2019, 24.00 ) **
+Разработать неизменяемый класс Polynomial (полином) для работы с многочленами n-ой степени от одной переменной вещественного типа (в качестве внутренней структуры для хранения коэффициентов использовать sz-массив). Для разработанного класса реализовать протокол эквивалентности по значению, перегрузить операции (включая "==" и "!="), допустимые для работы с многочленами (исключая деление многочлена на многочлен). Разработать модульные тесты для тестирования методов класса.
+
+#### Task Status
+
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |  
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.06/Transformer/Transform.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.06/Transformer.Tests/TransformerTests.cs)
 | 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
+| 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#)
+
+---
+
+
+
+
+
+
+
+
+
 
