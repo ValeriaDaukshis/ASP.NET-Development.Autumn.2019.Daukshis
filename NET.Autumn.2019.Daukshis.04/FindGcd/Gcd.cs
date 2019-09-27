@@ -4,6 +4,12 @@ namespace FindGcd
 {
     public static class Gcd 
     {
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="number1">The number1.</param>
+        /// <param name="number2">The number2.</param>
+        /// <returns>GCD of 2 numbers</returns>
         public static int FindGcdByEuclidean(int number1, int number2)
         {
             if (number1 == 0 & number2 != 0)
@@ -25,7 +31,14 @@ namespace FindGcd
 
             return number1 > number2 ? number1 : number2;
         }
-        
+
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="number1">The number1.</param>
+        /// <param name="number2">The number2.</param>
+        /// <param name="number3">The number3.</param>
+        /// <returns>GCD of 3 numbers</returns>
         public static int FindGcdByEuclidean(int number1, int number2, int number3)
         {
             int[] array = { Math.Abs(number1), Math.Abs(number2), Math.Abs(number3) };
@@ -55,7 +68,13 @@ namespace FindGcd
             } 
             return r1 == 0 ? r2 : r1;
         }
-        
+
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <returns>GCD of numbers</returns>
+        /// <exception cref="ArgumentException">Array has zero length</exception>
         public static int FindGcdByEuclidean(params int[] array)
         {
             if (array.Length == 0)
@@ -103,7 +122,13 @@ namespace FindGcd
             }
             return r1 == 0 ? r2 : r1;
         }
-        
+
+        /// <summary>
+        /// Finds the GCD by stein.
+        /// </summary>
+        /// <param name="number1">The number1.</param>
+        /// <param name="number2">The number2.</param>
+        /// <returns>GCD of 2 numbers</returns>
         public static int FindGcdByStein(int number1, int number2)
         {
             number1 = Math.Abs(number1);
@@ -137,7 +162,14 @@ namespace FindGcd
             }
             return number2 * k;
         }
-        
+
+        /// <summary>
+        /// Finds the GCD by stein.
+        /// </summary>
+        /// <param name="number1">The number1.</param>
+        /// <param name="number2">The number2.</param>
+        /// <param name="number3">The number3.</param>
+        /// <returns>GCD of 3 numbers</returns>
         public static int FindGcdByStein(int number1, int number2, int number3)
         {
             number1 = Math.Abs(number1);
@@ -166,7 +198,7 @@ namespace FindGcd
         }
 
         /// <summary>
-        /// BinaryGcdMethod
+        /// FindGcdByStein
         /// </summary>
         /// <param name="array">array of numbers</param>
         /// <returns>
@@ -201,7 +233,12 @@ namespace FindGcd
             }
             return k * array[array.Length - 1];
         }
-        
+
+        /// <summary>
+        /// Finds the even numbers.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <returns>returns true if 1 number is even</returns>
         private static bool FindEvenNumbers(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
@@ -209,7 +246,12 @@ namespace FindGcd
                     return true;
             return false;
         }
-        
+
+        /// <summary>
+        /// Finds the even numbers.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <returns>returns true if 1 number is zero</returns>
         private static bool FindZeroNumbers(int[] array)
         {
             for (int i = 0; i < array.Length; i++)

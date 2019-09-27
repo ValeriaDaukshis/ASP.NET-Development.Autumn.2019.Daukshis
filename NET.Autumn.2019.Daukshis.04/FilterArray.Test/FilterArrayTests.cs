@@ -40,5 +40,6 @@ namespace FilterArray.Test
         public void FilterArray_ZeroLengthArray_ArgumentException() =>
             Assert.Throws(typeof(ArgumentException),
                 () => ArrayExtension.FilterArray(new int[] { }, new FilterByPalindrome()));
+        
     }
 }

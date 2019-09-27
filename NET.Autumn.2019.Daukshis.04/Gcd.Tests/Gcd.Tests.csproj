@@ -50,10 +50,6 @@
       <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Filters\Filters.csproj">
-        <Project>{f7267704-fd4b-4895-90a0-f48c04d492a8}</Project>
-        <Name>Filters</Name>
-      </ProjectReference>
       <ProjectReference Include="..\FindGcd\FindGcd.csproj">
         <Project>{1b2b4502-bb4a-4de7-bcf3-cf25b1e165c6}</Project>
         <Name>FindGcd</Name>
