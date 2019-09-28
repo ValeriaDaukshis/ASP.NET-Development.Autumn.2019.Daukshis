@@ -1,4 +1,4 @@
-﻿namespace TransformerWithAbstractFactory
+﻿namespace TransformerWithAbstractFactory.AbstractClasses
 {
     public abstract class TransformationMethod
     {

@@ -1,4 +1,6 @@
-﻿namespace TransformerWithAbstractFactory
+﻿using TransformerWithAbstractFactory.AbstractClasses;
+
+namespace TransformerWithAbstractFactory.Main
 {
     public class Transformer
     {

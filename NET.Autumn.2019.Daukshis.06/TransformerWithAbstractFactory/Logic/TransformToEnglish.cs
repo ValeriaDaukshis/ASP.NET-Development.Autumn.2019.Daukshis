@@ -1,4 +1,6 @@
-﻿namespace TransformerWithAbstractFactory
+﻿using TransformerWithAbstractFactory.AbstractClasses;
+
+namespace TransformerWithAbstractFactory.Logic
 {
     public class TransformToEnglish : TransformerFactory
     {

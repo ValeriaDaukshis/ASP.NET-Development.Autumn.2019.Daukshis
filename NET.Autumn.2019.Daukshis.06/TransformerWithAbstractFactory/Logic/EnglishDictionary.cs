@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TransformerWithAbstractFactory.AbstractClasses;
 
-namespace TransformerWithAbstractFactory
+namespace TransformerWithAbstractFactory.Logic
 {
     public class EnglishDictionary : TransformationMethod
     {

@@ -1,7 +1,8 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
+using TransformerWithAbstractFactory.AbstractClasses;
 
-namespace TransformerWithAbstractFactory
+namespace TransformerWithAbstractFactory.Logic
 {
     public class DoubleToStringConverter : TransformationMethod
     {

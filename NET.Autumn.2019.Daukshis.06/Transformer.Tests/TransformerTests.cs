@@ -1,6 +1,7 @@
 ﻿
 using NUnit.Framework;
 using TransformerWithAbstractFactory;
+using TransformerWithAbstractFactory.Logic;
 
 namespace Transformer.Tests
 {
@@ -19,7 +20,7 @@ namespace Transformer.Tests
         [TestCase(double.Epsilon, ExpectedResult = "four point nine four zero six five six four five eight four one two four seven E minus three two four")]
         public string TransformerWithAbstractFactory_ReturnsArrayOfStringsWithWordsOfDigits(double number)
         {
-            TransformerWithAbstractFactory.Transformer a =  new TransformerWithAbstractFactory.Transformer(new TransformToEnglish());
+            TransformerWithAbstractFactory.Main.Transformer a =  new TransformerWithAbstractFactory.Main.Transformer(new TransformToEnglish());
             return a.Transform(number);
         }
         
@@ -36,7 +37,7 @@ namespace Transformer.Tests
         [TestCase(0.0, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000000")]
         public string Converter_ReturnsDoubleValueInStringRepresentation(double value)
         {
-            TransformerWithAbstractFactory.Transformer a =  new TransformerWithAbstractFactory.Transformer(new ConvertDoubleToString());
+            TransformerWithAbstractFactory.Main.Transformer a =  new TransformerWithAbstractFactory.Main.Transformer(new TransformTo2Notation());
             return a.Transform(value);
         }
     }

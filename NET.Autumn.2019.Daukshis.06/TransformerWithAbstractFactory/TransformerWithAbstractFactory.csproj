@@ -38,14 +38,14 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="ConvertDoubleToString.cs" />
-        <Compile Include="DoubleToStringConverter.cs" />
-        <Compile Include="EnglishDictionary.cs" />
-        <Compile Include="TransformationMethod.cs" />
-        <Compile Include="Transformer.cs" />
+        <Compile Include="AbstractClasses\TransformationMethod.cs" />
+        <Compile Include="AbstractClasses\TransformerFactory.cs" />
+        <Compile Include="Logic\TransformTo2Notation.cs" />
+        <Compile Include="Logic\DoubleToStringConverter.cs" />
+        <Compile Include="Logic\EnglishDictionary.cs" />
+        <Compile Include="Logic\TransformToEnglish.cs" />
+        <Compile Include="Main\Transformer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="TransformerFactory.cs" />
-        <Compile Include="TransformToEnglish.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
