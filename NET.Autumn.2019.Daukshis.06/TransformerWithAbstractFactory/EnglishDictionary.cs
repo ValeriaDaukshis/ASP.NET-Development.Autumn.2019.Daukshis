@@ -4,15 +4,31 @@ using System.Text;
 
 namespace TransformerWithAbstractFactory
 {
-    public abstract class DoubleDictionary
+    public class EnglishDictionary : TransformationMethod
     {
-        public abstract string ValueDictionary(double value); 
-    }
-
-    public class Dictionary : DoubleDictionary
-    {
-        private string DigitDictionary(double value)
+        public override string TransformToString(double number)
         {
+            Dictionary<double, string> doubleValues = new Dictionary<double, string>()
+            {
+                { Double.NaN, "Not a number" },
+                { Double.NegativeInfinity, "Negative infinity" },
+                { Double.PositiveInfinity, "Positive infinity"} 
+            };
+            string num;
+            try
+            {
+                num = doubleValues[number];
+                return num;
+            }
+            catch (KeyNotFoundException)
+            {
+                num = DigitDictionary(number);
+            }
+
+            return num;
+        }
+        private string DigitDictionary(double value)
+        {  
             Dictionary<char, string> words = new Dictionary<char, string>()
             {
                 { '0', "zero" },
@@ -35,32 +51,10 @@ namespace TransformerWithAbstractFactory
             foreach (var digit in num) 
             {
                 word.Append($"{words[digit]} ");
-            }
-
+            } 
+            
             word.Remove(word.Length - 1, 1);
             return word.ToString();
-        }
-
-        public override string ValueDictionary(double number)
-        {
-            Dictionary<double, string> doubleValues = new Dictionary<double, string>()
-            {
-                { Double.NaN, "Not a number" },
-                { Double.NegativeInfinity, "Negative infinity" },
-                { Double.PositiveInfinity, "Positive infinity"} 
-            };
-            string num;
-            try
-            {
-                num = doubleValues[number];
-                return num;
-            }
-            catch (KeyNotFoundException)
-            {
-                num = DigitDictionary(number);
-            }
-
-            return num;
-        }
+        } 
     }
 }

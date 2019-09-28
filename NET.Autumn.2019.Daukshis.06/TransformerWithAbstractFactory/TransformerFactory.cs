@@ -2,6 +2,6 @@
 {
     public abstract class TransformerFactory
     {
-        public abstract DoubleDictionary TransformToString();
+        public abstract TransformationMethod ToStringMethod();
     }
 }

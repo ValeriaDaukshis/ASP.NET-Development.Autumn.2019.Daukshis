@@ -2,15 +2,15 @@
 {
     public class Transformer
     {
-        private readonly DoubleDictionary _dictionary;
-        public Transformer(TransformToEnglish transform)
+        private readonly TransformationMethod _method;
+        public Transformer(TransformerFactory transform)
         {
-            _dictionary = transform.TransformToString();
+            _method = transform.ToStringMethod();
         }
-
+                
         public string Transform(double value)
         {
-            return _dictionary.ValueDictionary(value);
+            return _method.TransformToString(value);
         }
     }
 }

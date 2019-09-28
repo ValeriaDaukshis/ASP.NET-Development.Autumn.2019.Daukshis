@@ -1,10 +1,10 @@
 ﻿namespace TransformerWithAbstractFactory
 {
-    public class TransformToEnglish : TransformerFactory
+    public class ConvertDoubleToString : TransformerFactory
     {
         public override TransformationMethod ToStringMethod()
         {
-            return new EnglishDictionary();
+            return new DoubleToStringConverter();
         }
     }
 }
