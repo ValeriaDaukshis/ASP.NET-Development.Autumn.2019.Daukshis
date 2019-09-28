@@ -57,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TransformerWithAbstractFactory\TransformerWithAbstractFactory.csproj">
+      <Project>{5dab5288-46ff-45a1-9e4b-31ddcb3a6d2e}</Project>
+      <Name>TransformerWithAbstractFactory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Transformer\Transformer.csproj">
       <Project>{d9982c71-7cf8-409c-ae78-f1fbedcd46ca}</Project>
       <Name>Transformer</Name>
