@@ -7,6 +7,11 @@ namespace TransformerWithAbstractFactory.Logic
 {
     public class EnglishDictionary : TransformationMethod
     {
+        /// <summary>
+        /// Transforms to string.
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>Double value in word format</returns>
         public override string TransformToString(double number)
         {
             Dictionary<double, string> doubleValues = new Dictionary<double, string>()
@@ -28,6 +33,12 @@ namespace TransformerWithAbstractFactory.Logic
 
             return num;
         }
+
+        /// <summary>
+        /// Digits the dictionary.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>Double value in word format</returns>
         private string DigitDictionary(double value)
         {  
             Dictionary<char, string> words = new Dictionary<char, string>()

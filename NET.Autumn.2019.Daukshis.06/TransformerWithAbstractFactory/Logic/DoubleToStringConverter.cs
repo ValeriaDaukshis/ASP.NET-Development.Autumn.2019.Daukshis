@@ -6,6 +6,11 @@ namespace TransformerWithAbstractFactory.Logic
 {
     public class DoubleToStringConverter : TransformationMethod
     {
+        /// <summary>
+        /// Transforms to string.
+        /// </summary>
+        /// <param name="doubleNumber">The double number.</param>
+        /// <returns> String representation of double value in 2 notation</returns>
         public override string TransformToString(double doubleNumber)
         {
             Number num = new Number(doubleNumber);
