@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformerWithAbstractFact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformProject", "TransformProject\TransformProject.csproj", "{4935A82D-D7F6-45F6-ACD0-E1AB212AB532}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialProject", "PolynomialProject\PolynomialProject.csproj", "{4E8FF1EA-97C2-49B9-83DB-93C6318B0AC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polynomial.Tests", "Polynomial.Tests\Polynomial.Tests.csproj", "{654D2556-405E-4AC3-B593-CB61BD8EDD4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{4935A82D-D7F6-45F6-ACD0-E1AB212AB532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4935A82D-D7F6-45F6-ACD0-E1AB212AB532}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4935A82D-D7F6-45F6-ACD0-E1AB212AB532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8FF1EA-97C2-49B9-83DB-93C6318B0AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8FF1EA-97C2-49B9-83DB-93C6318B0AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8FF1EA-97C2-49B9-83DB-93C6318B0AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8FF1EA-97C2-49B9-83DB-93C6318B0AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{654D2556-405E-4AC3-B593-CB61BD8EDD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{654D2556-405E-4AC3-B593-CB61BD8EDD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{654D2556-405E-4AC3-B593-CB61BD8EDD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{654D2556-405E-4AC3-B593-CB61BD8EDD4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

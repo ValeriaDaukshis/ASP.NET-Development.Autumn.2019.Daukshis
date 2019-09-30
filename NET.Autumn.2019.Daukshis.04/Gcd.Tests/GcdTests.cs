@@ -72,7 +72,7 @@ namespace Gcd.Tests
         [Test]
         public void Tracer_FindGcdByEuclidean_TimeOfMethodExpected()
         {
-            Tracer tracer = new Tracer();
+            ITracer tracer = new Tracer();
             tracer.StartTrace();
             FindGcd.Gcd.FindGcdByEuclidean(1071, 147, 462);
             tracer.StopTrace();
