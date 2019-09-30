@@ -127,7 +127,7 @@ namespace PolynomialProject
                 return false;
 
             for (int i = 0; i < polynom1._polynom.Length; i++)
-                if (Math.Abs(polynom1._polynom[i] - polynom2._polynom[i]) < 0.0001)
+                if (Math.Abs(polynom1._polynom[i] - polynom2._polynom[i]) > 0.0001)
                     return false;
             return true;
         }
@@ -147,7 +147,7 @@ namespace PolynomialProject
             if (polynom2._polynom.Length != polynom1._polynom.Length)
                 return false;
             for (int i = 0; i < polynom1._polynom.Length; i++)
-                if (Math.Abs(polynom1._polynom[i] - polynom2._polynom[i]) > 0.0001)
+                if (Math.Abs(polynom1._polynom[i] - polynom2._polynom[i]) < 0.0001)
                     return false;
             return true;
         }
