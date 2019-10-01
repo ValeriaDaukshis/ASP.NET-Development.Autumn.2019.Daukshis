@@ -26,11 +26,19 @@ namespace PolynomialProject
         {
             CheckPolynomialInput(polynom1);
             CheckArrayInput(polynom2);
-            for (int i = 0; i < polynom1._polynom.Length; i++)
+            if (polynom1._polynom.Length > polynom2.Length)
             {
-                polynom1._polynom[i] = polynom1._polynom[i] + polynom2[i];
+                for (int i = 0; i < polynom2.Length; i++)
+                    polynom1._polynom[i] = polynom1._polynom[i] + polynom2[i];
             }
-            
+            else
+            {
+                for (int i = 0; i < polynom1._polynom.Length; i++)
+                    polynom1._polynom[i] = polynom1._polynom[i] + polynom2[i];
+                for (int i = polynom1._polynom.Length; i < polynom2.Length; i++)
+                    polynom1._polynom[i] = polynom2[i];
+            }
+
             return new Polynomial(polynom1._polynom);
         }
 
@@ -46,12 +54,17 @@ namespace PolynomialProject
         {
             CheckPolynomialInput(polynom1);
             CheckPolynomialInput(polynom2);
-            for (int i = 0; i < polynom1._polynom.Length; i++)
+            if (polynom1._polynom.Length > polynom2._polynom.Length)
             {
-                polynom1._polynom[i] = polynom1._polynom[i] + polynom2._polynom[i];
+                for (int i = 0; i < polynom2._polynom.Length; i++)
+                    polynom1._polynom[i] = polynom1._polynom[i] + polynom2._polynom[i];
+                return new Polynomial(polynom1._polynom);
             }
-            
-            return new Polynomial(polynom1._polynom);
+           
+            for (int i = 0; i < polynom1._polynom.Length; i++)
+                polynom2._polynom[i] = polynom1._polynom[i] + polynom2._polynom[i];
+
+            return new Polynomial(polynom2._polynom);
         }
 
         /// <summary>
@@ -66,10 +79,18 @@ namespace PolynomialProject
         {
             CheckPolynomialInput(polynom1);
             CheckArrayInput(polynom2);
-            for (int i = 0; i < polynom1._polynom.Length; i++)
+            if (polynom1._polynom.Length > polynom2.Length)
             {
-                polynom1._polynom[i] = polynom1._polynom[i] - polynom2[i];
+                for (int i = 0; i < polynom2.Length; i++)
+                    polynom1._polynom[i] = polynom1._polynom[i] - polynom2[i];
+                return new Polynomial(polynom1._polynom);
             }
+           
+            for (int i = 0; i < polynom1._polynom.Length; i++)
+                polynom1._polynom[i] = polynom1._polynom[i] - polynom2[i];
+            for (int i = polynom1._polynom.Length; i < polynom2.Length; i++)
+                polynom1._polynom[i] = polynom2[i];
+            
             return new Polynomial(polynom1._polynom);
         }
 
@@ -85,10 +106,18 @@ namespace PolynomialProject
         {
             CheckPolynomialInput(polynom1);
             CheckPolynomialInput(polynom2);
-            for (int i = 0; i < polynom1._polynom.Length; i++)
+            if(polynom1._polynom.Length > polynom2._polynom.Length) 
             {
-                polynom1._polynom[i] = polynom1._polynom[i] - polynom2._polynom[i];
+                for (int i = 0; i < polynom2._polynom.Length; i++)
+                    polynom1._polynom[i] = polynom1._polynom[i] - polynom2._polynom[i];
+                return new Polynomial(polynom1._polynom);
             }
+
+            for (int i = 0; i < polynom1._polynom.Length; i++)
+                    polynom1._polynom[i] = polynom1._polynom[i] - polynom2._polynom[i];
+            for(int i = polynom1._polynom.Length; i < polynom2._polynom.Length; i++)
+                polynom1._polynom[i] = polynom2._polynom[i]; 
+            
             return new Polynomial(polynom1._polynom);
         }
 
@@ -104,11 +133,17 @@ namespace PolynomialProject
         {
             CheckPolynomialInput(polynom1);
             CheckPolynomialInput(polynom2);
-            for (int i = 0; i < polynom1._polynom.Length; i++)
+            if (polynom1._polynom.Length > polynom2._polynom.Length)
             {
-                polynom1._polynom[i] = polynom1._polynom[i] * polynom2._polynom[i];
+                for (int i = 0; i < polynom2._polynom.Length; i++)
+                    polynom1._polynom[i] = polynom1._polynom[i] * polynom2._polynom[i];
+                return new Polynomial(polynom1._polynom);
             }
-            return new Polynomial(polynom1._polynom);
+           
+            for (int i = 0; i < polynom1._polynom.Length; i++)
+                polynom2._polynom[i] = polynom1._polynom[i] * polynom2._polynom[i];
+            
+            return new Polynomial(polynom2._polynom);
         }
 
         /// <summary>
