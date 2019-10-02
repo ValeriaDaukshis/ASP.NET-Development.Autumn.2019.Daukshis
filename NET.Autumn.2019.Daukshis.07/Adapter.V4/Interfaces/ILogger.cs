@@ -1,5 +1,8 @@
 namespace Algorithms.V4.Interfaces
 {
+    /// <summary>
+    /// Log the code
+    /// </summary>
     public interface ILogger
     {
         void Error(string message);

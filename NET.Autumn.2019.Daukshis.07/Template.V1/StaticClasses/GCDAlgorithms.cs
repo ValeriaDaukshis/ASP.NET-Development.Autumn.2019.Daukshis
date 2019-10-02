@@ -7,22 +7,61 @@ namespace Algorithms.V1.StaticClasses
     public static class GCDAlgorithms
     {
         #region Euclidean Algorithms (API)
-        
+
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <returns>Calculates GCD of 2 numbers by Euclidean</returns>
         public static int FindGcdByEuclidean(int first, int second)
             => Gcd(first, second, new EuclideanAlgorithm());
-        
+
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="milliseconds">The milliseconds.</param>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <returns>Calculates GCD of 2 numbers by Euclidean and returns algorithm execution time</returns>
         public static int FindGcdByEuclidean(out long milliseconds, int first, int second)
             => Gcd(first, second, out milliseconds, new EuclideanAlgorithm());
-        
+
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <param name="third">The third.</param>
+        /// <returns>Calculates GCD of 3 numbers by Euclidean</returns>
         public static int FindGcdByEuclidean(int first, int second, int third)
             => Gcd(first, second, third, new EuclideanAlgorithm());
-        
+
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="milliseconds">The milliseconds.</param>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <param name="third">The third.</param>
+        /// <returns>Calculates GCD of 3 numbers by Euclidean and returns algorithm execution time</returns>
         public static int FindGcdByEuclidean(out long milliseconds, int first, int second, int third)
             => Gcd(first, second, third, out milliseconds, new EuclideanAlgorithm());
-        
+
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="numbers">The numbers.</param>
+        /// <returns>Calculates GCD of numbers by Euclidean</returns>
         public static int FindGcdByEuclidean(params int[] numbers)
             => Gcd(new EuclideanAlgorithm(), numbers);
-        
+
+        /// <summary>
+        /// Finds the GCD by euclidean.
+        /// </summary>
+        /// <param name="milliseconds">The milliseconds.</param>
+        /// <param name="numbers">The numbers.</param>
+        /// <returns>Calculates GCD of numbers by Euclidean and returns algorithm execution time</returns>
         public static int FindGcdByEuclidean(out long milliseconds, params int[] numbers)
             => Gcd(new EuclideanAlgorithm(), out milliseconds, numbers);
         

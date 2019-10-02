@@ -1,11 +1,16 @@
 using System;
-using System.Diagnostics;
 using Algorithms.V2.Interfaces;
 
 namespace Algorithms.V2.GcdImplementations
 {
     public class EuclideanAlgorithm : IAlgorithm
     {
+        /// <summary>
+        /// Calculates the specified number1.
+        /// </summary>
+        /// <param name="number1">The number1.</param>
+        /// <param name="number2">The number2.</param>
+        /// <returns>Calculates GCD of 2 numbers</returns>
         public int Calculate(int number1, int number2)
         {
             if (number1 == 0 & number2 != 0)

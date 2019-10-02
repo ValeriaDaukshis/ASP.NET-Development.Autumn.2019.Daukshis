@@ -1,13 +1,17 @@
 using System;
-using System.Threading;
 using Algorithms.V4.Interfaces;
-using Algorithms.V4.StopWatcherImplementation;
 using Logger = Algorithms.V4.LoggerImplementation.Logger;
 
 namespace Algorithms.V4.GcdImplementations
 {
     public class EuclideanAlgorithm : Logger, IAlgorithm
     {
+        /// <summary>
+        /// Calculates the specified number1.
+        /// </summary>
+        /// <param name="number1">The number1.</param>
+        /// <param name="number2">The number2.</param>
+        /// <returns>Calculates GCD of 2 numbers by Euclidean</returns>
         public virtual int Calculate(int number1, int number2)
         {
             if (number1 == 0 & number2 != 0)
@@ -41,6 +45,14 @@ namespace Algorithms.V4.GcdImplementations
             _logger = logger;
         }
 
+        /// <summary>
+        /// Calculates the specified number1.
+        /// </summary>
+        /// <param name="number1">The number1.</param>
+        /// <param name="number2">The number2.</param>
+        /// <returns>
+        /// Calculates GCD of 2 numbers by Euclidean
+        /// </returns>
         public override int Calculate(int number1, int number2)
         {
             _logger = new Logger();
