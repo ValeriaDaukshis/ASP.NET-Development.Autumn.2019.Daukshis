@@ -44,7 +44,7 @@
     <Compile Include="ArrayExtension.cs" />
     <Compile Include="FilterByKey.cs" />
     <Compile Include="FilterByPalindrome.cs" />
-    <Compile Include="IFilter.cs" />
+    <Compile Include="IFilterCriterion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

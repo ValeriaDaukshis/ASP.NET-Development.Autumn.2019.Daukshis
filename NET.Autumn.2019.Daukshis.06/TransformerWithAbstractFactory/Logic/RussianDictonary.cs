@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using TransformerWithAbstractFactory.AbstractClasses;
 using TransformerWithAbstractFactory.Dictionaries;
 
 namespace TransformerWithAbstractFactory.Logic
 {
-    public class EnglishDictionary : TransformationMethod
+    public class RussianDictionary : TransformationMethod
     {
         private IDoubleComplexDictionary _complexDictionary;
         private IDoubleSimpleDictionary _simpleDictionary;
-        public EnglishDictionary(IDoubleComplexDictionary complexDictionary, IDoubleSimpleDictionary simpleDictionary)
+        public RussianDictionary(IDoubleComplexDictionary complexDictionary, IDoubleSimpleDictionary simpleDictionary)
         {
             this._complexDictionary = complexDictionary;
             this._simpleDictionary = simpleDictionary;
         }
-        /// <summary>
-        /// Transforms to string.
-        /// </summary>
-        /// <param name="number">The number.</param>
-        /// <returns>Double value in word format</returns>
         public override string TransformToString(double number)
         {
             string num;

@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
-using TransformerWithAbstractFactory.AbstractClasses;
-using TransformerWithAbstractFactory.Dictionaries;
+using Filter.Interfaces;
 
-namespace TransformerWithAbstractFactory.Logic
+namespace Filter.Transformers
 {
-    public class EnglishDictionary : TransformationMethod
+    public class DictionaryTransformer : ITransformer
     {
-        private IDoubleComplexDictionary _complexDictionary;
-        private IDoubleSimpleDictionary _simpleDictionary;
-        public EnglishDictionary(IDoubleComplexDictionary complexDictionary, IDoubleSimpleDictionary simpleDictionary)
+        private readonly IDoubleComplexDictionary _complexDictionary;
+        private readonly IDoubleSimpleDictionary _simpleDictionary;
+        public DictionaryTransformer(IDoubleComplexDictionary complexDictionary, IDoubleSimpleDictionary simpleDictionary)
         {
             this._complexDictionary = complexDictionary;
             this._simpleDictionary = simpleDictionary;
@@ -20,7 +19,7 @@ namespace TransformerWithAbstractFactory.Logic
         /// </summary>
         /// <param name="number">The number.</param>
         /// <returns>Double value in word format</returns>
-        public override string TransformToString(double number)
+        public string TransformToWord(double number)
         {
             string num;
             try

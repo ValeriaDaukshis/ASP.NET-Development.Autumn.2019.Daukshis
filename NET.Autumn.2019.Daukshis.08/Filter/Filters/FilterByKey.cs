@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using Filter.Interfaces;
 
-namespace Filter
+namespace Filter.Filters
 {
-    public class FilterByKey : IFilterCriterion
+    public class FilterByKey : IPredicate
     {
         private readonly int _key;
         public FilterByKey(int key )

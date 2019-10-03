@@ -40,6 +40,9 @@
     <ItemGroup>
         <Compile Include="AbstractClasses\TransformationMethod.cs" />
         <Compile Include="AbstractClasses\TransformerFactory.cs" />
+        <Compile Include="Dictionaries\EnglishComplexDoubleValues.cs" />
+        <Compile Include="Dictionaries\IDoubleSimpleDictionary.cs" />
+        <Compile Include="Logic\RussianDictonary.cs" />
         <Compile Include="Logic\TransformTo2Notation.cs" />
         <Compile Include="Logic\DoubleToStringConverter.cs" />
         <Compile Include="Logic\EnglishDictionary.cs" />

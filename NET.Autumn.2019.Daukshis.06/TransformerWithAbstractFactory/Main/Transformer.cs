@@ -7,7 +7,7 @@ namespace TransformerWithAbstractFactory.Main
         private readonly TransformationMethod _method;
         public Transformer(TransformerFactory transform)
         {
-            _method = transform.ToStringMethod();
+            _method = transform.WordNotationMethod();
         }
 
         /// <summary>

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Filter
 {
-    interface IFilter
+    public interface IFilterCriterion
     {
+        bool IsMatch(int value);
     }
 }

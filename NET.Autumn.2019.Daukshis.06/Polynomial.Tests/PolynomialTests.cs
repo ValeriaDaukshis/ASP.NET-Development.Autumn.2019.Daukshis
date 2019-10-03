@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Polynomial = PolynomialProject.Polynomial;
 
-namespace Polynomial.Tests
+namespace global::PolynomialProject.Polynomial.Tests
 {
     [TestFixture]
     public class PolynomialTests

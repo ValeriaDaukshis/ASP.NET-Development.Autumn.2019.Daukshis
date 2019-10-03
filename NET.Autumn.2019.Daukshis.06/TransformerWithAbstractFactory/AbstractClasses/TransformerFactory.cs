@@ -1,7 +1,9 @@
-﻿namespace TransformerWithAbstractFactory.AbstractClasses
+﻿using TransformerWithAbstractFactory.Dictionaries;
+
+namespace TransformerWithAbstractFactory.AbstractClasses
 {
     public abstract class TransformerFactory
     {
-        public abstract TransformationMethod ToStringMethod();
+        public abstract TransformationMethod WordNotationMethod(IDoubleComplexDictionary complexDictionary, IDoubleSimpleDictionary simpleDictionary);
     }
 }

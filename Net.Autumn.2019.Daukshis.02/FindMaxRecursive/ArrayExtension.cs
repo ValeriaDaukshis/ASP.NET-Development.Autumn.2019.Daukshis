@@ -43,11 +43,6 @@ namespace FindMaxRecursive
                 return FindBiggestNumberRecursive(ref biggestNumber, nextIndex + 1, subArrayLength, ++currentIndex);
             }
         }
-
-        /// <summary>
-        /// Check input data
-        /// </summary>
-        /// <param name="array">initial array</param>
         private static void CheckInput(int[] array)
         {
             if (array == null) 
