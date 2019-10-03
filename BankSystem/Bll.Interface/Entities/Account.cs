@@ -43,7 +43,7 @@ namespace Bll.Interface.Entities
 
         public void Withdraw(decimal amount)
         {
-            if (!IsBalanceValid(amount) || this.State == AccountState.closed || this.State == AccountState.freezed)
+            if (!IsBalanceValid(amount ) || this.State == AccountState.closed || this.State == AccountState.freezed)
             {
                 throw new ArgumentException(); //bad
             }

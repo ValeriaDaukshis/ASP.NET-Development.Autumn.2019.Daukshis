@@ -1,7 +1,26 @@
 https://core2.me/me/?cv=28d.2u
 # .NET-Training.-Autumn-2019
+---
 
-## Self-study stage (05.08.2019 - 15.09.2019)
+<a name="stages"></a>
+
+ + [Stage 1. Self-study (05.08.2019 - 15.09.2019)](#self-stady) 
+   - [content](#content1)
+ + [Stage 2. (16.09.2019 - 30.11.2019)](#stage2)  
+   - [Day 1. 16.09.2019](#1) 
+   - [Day 2. 17.09.2019](#2) 
+   - [Day 3. 19.09.2019](#3) 
+   - [Day 4. 23.09.2019](#4) 
+   - [Day 5. 24.09.2019](#5) 
+   - [Day 6. 26.09.2019](#6) 
+   - [Day 7. 30.09.2019](#7) 
+   - [Day 8. 01.10.2019](#8) 
+   - [Day 9. 03.10.2019](#9)
+
+---
+[Up](#stages)
+
+## <a name="self-stady"></a> [Stage 1. Self-study (05.08.2019 - 15.09.2019)](https://drive.google.com/drive/folders/1l9-adJJR2SbdwOoow67Iz4cDpohaqOiq)
  
 | Task | Task Status | Additional/Comments |
 | -------- | -------- | --------|  
@@ -21,7 +40,11 @@ https://core2.me/me/?cv=28d.2u
  
 ---
 
-#### Задачи (deadline - 18.09.2019, 24.00)
+[Up](#stages)
+
+## <a name="stage2"></a>  [Stage 2. (16.09.2019 - 30.11.2019)](https://drive.google.com/drive/folders/1zwjMfJoOfPslOcK9_noqN32aL66u7hQ6)
+
+### <a name="1"></a>  Day 1. 16.09.2019	
 
 - Реализовать методы пузырьковой, быстрой и сортировки слиянием для упорядчивания элементов целочисленного массива по нестрогому возрастанию (методы поместить в статический класс ArrayExtension, тип проекта Class Library). 
 > Одномерный массив считать упорядоченным, если отношение порядка выполняется для элементов, индексы которых удовлетворяют некоторому заданному условию (например, диапазон и шаг изменения, удоблетворение условия кратности заданной цифре и т.п.), а само отношение порядка определяется некоторой функцией-ключем (например, определяющей количество заданного символа в p-ичном (2<=p<=16) представлении числа, модуль числа и т.п.). *Для получения p-ичного строкового представления числа готовые классы-конверторы не использовать!* 
@@ -45,7 +68,9 @@ https://core2.me/me/?cv=28d.2u
 
 ---
 
-### Day 2. 17.09.2019	
+[Up](#stages)
+
+### <a name="2"></a> Day 2. 17.09.2019		
 
 #### Задачи
 1. **(deadline - 20.09.2019, 24.00)** Даны два целых знаковых четырехбайтовых числа и две позиции битов i и j (i<=j). Реализовать алгоритм вставки первых (j - i + 1) битов второго числа в первое так, чтобы биты второго числа занимали позиции с бита i по бит j (биты нумеруются справа налево). Решение оформить  в виде статического метода **InsertNumberIntoAnother** статического класса **NumbersExtension**. Разработать модульные тесты (NUnit и MS Unit Test - ([DDT](https://msdn.microsoft.com/en-us/library/ms182527.aspx)))) для тестирования метода. (Ниже схема-пояснение к алгоритму). Примерные тест-кейсы
@@ -89,7 +114,9 @@ https://core2.me/me/?cv=28d.2u
 
 ---
 
-### Day 3. 19.09.2019	
+[Up](#stages)
+
+### <a name="3"></a> Day 3. 19.09.2019	
 #### Читать
 - [C# 5.0 Unleashed. Bart De Smet. Sams Publishing. 2013](https://drive.google.com/drive/u/0/folders/0B7WmjuqYed3Aeko0MzNYZWtVOUk) Chapter 10: Methods
 
@@ -123,7 +150,9 @@ https://core2.me/me/?cv=28d.2u
 | 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.03/NextBiggerThanClass/NumbersExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.03/Number.Tests/NumbersExtensionTests.cs)
 
 ---
-### Day 4. 23.09.2019
+[Up](#stages)
+
+### <a name="4"></a> Day 4. 23.09.2019
 
 #### Задачи
   
@@ -146,7 +175,9 @@ https://core2.me/me/?cv=28d.2u
 
 --- 
 
-### Day 5. 24.09.2019
+[Up](#stages)
+
+### <a name="5"></a> Day 5. 24.09.2019
 
 #### Задачи
   
@@ -166,7 +197,9 @@ https://core2.me/me/?cv=28d.2u
 
 ---
 
-### Day 6. 26.09.2019
+[Up](#stages)
+
+### <a name="6"></a> Day 6. 26.09.2019
 
 #### Задачи
 
@@ -211,7 +244,9 @@ https://core2.me/me/?cv=28d.2u
 
 ---
 
-### Day 7. 30.09.2019	
+[Up](#stages)
+
+### <a name="7"></a> Day 7. 30.09.2019	
 
 1. Некто L начал разработку библиотеки (проект *Algorithms.V1*) для алгебраических вычислений. Согласно требованию библиотека должна быть реализована как статический класс с удобными для использования для различного рода расчетов статическими методами, в частности, методами, реализующими подсчет НОД-а для двух, трех, четырех и т.д. целых чисел алгоритмом Евклида (Стайна), включая возможность подсчета времени вычислений.
 
@@ -246,6 +281,172 @@ https://core2.me/me/?cv=28d.2u
 | 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V2*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/tree/master/NET.Autumn.2019.Daukshis.07/Extension.V2) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.07/Extension.V2.Tests/ExtensionV2Tests.cs) 
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V3*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/tree/master/NET.Autumn.2019.Daukshis.07/Decorator.V3) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.07/Decorator.V3.Tests/DecoratorTests.cs) 
 | 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V4*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/tree/master/NET.Autumn.2019.Daukshis.07/Adapter.V4) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.07/Adapter.Tests/EntryPoint.cs)| in [*TimerAdapter*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.07/Adapter.V4/Adapter/TimerAdapter.cs) Thread.Sleep(200), because StopWatcher returns 0
+---
+
+[Up](#stages)
+
+### <a name="AdditionalTask"></a> Additional Task (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 18.10.2019, 24.00**)
+#### Полезные ссылки
+- [VCS](https://learn.by/courses/course-v1:EPAM+DTO+ext1/courseware/ed724b3da0ce4e6d94e2260353f9bcd7/328025ec03584adfa6ab8ffa3dfa24e6/1)
+- [Git за полчаса: руководство для начинающих](https://proglib.io/p/git-for-half-an-hour/)
+- [Learn Git Branching](https://learngitbranching.js.org/?demo)
+- [Git Cheat Sheet Download](https://github.com/AnzhelikaKravchuk/.NET-Training.-Autumn-2019/blob/master/Day%203.%2019.09.2019/Git_Cheat_Sheet.pdf)
+
+#### [Задача](https://github.com/epam-lab/file-cabinet-task/tree/version1)
+
+#### Task Status
+
+| Step | Task | Solution Status | Solution Link | Additional/Comments |     
+| -------- | -------- | -------- | --------| --------|        
+| 1 | Создание консольного приложения FileCabinetApp | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| 2 | Создание сервиса FileCabinetService | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| 3 | Редактирование и валидация данных | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| 4 | Поиск | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| 5 | Рефакторинг | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| 6 | Экспорт в CSV и XML | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| 7 | Хранилище на файловой системе | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| 8 | Расширение команды | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |     
+| 9 | Импорт из CSV и XML | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| 10 | Удаление записей | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+
+---
+
+[Up](#stages)
+
+### <a name="8"></a> Day 8. 01.10.2019
+#### Материалы
+- [Programming C# 5.0. Ian Griffiths. O'Reilly Media. 2012.](http://shop.oreilly.com/product/0636920024064.do) 
+   - *Chapter 4.* Generics. [Download Example Code](https://resources.oreilly.com/examples/0636920024064/blob/master/Ch04.zip) 
+   - *Chapter 5.* Collections. [Download Example Code](https://resources.oreilly.com/examples/0636920024064/blob/master/Ch05.zip)
+- [C# in Depth. Jon Skeet. Manning Publications Co. 2013](https://www.manning.com/books/c-sharp-in-depth-third-edition)
+   - *Chapter 3.* [Parameterized typing with generics.](https://livebook.manning.com/#!/book/c-sharp-in-depth-third-edition/chapter-3/)
+   - *Appendix B.* [Generic collections in .NET.](https://livebook.manning.com/#!/book/c-sharp-in-depth-third-edition/appendix-b/)
+- [C# 6.0 in a Nutshell. Joseph Albahari, Ben Albahari. O'Reilly Media. 2015.](http://shop.oreilly.com/product/0636920040323.do)
+   - *Chapter 7.* Collections. [Code Listings](http://www.albahari.com/nutshell/ch07.aspx)
+- [C# 5.0 Unleashed. Bart De Smet. Sams Publishing. 2013](https://www.goodreads.com/book/show/16284093-c-5-0-unleashed)
+   - *Chapter 15.* Generic Types and Methods.
+   - *Chapter 16.* Collection Types.
+- [CLR via C#. Jeffrey Richter. Microsoft Press. 2010](https://www.goodreads.com/book/show/7121415-clr-via-c)
+   - *Chapter 12.* Generics.
+- [Pro .NET Performance: Optimize Your C# Applications. Sasha Goldshtein.](http://www.apress.com/us/book/9781430244585)
+   - *Chapter 5.* Collections and Generics   
+
+#### <a name="8-Tasks"></a> Задачи
+
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 03.10.2019, 24.00**) Создать новый статический класс ArrayExtension, в который поместить код метода FilterArrayByKey [Task 4](#2-Tasks), переименовав метод в Filter и сделав его методом расширения соответствующего массива. Метод должен уметь возвращать только те элемнты исходного массива, которые удовлетворяют определенному условию (предикату). И добавить метод FindMaximumItem [Task 2](#2-Tasks), как метод расширения, переименовать в Max .
+2. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 03.10.2019, 24.00**) Добавить в статический класс ArrayExtension (п.1) метод расширения Transform который трансформирует элементы массива вещественных чисел в строку согласно переданному правилу. Проверить работу разработанного метода. В качестве тест-кейсов использовать следующие правила
+  - получение для вещественного числа его строкового "словесно-цифрового" описания на английском языке;
+  - получение для вещественного числа его строкового "словесно-цифрового" описания на русском языке;
+  - получение для вещественного числа его битового строкового предстваления в формате IEEE 754.    
+*Как, не изменяя код класса Transformer [Task 1](#6-Tasks), его можно использовать в качестве правила для трансформации элементов массива в этом методе.*
+*Как, не изменяя код класса с методом расширения [Task 2](#6-Tasks), его можно использовать в качестве правила для трансформации элементов массива в этом методе.*
+3. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 04.10.2019, 24.00**) Добавить в статический класс ArrayExtension метод расширения для массива строк OrderAccordingTo, который возвращает элементы исходного массива в порядке, определенном переданным правилом сравнения. (*С индексированием не мудрить! Это будет обычная сортировка с той лишь разницей, что упорядоченный массив будет в качестве возвращаемого значения, а исходный не изменится*.)
+
+#### Task Status
+
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
+| 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
+| 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+
+---
+
+#### [Материал обязательный к ознакомлению](https://github.com/epam-dotnet-lab/tasks/tree/version1/debugging)
+
+---
+
+[Up](#stages)
+
+### <a name="9"></a> Day 9. 03.10.2019   
+#### Материалы
+- [Programming C# 5.0. Ian Griffiths. O'Reilly Media. 2012.](http://shop.oreilly.com/product/0636920024064.do) 
+   - *Chapter 4.* Generics. [Download Example Code](https://resources.oreilly.com/examples/0636920024064/blob/master/Ch04.zip) 
+   - *Chapter 5.* Collections. [Download Example Code](https://resources.oreilly.com/examples/0636920024064/blob/master/Ch05.zip)
+- [C# in Depth. Jon Skeet. Manning Publications Co. 2013](https://www.manning.com/books/c-sharp-in-depth-third-edition)
+   - *Chapter 3.* [Parameterized typing with generics.](https://livebook.manning.com/#!/book/c-sharp-in-depth-third-edition/chapter-3/)
+   - *Appendix B.* [Generic collections in .NET.](https://livebook.manning.com/#!/book/c-sharp-in-depth-third-edition/appendix-b/)
+- [C# 6.0 in a Nutshell. Joseph Albahari, Ben Albahari. O'Reilly Media. 2015.](http://shop.oreilly.com/product/0636920040323.do)
+   - *Chapter 7.* Collections. [Code Listings](http://www.albahari.com/nutshell/ch07.aspx)
+- [C# 5.0 Unleashed. Bart De Smet. Sams Publishing. 2013](https://www.goodreads.com/book/show/16284093-c-5-0-unleashed)
+   - *Chapter 15.* Generic Types and Methods.
+   - *Chapter 16.* Collection Types.
+- [CLR via C#. Jeffrey Richter. Microsoft Press. 2010](https://www.goodreads.com/book/show/7121415-clr-via-c)
+   - *Chapter 12.* Generics.
+- [Pro .NET Performance: Optimize Your C# Applications. Sasha Goldshtein.](http://www.apress.com/us/book/9781430244585)
+   - *Chapter 5.* Collections and Generics   
+
+#### <a name="9-Tasks"></a> Задачи
+
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 05.10.2019, 24.00**) Переобразовать методы расширения класса ArrayExtension [Day 8](#8-Tasks) в обобщенно-типизированные. Убедиться, что все написанные ранее тесты проходят. 
+2. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 05.10.2019, 24.00**) Добавить в класс с методами рассширения новый обобщенный метод расширения, который получает из массива объектов новый массив, все элементы которого имеют один тип.
+3. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 06.10.2019, 24.00**) Реализовать метод-генератор последовательности чисел Фибоначчи. Разработать unit-тесты.
+4. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 05.10.2019, 24.00**) Разработать обобщенный типизированный класс-коллекцию `Queue<T>`, реализующий основные операции для работы с очередью, и предоставляющий возможность итерирования по ней. Протестировать методы разработанного класса.
+5. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 10.10.2019, 24.00**) Заполните таблицу
+
+| Collection | Indexed lookup | Keyed lookup | Value lookup | Addition |  Removal |  Memory |      
+| -------- | -------- | --------| --------|  -------- |  -------- |  -------- |    
+| **Списки** | | | | | | |   
+| `T[]` | O(1) | -  | O(n) | O(n) | O(n) | Elements + additional info (like array's length) |   
+| `List<T>` | | | | | | |   
+|`LinkedList<T>`  |  |  |  |  |  |  |  
+|`Collection<T>`  |  |  |  |  |  |  |  
+|`BindingList<T>`  |  |  |  |  |  |  |  
+|`ObservableCollection<T>`  |  |  |  |  |  |  |
+|`KeyCollection<TKey, TItem>`  |  |  |  |  |  |  |
+|`ReadOnlyCollection<T>`  |  |  |  |  |  |  |
+|`ReadOnlyObservableCollection<T>` |  |  |  |  |  |  |
+**Словари** | | | | | | |  
+|`Dictionary<TKey, TValue>`   |  |  |  |  |  |  |
+|`SortedList<TKey, TValue>`   |  |  |  |  |  |  |
+|`SortedDictionary<TKey, TValue>`  |  |  |  |  |  |  |
+|`SortedDictionary<TKey,TValue>`.   |  |  |  |  |  |  |  
+`ReadOnlyDictionary<TKey, TValue> `   |  |  |  |  |  |  |
+**Множества** | | | | | | | 
+|`HashSet<T>`  |  |  |  |  |  |  |
+|`SortedSet<T>`   |  |  |  |  |  |  |
+| **Очередь, стек** | | | | | | | 
+|`Queue<T>`  |  |  |  |  |  |  |
+|`Stack<T>`  |  |  |  |  |  |  |
+* `*` If ... .
+* `**`If ... .
+
+
+|Collection | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection | 
+| -------- | -------- | --------| --------|  -------- |  -------- |  -------- | 
+**Списки** | | | | | | |  
+|`T[]` | `System.Array` | - | No | Yes | Index | No |   
+|`List<T>` | |  | | | | |   
+|`LinkedList<T>` | |  | | | | |   
+|`Collection<T>` | |  | | | | |   
+|`BindingList<T>` | |  | | | | |   
+|`ObservableCollection<T>`  | |  | | | | |   
+|`KeyCollection<TKey, TItem>`  | |  | | | | |   
+|`ReadOnlyCollection<T>` | |  | | | | |   
+|`ReadOnlyObservableCollection<T>`  | |  | | | | | 
+|**Словари** | | | | | | | 
+|`Dictionary<TKey, TValue>` | |  | | | | |    
+|`SortedList<TKey, TValue>`  | |  | | | | |   
+|`SortedDictionary<TKey, TValue>`  | |  | | | | |   
+|`ReadOnlyDictionary<TKey, TValue>`  | |  | | | | |   
+|**Множества** | | | | | | | 
+|`HashSet<T>` | |  | | | | |   
+|`SortedSet<T>`  | |  | | | | |   
+|**Очередь, стек** | | | | | | | 
+|`Queue<T>` | |  | | | | |   
+|`Stack<T>` | |  | | | | |   
+
+* `*` ... .
+* `**` ... .
+
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
+| 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
+| 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+| 4 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+| 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  | 
+
 
 
 
