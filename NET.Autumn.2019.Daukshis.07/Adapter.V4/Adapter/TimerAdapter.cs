@@ -25,7 +25,6 @@ namespace Algorithms.V4.Adapter
         {
             _timer = new StopWatcher();
             _timer.Start();
-            Thread.Sleep(200);
             int result = new EuclideanAlgorithmDecorator(new EuclideanAlgorithm(), new Logger()).Calculate(first, second);
             _timer.Stop();
             timeInMilliseconds = _timer.TimeInMilliseconds;

@@ -5,7 +5,7 @@ namespace Algorithms.V4.StopWatcherImplementation
 {
     public class StopWatcher : IStopWatcher
     {
-        public long TimeInMilliseconds => _timer.ElapsedMilliseconds;
+        public long TimeInMilliseconds => _timer.ElapsedTicks;
         private Stopwatch _timer;
         /// <summary>
         /// Initializes a new instance of the <see cref="StopWatcher"/> class.
