@@ -6,6 +6,10 @@ namespace Filter.Dictionaries
 {
     public class EnglishComplexDoubleValues : IDoubleComplexDictionary
     {
+        /// <summary>
+        /// Gets the complex dictionary.
+        /// </summary>
+        /// <returns>English <double, string> dictionary </returns>
         public Dictionary<double, string> GetComplexDictionary()
         {
             Dictionary<double, string> doubleValues = new Dictionary<double, string>()

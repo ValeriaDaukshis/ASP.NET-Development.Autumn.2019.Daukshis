@@ -5,13 +5,20 @@ namespace Filter.Filters
 {
     public class FilterByPalindrome : IPredicate
     {
+        /// <summary>
+        /// Determines whether the specified value is match.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified value is match; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsMatch(int value)
         {
             string number = Math.Abs(value).ToString();
             return IsPalindrome(number, 0, number.Length / 2); 
         }
         
-        public bool IsPalindrome(string value, int i, int count)
+        private bool IsPalindrome(string value, int i, int count)
         {
             if (count == 0)
                 return true;

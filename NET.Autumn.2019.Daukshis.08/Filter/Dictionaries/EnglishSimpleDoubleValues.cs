@@ -5,6 +5,10 @@ namespace Filter.Dictionaries
 {
     public class EnglishSimpleDoubleValues : IDoubleSimpleDictionary
     {
+        /// <summary>
+        /// Gets the simple dictionary.
+        /// </summary>
+        /// <returns>English <char, string> dictionary</returns>
         public Dictionary<char, string> GetSimpleDictionary()
         {
             Dictionary<char, string> doubleValues = new Dictionary<char, string>()

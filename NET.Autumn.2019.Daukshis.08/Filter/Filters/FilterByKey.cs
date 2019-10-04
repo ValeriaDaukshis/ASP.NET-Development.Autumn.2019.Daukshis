@@ -11,6 +11,13 @@ namespace Filter.Filters
             _key = key;
         }
 
+        /// <summary>
+        /// Determines whether the specified value is match.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified value is match; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsMatch(int value)
         {
             value = Math.Abs(value);
