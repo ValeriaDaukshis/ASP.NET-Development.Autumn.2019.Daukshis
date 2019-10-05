@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace QueueProject
 {
-    public class Queue<T> : IEnumerable<T>, ICollection, IEquatable<T>
+    public class Queue<T> : IEnumerable<T>, ICollection, IEquatable<Queue<T>>
     {
         private T[] array = { };
         private int head = 0;
@@ -40,6 +40,9 @@ namespace QueueProject
                 Enqueue(element);
         }
 
+        /// <summary>
+        /// Clear current queue.
+        /// </summary>
         public void Clear()
         {
             tail = 0;
@@ -48,6 +51,11 @@ namespace QueueProject
             ++version;
         }
 
+        /// <summary>
+        /// Check if collection contains element/
+        /// </summary>
+        /// <param name="item">Item to find.</param>
+        /// <returns>True if contains, otherwise false.</returns>
         public bool Contains(T item)
         {
             int count = size;
@@ -60,10 +68,10 @@ namespace QueueProject
             return false;
         }
 
-        public void CopyTo(T[] array, int arrayIndex)
-        {
-        }
-
+        /// <summary>
+        /// Insert element into collection.
+        /// </summary>
+        /// <param name="item">Item to add.</param>
         public void Enqueue(T item)
         {
             if (size + 1 == capacity)
@@ -77,6 +85,9 @@ namespace QueueProject
             ++version;
         }
 
+        /// <summary>
+        /// Extends capacity of collection
+        /// </summary>
         private void SetCapacity()
         {
             capacity += 10;
@@ -88,11 +99,19 @@ namespace QueueProject
             version++;
         }
 
+        /// <summary>
+        /// Get first item of collection.
+        /// </summary>
+        /// <returns>Head item.</returns>
         public T Peek()
         {
             return array[head];
         }
 
+        /// <summary>
+        /// Pop the first element from collection.
+        /// </summary>
+        /// <returns>Head element.</returns>
         public T DeQueue()
         {
             T element = array[head];
@@ -102,19 +121,33 @@ namespace QueueProject
             --size;
             return element;
         }
-        
+
+        /// <summary>
+        /// Copy elements of collection into array.
+        /// </summary>
+        /// <param name="array">Source array.</param>
+        /// <param name="index">Index in the array at which storing begins.</param>
         public void CopyTo(Array array, int index)
         {
             Array.Copy(this.array, 0, array, index, array.Length);
         }
-        
-        public bool Equals(T other) 
+
+        /// <summary>
+        /// Check if collections are equal.
+        /// </summary>
+        /// <param name="other">Collection to compare.</param>
+        /// <returns>True if collections are equal, otherwise false.</returns>
+        public bool Equals(Queue<T> other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
             return array.Equals(other);
         }
 
+        /// <summary>
+        /// Get the enumerator of collection.
+        /// </summary>
+        /// <returns>Collection enumerator.</returns>
         public IEnumerator<T> GetEnumerator()
         {
             int version2 = version;
@@ -129,6 +162,11 @@ namespace QueueProject
             }
         }
 
+        /// <summary>
+        /// Check if collection and the object are equal.
+        /// </summary>
+        /// <param name="obj">Object to compare.</param>
+        /// <returns>True if collection and  the object are equal, otherwise false.</returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -137,6 +175,10 @@ namespace QueueProject
             return Equals((Queue<T>) obj);
         }
 
+        /// <summary>
+        /// Get hash code of collection.
+        /// </summary>
+        /// <returns>Hash code of collection.</returns>
         public override int GetHashCode()
         {
             unchecked

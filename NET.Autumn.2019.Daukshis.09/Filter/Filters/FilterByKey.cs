@@ -14,6 +14,7 @@ namespace Filter.Filters
         /// <summary>
         /// Determines whether the specified value is match.
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>
         /// <returns>
         ///   <c>true</c> if the specified value is match; otherwise, <c>false</c>.
