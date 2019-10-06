@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueProject", "QueueProjec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue.Tests", "Queue.Tests\Queue.Tests.csproj", "{460BD82D-A2AA-4C53-B111-27D9342FD35E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{50ACD5E1-3743-4309-97E7-BD3D3E49AD97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci.Tests", "Fibonacci.Tests\Fibonacci.Tests.csproj", "{EC51DC49-E682-4AB7-80B9-2B6464D3C084}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{460BD82D-A2AA-4C53-B111-27D9342FD35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{460BD82D-A2AA-4C53-B111-27D9342FD35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{460BD82D-A2AA-4C53-B111-27D9342FD35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50ACD5E1-3743-4309-97E7-BD3D3E49AD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50ACD5E1-3743-4309-97E7-BD3D3E49AD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50ACD5E1-3743-4309-97E7-BD3D3E49AD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50ACD5E1-3743-4309-97E7-BD3D3E49AD97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC51DC49-E682-4AB7-80B9-2B6464D3C084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC51DC49-E682-4AB7-80B9-2B6464D3C084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC51DC49-E682-4AB7-80B9-2B6464D3C084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC51DC49-E682-4AB7-80B9-2B6464D3C084}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
