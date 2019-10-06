@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filters", "Filters\Filters.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterArray.Test", "FilterArray.Test\FilterArray.Test.csproj", "{785AF90C-E471-42D9-B0B0-B97F50ED54B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gcd.Tests", "Gcd.Tests\Gcd.Tests.csproj", "{C6717181-1B3E-4B0A-B239-EBBCF7DE8CBC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindGcd", "FindGcd\FindGcd.csproj", "{1B2B4502-BB4A-4DE7-BCF3-CF25B1E165C6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{785AF90C-E471-42D9-B0B0-B97F50ED54B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{785AF90C-E471-42D9-B0B0-B97F50ED54B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{785AF90C-E471-42D9-B0B0-B97F50ED54B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6717181-1B3E-4B0A-B239-EBBCF7DE8CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6717181-1B3E-4B0A-B239-EBBCF7DE8CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6717181-1B3E-4B0A-B239-EBBCF7DE8CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6717181-1B3E-4B0A-B239-EBBCF7DE8CBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B2B4502-BB4A-4DE7-BCF3-CF25B1E165C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B2B4502-BB4A-4DE7-BCF3-CF25B1E165C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B2B4502-BB4A-4DE7-BCF3-CF25B1E165C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B2B4502-BB4A-4DE7-BCF3-CF25B1E165C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

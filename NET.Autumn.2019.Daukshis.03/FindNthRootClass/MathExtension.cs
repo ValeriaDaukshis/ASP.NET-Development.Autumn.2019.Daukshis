@@ -41,22 +41,32 @@ namespace FindNthRootClass
             double result = 1;
             for (int i = 0; i < pow; i++)
                 result *= number;
+
             return result;
         }
 
         /// <summary>
-        /// Check input data
+        /// Checks the input.
         /// </summary>
-        /// <param name="number">initial number</param>
-        /// <param name="root">root from number</param>
-        /// <param name="accuracy">accuracy</param>
+        /// <param name="number">The number.</param>
+        /// <param name="root">The root.</param>
+        /// <param name="accuracy">The accuracy.</param>
+        /// <exception cref="ArgumentException">
+        /// Incorrect root
+        /// or
+        /// Root must be positive
+        /// or
+        /// Incorrect accuracy
+        /// </exception>
         private static void CheckInput(double number, int root, double accuracy)
         {
-            if (number < 0 & root % 2 == 0)
+            if (number < 0 && root % 2 == 0)
                 throw new ArgumentException("Incorrect root");
+
             if (root < 0)
                 throw new ArgumentException("Root must be positive");
-            if (accuracy > 1 | accuracy < 0)
+
+            if (accuracy > 1 || accuracy < 0)
                 throw new ArgumentException("Incorrect accuracy");
         }
     }
