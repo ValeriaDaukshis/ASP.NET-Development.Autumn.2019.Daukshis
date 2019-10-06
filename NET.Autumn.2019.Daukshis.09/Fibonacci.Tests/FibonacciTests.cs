@@ -10,7 +10,7 @@ namespace Fibonacci.Tests
         [TestCase(1, ExpectedResult = 1)]
         [TestCase(10, ExpectedResult = 34)]
         [TestCase(25, ExpectedResult = 46368)]
-        public int GetFibonacciNumbers(int limit)
+        public int GetFibonacciNumbers_ReturnNthElement(int limit)
         {
             int result = 0;
             foreach (var a in NumberExtensions.GetFibonacciNumbers(limit))
@@ -19,7 +19,7 @@ namespace Fibonacci.Tests
             return result;
         }
         [Test]
-        public void FindMaximumItem_ZeroLengthArray_ArgumentException()
+        public void GetFibonacciNumbers_SetBibLimit_ArgumentException()
         {
             Assert.Throws<ArgumentException>(
                 delegate
