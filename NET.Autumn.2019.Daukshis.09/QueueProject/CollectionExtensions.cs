@@ -201,4 +201,26 @@ namespace QueueProject
             return GetEnumerator();
         }
     }
+
+    class C<T> : IEnumerator
+    {
+        public bool MoveNext()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Current { get; }
+
+        object IEnumerator.Current => Current;
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
