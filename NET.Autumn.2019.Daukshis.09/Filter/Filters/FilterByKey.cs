@@ -3,7 +3,7 @@ using Filter.Interfaces;
 
 namespace Filter.Filters
 {
-    public class FilterByKey : IPredicate
+    public class FilterByKey<T> : IPredicate<T>
     {
         private readonly char _key;
         public FilterByKey(char key)
@@ -19,7 +19,7 @@ namespace Filter.Filters
         /// <returns>
         ///   <c>true</c> if the specified value is match; otherwise, <c>false</c>.
         /// </returns>
-        public bool IsMatch<T>(T value)  where T : struct
+        public bool IsMatch<T>(T value) 
         {
             return IsMatch(value.ToString());
         }

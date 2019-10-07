@@ -3,8 +3,8 @@
     /// <summary>
     /// Transform double value to words
     /// </summary>
-    public interface ITransformer
+    public interface ITransformer<T, TV>
     {
-        string TransformToWord<T>(T value) where T : struct;
+        TV TransformToWord(T value);
     }
 }

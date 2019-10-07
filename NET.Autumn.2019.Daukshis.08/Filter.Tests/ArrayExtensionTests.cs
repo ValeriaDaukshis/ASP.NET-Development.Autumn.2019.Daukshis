@@ -8,8 +8,6 @@ using NUnit.Framework;
 
 namespace Filter.Tests
 {
-    
-    
     [TestFixture]
     public class ArrayExtensionTests
     {  
@@ -84,7 +82,7 @@ namespace Filter.Tests
                 "four point nine four zero six five six four five eight four one two four seven E minus three two four"
             })]
         public string[] EnglishTransformer_ReturnsArrayOfStringsWithWordsOfDigits(double[] number)
-             => ArrayExtension.Transform(number, new DictionaryTransformer(new EnglishComplexDoubleValues(), new EnglishSimpleDoubleValues()));
+             => ArrayExtension.Transform(number, new DictionaryTransformer(new EnglishDictionary()));
         
         
         [TestCase(new double[]{double.NaN, double.NegativeInfinity, -0.0d, 0.1d, -23.809d}, 
@@ -94,7 +92,7 @@ namespace Filter.Tests
                  "минус два три точка восемь ноль девять"
              })] 
         public string[] RussianTransformer_ReturnsArrayOfStringsWithWordsOfDigits(double[] number)
-             =>  ArrayExtension.Transform(number, new DictionaryTransformer(new RussianComplexDoubleValues(), new RussianSimpleDoubleValues()));
+             =>  ArrayExtension.Transform(number, new DictionaryTransformer(new RussianDictionary()));
          
         
         [TestCase(new double[]{255.255, -255.255, double.MaxValue, double.NaN, double.PositiveInfinity, -0.0}, 

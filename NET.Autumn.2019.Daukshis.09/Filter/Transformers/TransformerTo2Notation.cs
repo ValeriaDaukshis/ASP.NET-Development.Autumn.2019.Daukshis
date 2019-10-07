@@ -1,27 +1,19 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 using Filter.Interfaces;
 
 namespace Filter.Transformers
 {
-    public class TransformerTo2Notation : ITransformer
+    public class TransformerTo2Notation : ITransformer<double,string>
     {
         /// <summary>
         /// Transforms to word.
         /// </summary>
         /// <param name="doubleNumber">The double number.</param>
         /// <returns>Double value is string representation</returns>
-        public string TransformToWord<T>(T doubleNumber) where T : struct
-        {
-            if (typeof(T) == typeof(double))
-                return TransformToWord(Convert.ToDouble(doubleNumber));
-            string a = doubleNumber.ToString();
-            double b = Convert.ToDouble(a);
-            return TransformToWord(b);
-        }
-        
-        private string TransformToWord(double doubleNumber) 
+        public string TransformToWord(double doubleNumber) 
         {
             Number num = new Number(doubleNumber);
             long value = num.longValue;

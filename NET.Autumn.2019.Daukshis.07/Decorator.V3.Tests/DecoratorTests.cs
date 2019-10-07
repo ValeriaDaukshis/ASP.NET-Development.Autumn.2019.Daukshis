@@ -1,3 +1,4 @@
+using Algorithms.V3.GcdImplementations;
 using Algorithms.V3.StaticClasses;
 using NUnit.Framework;
 
@@ -15,7 +16,7 @@ namespace Decorator.V3.Tests
         [TestCase(-17, 5, ExpectedResult = 1)]
         [TestCase(50641,569, ExpectedResult = 569)]
         public int FindGcdByEuclidean_2Numbers(int number1, int number2)
-            => GCDAlgorithms.FindGcdByEuclidean(number1, number2); 
+            => new EuclideanAlgorithmDecorator(new EuclideanAlgorithm()).Calculate(number1, number2); 
         
         [TestCase(111111111, 0, 0, ExpectedResult = 111111111)]
         [TestCase(0, 0, 0, ExpectedResult = 0)]
@@ -24,13 +25,21 @@ namespace Decorator.V3.Tests
         [TestCase(1071, 148, 462, ExpectedResult = 1)]
         [TestCase(25, -5, -10, ExpectedResult = 5)]
         public int FindGcdByEuclidean_3Numbers(int number1, int number2, int number3)
-            => GCDAlgorithms.FindGcdByEuclidean(number1, number2, number3);
+        {
+            int result = new EuclideanAlgorithmDecorator(new EuclideanAlgorithm()).Calculate(number1, number2);
+            return new EuclideanAlgorithmDecorator(new EuclideanAlgorithm()).Calculate(result, number3);
+        }
 
-        [TestCase(new int[] { 1071, 147, 462, 7 }, ExpectedResult = 7)]
-        [TestCase(new int[] { 25, 125, -75, 500, -375 }, ExpectedResult = 25)]
-        [TestCase(new int[] { 25, 125, -75, 500, -375, 0, 0 }, ExpectedResult = 25)]
+        [TestCase(new int[] {1071, 147, 462, 7}, ExpectedResult = 7)]
+        [TestCase(new int[] {25, 125, -75, 500, -375}, ExpectedResult = 25)]
+        [TestCase(new int[] {25, 125, -75, 500, -375, 0, 0}, ExpectedResult = 25)]
         public int FindGcdByEuclidean_ArrayOfNumbers(int[] array)
-            => GCDAlgorithms.FindGcdByEuclidean(array);
+        {
+            int result = array[0];
+            for(int i = 1 ; i < array.Length; i++)
+                result = new EuclideanAlgorithmDecorator(new EuclideanAlgorithm()).Calculate(result, number3);
+            return result;
+        }
 
         [TestCase(111111111, 0, ExpectedResult = 111111111)]
         [TestCase(0, 0, ExpectedResult = 0)]

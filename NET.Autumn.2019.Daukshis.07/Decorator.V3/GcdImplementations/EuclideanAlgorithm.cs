@@ -6,7 +6,7 @@ namespace Algorithms.V3.GcdImplementations
 {
     public class EuclideanAlgorithm : IAlgorithm
     {
-        public virtual int Calculate(int number1, int number2)
+        public int Calculate(int number1, int number2)
         {
             if (number1 == 0 & number2 != 0)
                 return Math.Abs(number2);
@@ -30,9 +30,9 @@ namespace Algorithms.V3.GcdImplementations
         }
     }
 
-    public class EuclideanAlgorithmDecorator : EuclideanAlgorithm
+    public class EuclideanAlgorithmDecorator : IAlgorithm
     {
-        private EuclideanAlgorithm _algorithm;
+        private readonly EuclideanAlgorithm _algorithm;
         public long Milliseconds { set; get; }
         
         public EuclideanAlgorithmDecorator(EuclideanAlgorithm algorithm)
@@ -40,7 +40,7 @@ namespace Algorithms.V3.GcdImplementations
             _algorithm = algorithm;
             Milliseconds = 0;
         }
-        public override int Calculate(int first, int second)
+        public int Calculate(int first, int second)
         {
             Stopwatch timer = new Stopwatch();
             timer.Start();

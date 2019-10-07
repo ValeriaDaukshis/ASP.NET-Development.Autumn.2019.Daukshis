@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using Filter.Interfaces;
@@ -7,12 +8,10 @@ namespace Filter.Transformers
 {
     public class DictionaryTransformer : ITransformer
     {
-        private readonly IDoubleComplexDictionary _complexDictionary;
-        private readonly IDoubleSimpleDictionary _simpleDictionary;
-        public DictionaryTransformer(IDoubleComplexDictionary complexDictionary, IDoubleSimpleDictionary simpleDictionary)
+        private readonly IDoubleDictionary _dictionary;
+        public DictionaryTransformer(IDoubleDictionary dictionary)
         {
-            this._complexDictionary = complexDictionary;
-            this._simpleDictionary = simpleDictionary;
+            this._dictionary = dictionary ?? throw new ArgumentNullException();
         }
         /// <summary>
         /// Transforms to string.
@@ -24,7 +23,7 @@ namespace Filter.Transformers
             string num;
             try
             {
-                num = _complexDictionary.GetComplexDictionary()[number];
+                num = _dictionary.ComplexDictionary[number];
                 return num;
             }
             catch (KeyNotFoundException)
@@ -41,7 +40,7 @@ namespace Filter.Transformers
             var word = new StringBuilder();
             foreach (var digit in num) 
             {
-                word.Append($"{_simpleDictionary.GetSimpleDictionary()[digit]} ");
+                word.Append($"{_dictionary.SimpleDictionary[digit]} ");
             } 
             
             word.Remove(word.Length - 1, 1);

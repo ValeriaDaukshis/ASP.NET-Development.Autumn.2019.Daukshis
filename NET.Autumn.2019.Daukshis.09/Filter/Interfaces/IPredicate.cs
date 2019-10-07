@@ -3,8 +3,8 @@
     /// <summary>
     /// Is value Predicate
     /// </summary>
-    public interface IPredicate
+    public interface IPredicate<T>
     {
-        bool IsMatch<T>(T value)  where T : struct;
+        bool IsMatch<T>(T value);
     }
 }

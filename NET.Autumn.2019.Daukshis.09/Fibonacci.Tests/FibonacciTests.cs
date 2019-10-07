@@ -6,8 +6,8 @@ namespace Fibonacci.Tests
 {
     public class FibonacciTests
     {
+        //0 1 1 2 3 
         [TestCase(5, ExpectedResult = 3)]
-        [TestCase(1, ExpectedResult = 1)]
         [TestCase(10, ExpectedResult = 34)]
         [TestCase(25, ExpectedResult = 46368)]
         public int GetFibonacciNumbers_ReturnNthElement(int limit)
@@ -21,7 +21,7 @@ namespace Fibonacci.Tests
         [Test]
         public void GetFibonacciNumbers_SetBibLimit_ArgumentException()
         {
-            Assert.Throws<ArgumentException>(
+            Assert.Throws<OverflowException>(
                 delegate
                 {
                     foreach (var a in NumberExtensions.GetFibonacciNumbers(int.MaxValue))

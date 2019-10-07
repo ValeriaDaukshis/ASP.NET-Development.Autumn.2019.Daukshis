@@ -15,7 +15,7 @@ namespace Filter.StaticArrayExtensions
         /// <param name="numbers">The numbers.</param>
         /// <param name="criterion">The criterion.</param>
         /// <returns>Filtered array</returns>
-        public static T[] Filter<T>(T[] numbers, IPredicate criterion) where T : struct
+        public static T[] Filter<T>(T[] numbers, IPredicate<T> criterion) 
         {
             CheckInput(numbers);
             return numbers.FilterArray(criterion);
@@ -40,7 +40,7 @@ namespace Filter.StaticArrayExtensions
         /// <returns>Array of values in string representation</returns>
         /// <exception cref="ArgumentNullException">Array is null</exception>
         /// <exception cref="ArgumentException">Array has zero length</exception>
-        public static string[] Transform<T>(T[] array, ITransformer transformer) where T : struct
+        public static TV[] Transform<T,TV>(T[] array, ITransformer<T,TV> transformer) 
         {
             CheckInput(array);
             return array.TransformToWords(transformer);
@@ -57,10 +57,10 @@ namespace Filter.StaticArrayExtensions
             array.SortWithComparator(comparator);
         }
 
-        public static T[] TypedArray<T>(T[] array, Type type) 
+        public static TV[] TypedArray<T,TV>(T[] array) 
         {
             CheckInput(array);
-            return array.GetTypedArray(type);
+            return array.GetTypedArray<T,TV>();
         }
         
         private static void CheckInput<T>(T[] array)
@@ -81,7 +81,7 @@ namespace Filter.StaticArrayExtensions
         /// <param name="numbers">The numbers.</param>
         /// <param name="criterion">The criterion.</param>
         /// <returns>Filtered array with predicate</returns>
-        public static T[] FilterArray<T>(this T[] numbers, IPredicate criterion) where T : struct
+        public static T[] FilterArray<T>(this T[] numbers, IPredicate<T> criterion) 
         {
             var filteredList = new List<T>(numbers.Length);
             for (int i = 0; i < numbers.Length; i++)
@@ -133,9 +133,9 @@ namespace Filter.StaticArrayExtensions
         /// <param name="array">The array.</param>
         /// <param name="transformer">The transformer.</param>
         /// <returns>Array of double in string representation</returns>
-        public static string[] TransformToWords<T>(this T[] array, ITransformer<TraceSource,TResult> transformer) where T : struct
+        public static TV[] TransformToWords<T, TV>(this T[] array, ITransformer<T,TV> transformer) 
         {
-            string[] transformedArray = new string[array.Length];
+            TV[] transformedArray = new TV[array.Length];
             for (int i = 0; i < transformedArray.Length; i++)
                 transformedArray[i] = transformer.TransformToWord(array[i]);
             return transformedArray;
@@ -151,16 +151,15 @@ namespace Filter.StaticArrayExtensions
              Array.Sort(array, comparator);
         }
 
-        public static T[] GetTypedArray<T>(this T[] array, Type type)
+        public static TV[] GetTypedArray<T, TV>(this T[] array)
         {
-            var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(type));
+            var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(typeof(TV)));
             for (int i = 0 ; i < array.Length; i++)
-                if (array[i].GetType() == type)
+                if (array[i].GetType() == typeof(TV))
                     ((IList)list).Add(array[i]);
-            T[] a = new T[((IList)list).Count];
+            TV[] a = new TV[((IList)list).Count];
             ((IList)list).CopyTo(a, 0);
             return a;
-
         }
     }
 }

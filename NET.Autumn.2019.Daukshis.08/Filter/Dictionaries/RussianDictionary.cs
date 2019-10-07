@@ -1,17 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Filter.Interfaces;
 
 namespace Filter.Dictionaries
 {
-    public class RussianSimpleDoubleValues : IDoubleSimpleDictionary
+    public class RussianDictionary : IDoubleDictionary
     {
-        /// <summary>
-        /// Gets the simple dictionary.
-        /// </summary>
-        /// <returns>Russian <char, string> dictionary</returns>
-        public Dictionary<char, string> GetSimpleDictionary()
-        {
-            Dictionary<char, string> doubleValues = new Dictionary<char, string>()
+        public Dictionary<double, string> ComplexDictionary => new Dictionary<double, string>()
+            {
+                {Double.NaN, "Не число"},
+                {Double.NegativeInfinity, "Отрицательная бесконечность"},
+                {Double.PositiveInfinity, "Положительная бесконечность"}
+            };
+            
+        public Dictionary<char, string> SimpleDictionary => new Dictionary<char, string>()
             {
                 {'0', "ноль"},
                 {'1', "один"},
@@ -28,7 +30,5 @@ namespace Filter.Dictionaries
                 {'E', "E"},
                 {'+', "плюс"}
             };
-            return doubleValues;
-        }
     }
 }

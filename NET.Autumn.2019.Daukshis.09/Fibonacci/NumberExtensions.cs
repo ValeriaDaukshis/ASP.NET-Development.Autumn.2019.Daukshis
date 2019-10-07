@@ -18,15 +18,20 @@ namespace Fibonacci
             int x1 = 1;
             for (int i = 2; i < limit; i++)
             {
-                int result = x0 + x1;
-                if (result < 0 )
+                int result = x1;
+                try
                 {
-                    throw new ArgumentException("Fib number is heighter than int max value");
-                    //yield break;
+                    result = checked(x0 + x1);
                 }
+                catch (StackOverflowException e)
+                {
+                    Console.WriteLine(e);
+                }
+                    
                 yield return result;
                 x0 = x1;
                 x1 = result;
+                
             }
         }
     }
