@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Filter.Comparators;
 using Filter.Interfaces;
 
@@ -132,7 +133,7 @@ namespace Filter.StaticArrayExtensions
         /// <param name="array">The array.</param>
         /// <param name="transformer">The transformer.</param>
         /// <returns>Array of double in string representation</returns>
-        public static string[] TransformToWords<T>(this T[] array, ITransformer transformer) where T : struct
+        public static string[] TransformToWords<T>(this T[] array, ITransformer<TraceSource,TResult> transformer) where T : struct
         {
             string[] transformedArray = new string[array.Length];
             for (int i = 0; i < transformedArray.Length; i++)

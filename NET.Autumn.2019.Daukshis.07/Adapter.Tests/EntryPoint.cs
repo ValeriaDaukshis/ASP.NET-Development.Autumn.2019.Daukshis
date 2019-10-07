@@ -1,5 +1,9 @@
 ﻿using System;
+using Algorithms.V4.GcdImplementations;
+using Algorithms.V4.Interfaces;
 using Algorithms.V4.StaticClasses;
+using Algorithms.V4.StopWatcherImplementation;
+using Logger = Algorithms.V4.LoggerImplementation.Logger;
 
 namespace Adapter.Tests
 {
@@ -16,6 +20,10 @@ namespace Adapter.Tests
             Console.WriteLine($"Euclidean with params without timer: {GcdAlgorithms.FindGcdByEuclidean(84, 168, 3598, 4568, 8562)}"); 
             Console.WriteLine($"Euclidean with params with timer: {GcdAlgorithms.FindGcdByEuclidean(out milliseconds,38262,252,154, 382654)}, Time: {milliseconds}\n");
             Console.ReadKey();
+
+            Algorithms.V4.Interfaces.ILogger l = new Logger();
+            IAlgorithm al  = new EuclideanAlgorithm();
+            IStopWatcher s = new StopWatcher();
         }
     }
 }
