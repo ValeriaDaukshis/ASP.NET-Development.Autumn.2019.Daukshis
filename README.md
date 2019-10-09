@@ -21,10 +21,10 @@ https://core2.me/me/?cv=28d.2u
 [Up](#stages)
 
 ## <a name="self-stady"></a> [Stage 1. Self-study (05.08.2019 - 15.09.2019)](https://drive.google.com/drive/folders/1l9-adJJR2SbdwOoow67Iz4cDpohaqOiq)
- 
+
 | Task | Task Status | Additional/Comments |
-| -------- | -------- | --------|  
-| [Lections Day 1](https://drive.google.com/drive/folders/0B7WmjuqYed3AWXFzc1Mtcnk3d1k) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)| 
+| -------- | -------- | --------|
+| [Lections Day 1](https://drive.google.com/drive/folders/0B7WmjuqYed3AWXFzc1Mtcnk3d1k) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Lections Day 2](https://drive.google.com/drive/folders/1_B9ncAWoJtoDvG6vQkxyAvMuXDdqXRAw) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|Array.CopyTo, Clone (12 пример LinqPad )
 | [Lections Day 3](https://drive.google.com/drive/folders/1j17L1jUOa9wB1OibGtCuYdsV28kvstr-) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Lections Day 4](https://drive.google.com/drive/folders/1G_Nlntl2BTH0ugKjMVdflPtyQUcUL4Gx) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
@@ -37,7 +37,7 @@ https://core2.me/me/?cv=28d.2u
 | [Проектирование СУБД. Технострим. Модуль 1](https://www.youtube.com/watch?v=R21v8SoIsiY&list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--&index=2&t=929s) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Проектирование СУБД. Технострим. Модуль 2](https://www.youtube.com/watch?v=7t9hLFtN77U&list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--&index=2) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
 | [Проектирование СУБД. Технострим. Модуль 3](https://www.youtube.com/watch?v=fcNhZDWUGDM&list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--&index=3) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
- 
+
 ---
 
 [Up](#stages)
@@ -88,7 +88,8 @@ https://core2.me/me/?cv=28d.2u
         NumbersExtension.InsertNumberIntoAnother(8, 15, 32, 32) => ArgumentOutOfRangeException
         NumbersExtension.InsertNumberIntoAnother(8, 15, 0, 32) => ArgumentOutOfRangeException
         ...
-        
+    
+
 ![Схема к алгоритму](https://github.com/EPM-RD-NETLAB/.NET-Framework-modules/blob/master/Pictures/Scheme.png)    
 2. **(deadline - 19.09.2019, 24.00)** Реализовать *рекурсивный* алгоритм поиска максимального элемента в неотсортированном целочисленом массиве. Решение оформить  в виде статического метода **FindMximumItem** статического класса **ArrayExtension**. Разработать модульные тесты NUnit для тестирования метода. Рассмотреть вариант тестирования массивов большой размерности, элементы которых сгенерированны случайным образом.  
 3. **(deadline - 21.09.2019, 24.00))** Реализовать алгоритм поиска в целочисленном массиве индекса элемента, для которого сумма элементов слева и сумма элементов справа равны. Решение оформить  в виде статического метода **FindBalanceIndex** статического класса **ArrayExtension** (п. 2). Если такого элемента не существует вернуть null. Разработать модульные тесты NUnit. Рассмотреть вариант тестирования массивов большой размерности, элементы которых сгенерированны случайным образом.    
@@ -102,11 +103,11 @@ https://core2.me/me/?cv=28d.2u
         ArrayExtension.FilterArrayByKey(new int[] { 1, 2 }, -1) => ArgumentOutOfRangeException
         ArrayExtension.FilterArrayByKey(null, 0) => ArgumentNullException
         ...
-        
+    
 #### Task Status
 
 | Task | Solution Status | Solution Link | MS Test Status | MS Test Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
-| -------- | -------- | --------| --------|  -------- |  -------- | -------- | -------- |    
+| -------- | -------- | --------| --------|  -------- |  -------- | -------- | -------- |
 | 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Net.Autumn.2019.Daukshis.02/InsertNumber/NumbersExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to MS Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Net.Autumn.2019.Daukshis.02/InsertNumberIntoAnother.MsTests/InsertNumberIntoAnotherMsTests.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Net.Autumn.2019.Daukshis.02/InsertNumberIntoAnother.Tests/InsertNumberIntoAnotherTests.cs) |
 | 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Net.Autumn.2019.Daukshis.02/FindMaxRecursive/ArrayExtension.cs) |  |  | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Net.Autumn.2019.Daukshis.02/FindMaximumItem.Tests/FindMaximumItemTests.cs) |
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Net.Autumn.2019.Daukshis.02/FindBalanceIndexTask/ArrayExtension.cs) |  |  | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/Net.Autumn.2019.Daukshis.02/FindBalanceIndex.Tests/FindBalanceIndexTests.cs) |
@@ -155,14 +156,14 @@ https://core2.me/me/?cv=28d.2u
 ### <a name="4"></a> Day 4. 23.09.2019
 
 #### Задачи
-  
+
 1. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - in class)**   
  	- Проанализировать код, полученный при решении задачи #4 (Day 2. 17.09.2019), на предмет возможности его использования для получения (из исходного) массива, состоящего только из тех элементов исходного, запись которых является полиндромом (симметричным)(например 121, 1345431, 122221 и т.д.). *Функцию, определяющую является ли число полиндромом, реализовать как рекурсивную.*   	
  	- Добавить, если требуется, недостающую функциональность.
 	- Проанализировать полученный код на возможность его использования для получения (из исходного) массива, состоящего только из четных элементов исходного. Добавить, если требуется, недостающую функциональность.
 	- Предложить вариант общей формулировки решенных задач.  
 	- Полученный методы (методы) оформить как метод (методы) расширения для целочисленных массивов. 
- 	
+
 2. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 27.09.2019, 15.00)** 
 	- В статический класс **MathExtension** (п. 1) добавть **FindGcdByEuclidean**-методы которого позволяют выполнять вычисления НОД по алгоритму Евклида для двух, трех и т.д. целых чисел (http://en.wikipedia.org/wiki/Euclidean_algorithm , https://habrahabr.ru/post/205106/, https://habrahabr.ru/post/205106/). Добавить методы, которые помимо вычисления НОД, предоставляют дополнительную возможность определения значение времени, необходимое для выполнения расчета. К разработанному классу добавить **FindGcdByStein**-методы, реализующие алгоритм Стейна (бинарный алгоритм Евклида) для расчета НОД двух, трех и т.д. целых чисел (http://en.wikipedia.org/wiki/Binary_GCD_algorithm, https://habrahabr.ru/post/205106/ ), а также методы,  предоставляющие дополнительную возможность определения значение времени, необходимое для выполнения расчета. Рассмотреть различные возможности реализации методов, возвращающих время вычисления НОД. Разработать модульные тесты.
 
@@ -173,14 +174,14 @@ https://core2.me/me/?cv=28d.2u
 | 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to .cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.04/Filters/ArrayExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.04/FilterArray.Test/FilterArrayTests.cs)
 | 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V1*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/tree/master/NET.Autumn.2019.Daukshis.07/Template.V1) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.07/Template.V1.Tests/TemplateV1Tests.cs) 
 
---- 
+---
 
 [Up](#stages)
 
 ### <a name="5"></a> Day 5. 24.09.2019
 
 #### Задачи
-  
+
 1. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png))**
  Разработать систему типов для описания работы с банковским счетом. Состояние счета определяется его номером, данными о владельце счета (имя, фамилия, e-mail), суммой на счете, его текущим состоянием (активен, закрыт, заморожен ...) и некоторыми бонусными баллами, которые увеличиваются каждый раз при пополнении счета/списании со счета на величины различные для пополнения и списания и рассчитываемые в зависимости от некоторых значений величин «стоимости» баланса и «стоимости» пополнения. Величины «стоимости» баланса и «стоимости» пополнения являются целочисленными значениями и зависят от типа счета, который может быть, Base, Silver, Gold. Для работы со счетом реализовать следующие возможности:
 	- пополнение на счет;
@@ -216,7 +217,7 @@ https://core2.me/me/?cv=28d.2u
 	- [TestCase(1.23333e308d, ExpectedResult = "one point two three three three three E plus three zero eight")]
 	- [TestCase(double.Epsilon, ExpectedResult = "four point nine four zero six five six four five eight four one two four seven E minus three two four")]
 		и т.д. для double.MaxValue, double.MaxValue.
-		
+	
 2. **(![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 28.09.2019, 24.00 )**
 Расширить функциональную возможность типа System.Double, реализовав возможность получения строкового представления вещественного числа в формате IEEE 754. Готовые классы-конверторы не использовать. Разработать модульные тесты. Примерные тест-кейсы (для тестирования специальных значений вещественных чисел возможны варианты).
 	- [TestCase(-255.255, ExpectedResult = "1100000001101111111010000010100011110101110000101000111101011100")]
@@ -253,7 +254,7 @@ https://core2.me/me/?cv=28d.2u
 	Завершите разработку библиотеки, начатой L, добавив недостающий функционал, *не изменяя сигнутуры существующих в типах методов*.
 	
 	Какие класс (классы) необходимо будет изменить в случае, если появиться необходимость добавить реализацию еще одного алгоритма Евклида? обоснуйте целесообразность использования подхода, предложенного L, с точки зрения трудозатрат при добавлении такой функциональности. 
-	  
+	
 	Подумайте, является ли необходимость подсчета времени ответственностью класса алгоритма.
 	
 2. Некто M начал разработку библиотеки (проект *Algorithms.V2*) для алгебраических вычислений. Согласно требованию библиотека должна предоставлять набор типов с удобными для использования различного рода расчетов методами, в частности, методами, реализующими подсчет НОД-а для двух, трех, четырех и т.д. целых чисел классическим алгоритмом Евклида (Стайна), включая возможность подсчета времени вычислений.   
@@ -263,7 +264,7 @@ https://core2.me/me/?cv=28d.2u
 	Какие класс (классы) необходимо будет изменить в случае, если появиться необходимость добавить реализацию еще одного алгоритма? обоснуйте целесообразность использования подхода, предложенного M, с точки зрения трудозатрат при добавлении такой функциональности.   
 	
 3. Некто N начал разработку библиотеки (проект *Algorithms.V3*) для алгебраических вычислений. Согласно требованию библиотека должна предоставлять набор типов с удобными для использования различного рода расчетов методами, в частности, методами, реализующими подсчет НОД-а двух, трех, четырех и т.д. целых чисел классическим алгоритмом Евклида (Стайна), включая возможность подсчета времени вычислений.  
- 
+
 	Завершите разработку библиотеки, начатой N, добавив недостающий функционал, *не изменяя сигнутуры обозначенных в типах методов и наборы публичных членов предложенных типов*. Для реализации для обозначенных алгоритмов возможности подсчета НОД-а для трех, четырех и т.д. целых чисел разработать новый класс, который *расширяет* функциональность исходных, *не используя классического наследования*. Добавить в полученный класс возможность подсчета времени работы алгоритмов.
 	
 	Какие класс (классы) необходимо будет изменить в случае, если появиться необходимость добавить реализацию еще одного алгоритма? обоснуйте целесообразность использования подхода, предложенного N, с точки зрения трудозатрат при добавлении такой функциональности.  
@@ -296,18 +297,18 @@ https://core2.me/me/?cv=28d.2u
 
 #### Task Status
 
-| Step | Task | Solution Status | Solution Link | Additional/Comments |     
-| -------- | -------- | -------- | --------| --------|        
-| 1 | Создание консольного приложения FileCabinetApp | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/File_Cabinet/tree/master/FileCabinetApp) |  |    
-| 2 | Создание сервиса FileCabinetService | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
-| 3 | Редактирование и валидация данных | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
-| 4 | Поиск | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
-| 5 | Рефакторинг | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
-| 6 | Экспорт в CSV и XML | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
-| 7 | Хранилище на файловой системе | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
-| 8 | Расширение команды | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |     
-| 9 | Импорт из CSV и XML | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
-| 10 | Удаление записей | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
+| Step | Task | Solution Status | Solution Link | Additional/Comments |
+| -------- | -------- | -------- | --------| --------|
+| 1 | Создание консольного приложения FileCabinetApp | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/File_Cabinet/tree/master/FileCabinetApp) |  |
+| 2 | Создание сервиса FileCabinetService | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
+| 3 | Редактирование и валидация данных | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
+| 4 | Поиск | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
+| 5 | Рефакторинг | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
+| 6 | Экспорт в CSV и XML | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
+| 7 | Хранилище на файловой системе | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
+| 8 | Расширение команды | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
+| 9 | Импорт из CSV и XML | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
+| 10 | Удаление записей | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |
 
 ---
 
@@ -384,57 +385,56 @@ https://core2.me/me/?cv=28d.2u
 4. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 05.10.2019, 24.00**) Разработать обобщенный типизированный класс-коллекцию `Queue<T>`, реализующий основные операции для работы с очередью, и предоставляющий возможность итерирования по ней. Протестировать методы разработанного класса.
 5. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 10.10.2019, 24.00**) Заполните таблицу
 
-| Collection | Indexed lookup | Keyed lookup | Value lookup | Addition |  Removal |  Memory |      
-| -------- | -------- | --------| --------|  -------- |  -------- |  -------- |    
-| **Списки** | | | | | | |   
-| `T[]` | O(1) | -  | O(n) | O(n) | O(n) | Elements + additional info (like array's length) |   
-| `List<T>` | | | | | | |   
-|`LinkedList<T>`  |  |  |  |  |  |  |  
-|`Collection<T>`  |  |  |  |  |  |  |  
-|`BindingList<T>`  |  |  |  |  |  |  |  
-|`ObservableCollection<T>`  |  |  |  |  |  |  |
-|`KeyCollection<TKey, TItem>`  |  |  |  |  |  |  |
-|`ReadOnlyCollection<T>`  |  |  |  |  |  |  |
-|`ReadOnlyObservableCollection<T>` |  |  |  |  |  |  |
-**Словари** | | | | | | |  
-|`Dictionary<TKey, TValue>`   |  |  |  |  |  |  |
-|`SortedList<TKey, TValue>`   |  |  |  |  |  |  |
-|`SortedDictionary<TKey, TValue>`  |  |  |  |  |  |  |
-|`SortedDictionary<TKey,TValue>`.   |  |  |  |  |  |  |  
-`ReadOnlyDictionary<TKey, TValue> `   |  |  |  |  |  |  |
-**Множества** | | | | | | | 
-|`HashSet<T>`  |  |  |  |  |  |  |
-|`SortedSet<T>`   |  |  |  |  |  |  |
-| **Очередь, стек** | | | | | | | 
-|`Queue<T>`  |  |  |  |  |  |  |
-|`Stack<T>`  |  |  |  |  |  |  |
+| Collection | Indexed lookup | Keyed lookup | Value lookup | Addition |  Removal |  Memory |
+| -------- | -------- | --------| --------|  -------- |  -------- |  -------- |
+| **Списки** | | | | | | |
+| `T[]` | O(1) | -  | O(n) | O(n) | O(n) | Elements + additional info (like array's length) |
+| `List<T>` | O(1) | - | O(n) | O(1) | O(n) | Automatically resizable array |
+|`LinkedList<T>`  | - | - | O(n) | O(1) | O(1) | Doubly-linked list |
+|`Collection<T>`  | O(1) | - | O(n) | O(1) | O(n) |  |
+|`BindingList<T>`  | O(1) | - | O(n) | O(1) | O(n) |  |
+|`ObservableCollection<T>`  | O(1) | - | O(n) | O(1) | O(n) |  |
+|`KeyCollection<TKey, TItem>`  | O(1) | O(1) | O(1) | O(1) | O(1) |  |
+|`ReadOnlyCollection<T>`  | O(1) | - | O(n) | - | - |  |
+|`ReadOnlyObservableCollection<T>` | O(1) | - | O(n) | - | - |  |
+|**Словари** | | | | | | |
+|`Dictionary<TKey, TValue>`  | O(1) | O(1) | O(1) | O(1) | O(1) | Hash table |
+|`SortedList<TKey, TValue>`  | O(1) | O(1) | O(log n) | O(n) | O(n) | Sorted resizable array |
+|`SortedDictionary<TKey, TValue>` | O(1) | O(1) | O(log n) | O(log n) | O(log n) | Red- black tree |
+|`ReadOnlyDictionary<TKey, TValue> `  | O(1) | O(1) | O(1) | - | - | Hash table |
+|**Множества** | | | | | | |
+|`HashSet<T>`  | - | - | O(1) | O(1) | O(1) | Hash table |
+|`SortedSet<T>`   | - | - | O(log n) | O(log n) | O(log n) | Red- black tree |
+| **Очередь, стек** | | | | | | |
+|`Queue<T>`  | - | - | - | O(1) | O(1) | Automatically resizable cyclic array |
+|`Stack<T>`  | - | - | - | O(1) | O(1) | Automatically resizable array |
 * `*` If ... .
 * `**`If ... .
 
 
-|Collection | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection | 
-| -------- | -------- | --------| --------|  -------- |  -------- |  -------- | 
-**Списки** | | | | | | |  
-|`T[]` | `System.Array` | - | No | Yes | Index | No |   
-|`List<T>` | |  | | | | |   
-|`LinkedList<T>` | |  | | | | |   
-|`Collection<T>` | |  | | | | |   
-|`BindingList<T>` | |  | | | | |   
-|`ObservableCollection<T>`  | |  | | | | |   
-|`KeyCollection<TKey, TItem>`  | |  | | | | |   
-|`ReadOnlyCollection<T>` | |  | | | | |   
-|`ReadOnlyObservableCollection<T>`  | |  | | | | | 
-|**Словари** | | | | | | | 
-|`Dictionary<TKey, TValue>` | |  | | | | |    
-|`SortedList<TKey, TValue>`  | |  | | | | |   
-|`SortedDictionary<TKey, TValue>`  | |  | | | | |   
-|`ReadOnlyDictionary<TKey, TValue>`  | |  | | | | |   
-|**Множества** | | | | | | | 
-|`HashSet<T>` | |  | | | | |   
-|`SortedSet<T>`  | |  | | | | |   
-|**Очередь, стек** | | | | | | | 
-|`Queue<T>` | |  | | | | |   
-|`Stack<T>` | |  | | | | |   
+|Collection | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection |
+| -------- | -------- | --------| --------|  -------- |  -------- |  -------- |
+|**Списки** | | | | | | |
+|`T[]` | `System.Array` | - | No | Yes | Index | No |
+|`List<T>` | |  | | | | |
+|`LinkedList<T>` | |  | | | | |
+|`Collection<T>` | |  | | | | |
+|`BindingList<T>` | |  | | | | |
+|`ObservableCollection<T>`  | |  | | | | |
+|`KeyCollection<TKey, TItem>`  | |  | | | | |
+|`ReadOnlyCollection<T>` | |  | | | | |
+|`ReadOnlyObservableCollection<T>`  | |  | | | | |
+|**Словари** | | | | | | |
+|`Dictionary<TKey, TValue>` | |  | | | | |
+|`SortedList<TKey, TValue>`  | |  | | | | |
+|`SortedDictionary<TKey, TValue>`  | |  | | | | |
+|`ReadOnlyDictionary<TKey, TValue>`  | |  | | | | |
+|**Множества** | | | | | | |
+|`HashSet<T>` | |  | | | | |
+|`SortedSet<T>`  | |  | | | | |
+|**Очередь, стек** | | | | | | |
+|`Queue<T>` | |  | | | | |
+|`Stack<T>` | |  | | | | |
 
 * `*` ... .
 * `**` ... .
