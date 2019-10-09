@@ -55,6 +55,13 @@ namespace Filter.StaticArrayExtensions
             CheckInput(array);
             array.SortWithComparator(comparator);
         }
+        /// <summary>
+        /// TypedArray
+        /// </summary>
+        /// <param name="array"></param>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TResult"></typeparam>
+        /// <returns>typed array</returns>
         public static TResult[] TypedArray<TSource,TResult>(TSource[] array) 
         {
             CheckInput(array);
@@ -68,7 +75,6 @@ namespace Filter.StaticArrayExtensions
             if (array.Length == 0)
                 throw new ArgumentException("Array has zero length");
         }
-        
     }
     
     public static class MethodsExtensions
@@ -149,6 +155,13 @@ namespace Filter.StaticArrayExtensions
              Array.Sort(array, comparator);
         }
         
+        /// <summary>
+        /// GetTypedArray
+        /// </summary>
+        /// <param name="array">init array</param>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TResult"></typeparam>
+        /// <returns>typed array</returns>
         public static TResult[] GetTypedArray<TSource, TResult>(this TSource[] array)
         {
             var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(typeof(TResult)));
