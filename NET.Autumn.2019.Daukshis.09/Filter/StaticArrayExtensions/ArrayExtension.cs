@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Filter.Comparator;
 using Filter.Interfaces;
@@ -54,7 +55,11 @@ namespace Filter.StaticArrayExtensions
             CheckInput(array);
             array.SortWithComparator(comparator);
         }
-        
+        public static TResult[] TypedArray<TSource,TResult>(TSource[] array) 
+        {
+            CheckInput(array);
+            return array.GetTypedArray<TSource,TResult>();
+        }
         
         private static void CheckInput<TSource>(TSource[] array)
         {
@@ -142,6 +147,18 @@ namespace Filter.StaticArrayExtensions
         public static void SortWithComparator<TSource>(this TSource[] array, IComparer<TSource> comparator)
         {
              Array.Sort(array, comparator);
+        }
+        
+        public static TResult[] GetTypedArray<TSource, TResult>(this TSource[] array)
+        {
+            var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(typeof(TResult)));
+            for (int i = 0 ; i < array.Length; i++)
+                if (array[i].GetType() == typeof(TResult))
+                    ((IList)list).Add(array[i]);
+            TResult[] a = new TResult[((IList)list).Count];
+            ((IList)list).CopyTo(a, 0);
+            return a;
+
         }
         
     }

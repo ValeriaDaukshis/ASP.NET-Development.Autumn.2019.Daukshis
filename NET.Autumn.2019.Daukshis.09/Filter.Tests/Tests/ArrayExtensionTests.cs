@@ -138,5 +138,41 @@ namespace Filter.Tests.Tests
             ArrayExtension.OrderAccordingTo(actual, new CompareByNumberOfLetters());
             Assert.AreEqual(expected, actual); 
         }
+        
+        //TYPED ARRAY
+        [TestCase(new object[]{"25adsa",125, 36.5, "46sd", "16ahg"},typeof(string), new string[]{ "25adsa", "46sd", "16ahg"})]
+        [TestCase(new object[]{'3',12, '4', '5', "fd"}, typeof(string), new string[] { "fd"})]
+        [TestCase(new object[]{"A", "a", "Ba", "b"}, typeof(string), new string[] {"A", "a", "Ba", "b"})]
+        //[TestCase(new object[]{null, "a", "B", "b"}, typeof(string),new string[] { "a", "B", "b", null})]
+        public void TypedArray_GetStringArray(object[] array,Type type, string[] expected)
+        {
+            string[] actual = ArrayExtension.TypedArray<object, string>(array);
+            Assert.AreEqual(expected, actual); 
+        }
+
+
+        [TestCase(new object[]{'3',12, '4', '5', "fd"}, typeof(char), new char[] { '3', '4', '5'})]
+        public void TypedArray_GetCharArray(object[] array,Type type, char[] expected)
+        {
+            char[] actual = ArrayExtension.TypedArray<object, char>(array);
+            Assert.AreEqual(expected, actual); 
+        }
+
+
+        [TestCase(new object[]{"A", 1, 25, 36.5,"a", "Ba",16, "b"}, typeof(int), new int[] {1, 25, 16})]
+        public void TypedArray_GetInt32Array(object[] array,Type type, int[] expected)
+        {
+            int[] actual = ArrayExtension.TypedArray<object, int>(array);
+            Assert.AreEqual(expected, actual); 
+        }
+
+        [TestCase(new object[]{"25adsa",125, 36.5, "46sd", "16ahg"},typeof(double), new double[]{ 36.5})]
+        public void TypedArray_GetDoubleArray(object[] array,Type type, double[] expected)
+        {
+            double[] actual = ArrayExtension.TypedArray<object, double>(array);
+            Assert.AreEqual(expected, actual); 
+
+        }
+
     }
 }
