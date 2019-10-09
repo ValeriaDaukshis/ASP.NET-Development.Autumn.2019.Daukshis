@@ -8,6 +8,6 @@ namespace Filter.Interfaces
     public interface IDoubleDictionary
     {
         Dictionary<char, string> SimpleDictionary { get; }
-        Dictionary<string, string> ComplexDictionary { get; }
+        Dictionary<double, string> ComplexDictionary { get; }
     }
 }

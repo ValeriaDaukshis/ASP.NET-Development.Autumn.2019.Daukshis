@@ -1,12 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
-namespace Filter.Comparators
+namespace Filter.Comparator
 {
     public class CompareGenerics 
     {
-        public int Compare<T>(T x, T y)
+        /// <summary>
+        /// Compare
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <typeparam name="TSource"></typeparam>
+        /// <returns>Comparation result</returns>
+        public int Compare<TSource>(TSource x, TSource y)
         {
             return CompareValues(x.ToString(), y.ToString());
         }

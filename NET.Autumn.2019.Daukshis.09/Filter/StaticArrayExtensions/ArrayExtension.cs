@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Filter.Comparators;
+using Filter.Comparator;
 using Filter.Interfaces;
 
 namespace Filter.StaticArrayExtensions
@@ -15,7 +13,7 @@ namespace Filter.StaticArrayExtensions
         /// <param name="numbers">The numbers.</param>
         /// <param name="criterion">The criterion.</param>
         /// <returns>Filtered array</returns>
-        public static T[] Filter<T>(T[] numbers, IPredicate<T> criterion) 
+        public static TSource[] Filter<TSource>(TSource[] numbers, IPredicate<TSource> criterion) 
         {
             CheckInput(numbers);
             return numbers.FilterArray(criterion);
@@ -26,7 +24,7 @@ namespace Filter.StaticArrayExtensions
         /// </summary>
         /// <param name="numbers">The numbers.</param>
         /// <returns>Max value in array</returns>
-        public static T FindMaximumItem<T> (T[] numbers) 
+        public static TSource FindMaximumItem<TSource> (TSource[] numbers) 
         {
             CheckInput(numbers);
             return numbers.FindMax();
@@ -40,7 +38,7 @@ namespace Filter.StaticArrayExtensions
         /// <returns>Array of values in string representation</returns>
         /// <exception cref="ArgumentNullException">Array is null</exception>
         /// <exception cref="ArgumentException">Array has zero length</exception>
-        public static TV[] Transform<T,TV>(T[] array, ITransformer<T,TV> transformer) 
+        public static TResult[] Transform<TSource,TResult>(TSource[] array, ITransformer<TSource,TResult> transformer) 
         {
             CheckInput(array);
             return array.TransformToWords(transformer);
@@ -51,19 +49,14 @@ namespace Filter.StaticArrayExtensions
         /// </summary>
         /// <param name="array">The array.</param>
         /// <param name="comparator">The comparator.</param>
-        public static void OrderAccordingTo<T>(T[] array, IComparer<T> comparator)
+        public static void OrderAccordingTo<TSource>(TSource[] array, IComparer<TSource> comparator)
         {
             CheckInput(array);
             array.SortWithComparator(comparator);
         }
-
-        public static TV[] TypedArray<T,TV>(T[] array) 
-        {
-            CheckInput(array);
-            return array.GetTypedArray<T,TV>();
-        }
         
-        private static void CheckInput<T>(T[] array)
+        
+        private static void CheckInput<TSource>(TSource[] array)
         {
             if (array == null)
                 throw new ArgumentNullException("Array is null ");
@@ -81,9 +74,9 @@ namespace Filter.StaticArrayExtensions
         /// <param name="numbers">The numbers.</param>
         /// <param name="criterion">The criterion.</param>
         /// <returns>Filtered array with predicate</returns>
-        public static T[] FilterArray<T>(this T[] numbers, IPredicate<T> criterion) 
+        public static TSource[] FilterArray<TSource>(this TSource[] numbers, IPredicate<TSource> criterion) 
         {
-            var filteredList = new List<T>(numbers.Length);
+            var filteredList = new List<TSource>(numbers.Length);
             for (int i = 0; i < numbers.Length; i++)
             {
                 if(criterion.IsMatch(numbers[i]))
@@ -97,13 +90,13 @@ namespace Filter.StaticArrayExtensions
         /// </summary>
         /// <param name="array">The array.</param>
         /// <returns>Max value in array</returns>
-        public static T FindMax<T>(this T[] array) 
+        public static TSource FindMax<TSource>(this TSource[] array) 
         {
             if (array.Length == 1)
                 return array[0];
             int count = array.Length > 100_000 ? 10_000 : 1;
 
-            T maxValue = array[0];
+            TSource maxValue = array[0];
             int nextElement = 0;
             for (int i = 0; i < count; i++)
             {
@@ -116,7 +109,7 @@ namespace Filter.StaticArrayExtensions
             } 
             return maxValue;
 
-            T FindBiggestNumberRecursive(ref T biggestNumber, int nextIndex, int subArrayLength, int currentIndex)
+            TSource FindBiggestNumberRecursive(ref TSource biggestNumber, int nextIndex, int subArrayLength, int currentIndex)
             {
                 if(new CompareGenerics().Compare(array[nextIndex], biggestNumber) == 1)
                     biggestNumber = array[nextIndex];
@@ -133,9 +126,9 @@ namespace Filter.StaticArrayExtensions
         /// <param name="array">The array.</param>
         /// <param name="transformer">The transformer.</param>
         /// <returns>Array of double in string representation</returns>
-        public static TV[] TransformToWords<T, TV>(this T[] array, ITransformer<T,TV> transformer) 
+        public static TResult[] TransformToWords<TSource, TResult>(this TSource[] array, ITransformer<TSource,TResult> transformer) 
         {
-            TV[] transformedArray = new TV[array.Length];
+            TResult[] transformedArray = new TResult[array.Length];
             for (int i = 0; i < transformedArray.Length; i++)
                 transformedArray[i] = transformer.TransformToWord(array[i]);
             return transformedArray;
@@ -146,20 +139,10 @@ namespace Filter.StaticArrayExtensions
         /// </summary>
         /// <param name="array">The array.</param>
         /// <param name="comparator">The comparator.</param>
-        public static void SortWithComparator<T>(this T[] array, IComparer<T> comparator)
+        public static void SortWithComparator<TSource>(this TSource[] array, IComparer<TSource> comparator)
         {
              Array.Sort(array, comparator);
         }
-
-        public static TV[] GetTypedArray<T, TV>(this T[] array)
-        {
-            var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(typeof(TV)));
-            for (int i = 0 ; i < array.Length; i++)
-                if (array[i].GetType() == typeof(TV))
-                    ((IList)list).Add(array[i]);
-            TV[] a = new TV[((IList)list).Count];
-            ((IList)list).CopyTo(a, 0);
-            return a;
-        }
+        
     }
 }

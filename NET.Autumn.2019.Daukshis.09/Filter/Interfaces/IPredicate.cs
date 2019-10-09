@@ -3,8 +3,8 @@
     /// <summary>
     /// Is value Predicate
     /// </summary>
-    public interface IPredicate<T>
+    public interface IPredicate<TSource>
     {
-        bool IsMatch<T>(T value);
+        bool IsMatch<TSource>(TSource value);
     }
 }

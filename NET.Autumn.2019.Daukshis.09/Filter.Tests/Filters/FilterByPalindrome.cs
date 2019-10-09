@@ -3,7 +3,7 @@ using Filter.Interfaces;
 
 namespace Filter.Filters
 {
-    public class FilterByPalindrome<T> : IPredicate<T>
+    public class FilterByPalindrome<TSource> : IPredicate<TSource>
     {
         /// <summary>
         /// Determines whether the specified value is match.
@@ -12,7 +12,7 @@ namespace Filter.Filters
         /// <returns>
         ///   <c>true</c> if the specified value is match; otherwise, <c>false</c>.
         /// </returns>
-        public bool IsMatch<T>(T value) 
+        public bool IsMatch<TSource>(TSource value) 
         {
             return IsMatch(value.ToString());
         }

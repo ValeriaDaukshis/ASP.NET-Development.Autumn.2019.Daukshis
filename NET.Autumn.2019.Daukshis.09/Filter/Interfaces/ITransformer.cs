@@ -3,8 +3,8 @@
     /// <summary>
     /// Transform double value to words
     /// </summary>
-    public interface ITransformer<T, TV>
+    public interface ITransformer<TSource, TResult>
     {
-        TV TransformToWord(T value);
+        TResult TransformToWord(TSource value);
     }
 }

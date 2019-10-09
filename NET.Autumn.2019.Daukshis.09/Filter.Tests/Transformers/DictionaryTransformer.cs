@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
+﻿
 using System.Text;
 using Filter.Interfaces;
 
 namespace Filter.Transformers
 {
-    public class DictionaryTransformer<T> : ITransformer<T,string>
+    public class DictionaryTransformer : ITransformer<double,string>
     {
         private readonly IDoubleDictionary _dictionary;
         public DictionaryTransformer(IDoubleDictionary dictionary)
@@ -20,25 +17,18 @@ namespace Filter.Transformers
         /// </summary>
         /// <param name="number">The number.</param>
         /// <returns>Double value in word format</returns>
-        public string TransformToWord(T number)
+        public string TransformToWord(double number)
         {
-            string num;
-            try
+            if(_dictionary.ComplexDictionary.ContainsKey(number))
             {
-                num = _dictionary.ComplexDictionary[number.ToString()];
-                return num;
+                return _dictionary.ComplexDictionary[number];
             }
-            catch (KeyNotFoundException)
-            {
-                num = DigitDictionary(number.ToString());
-            }
-
-            return num;
+            return DigitDictionary(number.ToString());
         }
         
         private string DigitDictionary(string value)
         {
-            string num = value.ToString();
+            string num = value;
             var word = new StringBuilder();
             foreach (var digit in num) 
             {

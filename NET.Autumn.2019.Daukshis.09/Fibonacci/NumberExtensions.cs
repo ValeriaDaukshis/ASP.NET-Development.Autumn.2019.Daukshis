@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace Fibonacci
 {
@@ -10,15 +11,17 @@ namespace Fibonacci
         /// </summary>
         /// <param name="limit">count of numbers</param>
         /// <returns>Fibonacci number</returns>
-        public static IEnumerable<int> GetFibonacciNumbers(int limit)
+        public static IEnumerable<ulong> GetFibonacciNumbers(int limit)
         {
-            yield return 0;
-            yield return 1;
-            int x0 = 0;
-            int x1 = 1;
+            if(limit <= 0)
+                throw new ArgumentException();
+            
+            ulong x0 = 0, x1 = 1;
+            yield return x0;
+            yield return x1;
             for (int i = 2; i < limit; i++)
             {
-                int result = x1;
+                ulong result = x1;
                 try
                 {
                     result = checked(x0 + x1);

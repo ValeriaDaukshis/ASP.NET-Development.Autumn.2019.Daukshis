@@ -1,23 +1,27 @@
 using System;
-using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace Fibonacci.Tests
 {
     public class FibonacciTests
     {
-        //0 1 1 2 3 
-        [TestCase(5, ExpectedResult = 3)]
-        [TestCase(10, ExpectedResult = 34)]
-        [TestCase(25, ExpectedResult = 46368)]
-        public int GetFibonacciNumbers_ReturnNthElement(int limit)
+        [TestCase(5, ExpectedResult = new ulong[]{0, 1, 1, 2, 3})]
+        [TestCase(10, ExpectedResult = new ulong[]{0, 1, 1, 2, 3, 5, 8, 13, 21, 34})]
+        [TestCase(25, 
+            ExpectedResult = new ulong[]{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368})]
+        public ulong[] GetFibonacciNumbers_ReturnNthElement(int limit)
         {
-            int result = 0;
+            ulong[] result = new ulong[limit];
+            int i = 0;
             foreach (var a in NumberExtensions.GetFibonacciNumbers(limit))
-                result = a;
+            {
+                result[i] = a;
+                ++i;
+            }
 
             return result;
         }
+        
         [Test]
         public void GetFibonacciNumbers_SetBibLimit_ArgumentException()
         {

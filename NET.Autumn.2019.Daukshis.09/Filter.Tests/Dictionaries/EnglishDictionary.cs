@@ -5,13 +5,13 @@ using Filter.Interfaces;
 
 namespace Filter.Dictionaries
 {
-    public class EnglishDictionary<T> : IDoubleDictionary
+    public class EnglishDictionary : IDoubleDictionary
     { 
-        public Dictionary<string, string> ComplexDictionary => new Dictionary<string, string>()
+        public Dictionary<double, string> ComplexDictionary => new Dictionary<double, string>()
         {
-            {Double.NaN.ToString(), "Not a number"},
-            {Double.NegativeInfinity.ToString(), "Negative infinity"},
-            {Double.PositiveInfinity.ToString(), "Positive infinity"}
+            {Double.NaN, "Not a number"},
+            {Double.NegativeInfinity, "Negative infinity"},
+            {Double.PositiveInfinity, "Positive infinity"}
         };
        
         public Dictionary<char, string> SimpleDictionary => new Dictionary<char, string>()

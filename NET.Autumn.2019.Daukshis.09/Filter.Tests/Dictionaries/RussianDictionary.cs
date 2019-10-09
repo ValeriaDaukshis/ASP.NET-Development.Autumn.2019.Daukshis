@@ -4,13 +4,13 @@ using Filter.Interfaces;
 
 namespace Filter.Dictionaries
 {
-        public class RussianDictionary<T> : IDoubleDictionary
+        public class RussianDictionary : IDoubleDictionary
         {
-            public Dictionary<string, string> ComplexDictionary => new Dictionary<string, string>()
+            public Dictionary<double, string> ComplexDictionary => new Dictionary<double, string>()
             {
-                {Double.NaN.ToString(), "Не число"},
-                {Double.NegativeInfinity.ToString(), "Отрицательная бесконечность"},
-                {Double.PositiveInfinity.ToString(), "Положительная бесконечность"}
+                {Double.NaN, "Не число"},
+                {Double.NegativeInfinity, "Отрицательная бесконечность"},
+                {Double.PositiveInfinity, "Положительная бесконечность"}
             };
             
             public Dictionary<char, string> SimpleDictionary => new Dictionary<char, string>()

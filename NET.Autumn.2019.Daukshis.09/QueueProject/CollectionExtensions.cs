@@ -7,13 +7,13 @@ namespace QueueProject
 {
     public class Queue<T> : IEnumerable<T>, ICollection, IEquatable<Queue<T>>
     {
-        private T[] array = { };
+        private T[] array;
         private int head = 0;
         private int tail = 0;
         private int version = 0;
-        private int capacity = 10;
+        private int capacity = 4;
         private int size = 0;
-        public int Count { get; }
+        public int Count => size;
         public bool IsSynchronized { get; }
         public object SyncRoot { get; }
 
@@ -45,6 +45,13 @@ namespace QueueProject
         /// </summary>
         public void Clear()
         {
+            if(head < tail)
+                Array.Clear(array, head, tail);
+            else
+            {
+                Array.Clear(array, head, array.Length - head);
+                Array.Clear(array, 0, tail);
+            }
             tail = 0;
             head = 0;
             size = 0;
@@ -59,10 +66,13 @@ namespace QueueProject
         public bool Contains(T item)
         {
             int count = size;
+            int headPointer = head;
             while (count-- > 0)
             {
                 if (item != null && array[count].Equals(item))
                     return true;
+               
+                headPointer = (headPointer + 1) % array.Length;
             }
 
             return false;
@@ -74,13 +84,13 @@ namespace QueueProject
         /// <param name="item">Item to add.</param>
         public void Enqueue(T item)
         {
-            if (size + 1 == capacity)
+            if (size == capacity)
             {
                 SetCapacity();
             }
             
             array[tail] = item;
-            ++tail;
+            tail = (tail + 1) % this.array.Length;
             ++size;
             ++version;
         }
@@ -92,10 +102,17 @@ namespace QueueProject
         {
             capacity += 10;
             T[] newArray = new T[capacity];
-            Array.Copy(array, head, newArray, 0, array.Length - head);
+            if(head < tail)
+                Array.Copy(array, head, newArray, 0, size);
+            else
+            {
+                Array.Copy(array, head, newArray, 0, array.Length - head);
+                Array.Copy(array, 0, newArray, array.Length - head, tail);
+
+            }
             array = newArray;
             head = 0;
-            tail = size;
+            tail = size != capacity ? size : 0;
             version++;
         }
 
@@ -114,9 +131,11 @@ namespace QueueProject
         /// <returns>Head element.</returns>
         public T DeQueue()
         {
+            if(size == 0)
+                throw new InvalidOperationException("The queue size is zero");
             T element = array[head];
             array[head] = default(T);
-            ++head;
+            head = (head + 1) % array.Length;
             ++version;
             --size;
             return element;
@@ -129,7 +148,17 @@ namespace QueueProject
         /// <param name="index">Index in the array at which storing begins.</param>
         public void CopyTo(Array array, int index)
         {
-            Array.Copy(this.array, 0, array, index, array.Length);
+            if(array == null)
+                throw new ArgumentNullException("Array is null");
+            if(index < 0 || index > array.Length)
+                throw new ArgumentOutOfRangeException("Invalid index");
+            if(array.Length - index < size)
+                throw new ArgumentException("Size of source array is bigger than destination");
+            int numOfElements = (this.array.Length - head < size) ? this.array.Length - index : size;
+            Array.Copy(this.array, head, array, index, numOfElements);
+            if(size - numOfElements > 0)
+                Array.Copy(this.array, 0, array, index + this.array.Length - head, size - numOfElements);
+
         }
 
         /// <summary>
@@ -141,7 +170,12 @@ namespace QueueProject
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return array.Equals(other);
+            if (array.Length != other.array.Length)
+                return false;
+            for (int i = 0; i < array.Length; i++)
+                if (!array[i].Equals(other.array[i]))
+                    return false;
+            return true;
         }
 
         /// <summary>
