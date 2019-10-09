@@ -1,8 +1,10 @@
 using System;
+using Filter.Comparator;
 using Filter.Comparators;
 using Filter.Dictionaries;
 using Filter.Filters;
 using Filter.StaticArrayExtensions;
+using Filter.Tests.Comparators;
 using Filter.Transformers;
 using NUnit.Framework;
 
@@ -17,8 +19,13 @@ namespace Filter.Tests.Tests
         [TestCase(new int[] { -100, -20, 0 }, ExpectedResult = 0)]
         [TestCase(new int[] {145, -89, 145, 145, 33}, ExpectedResult = 145)]
         [TestCase(new int[] {-1}, ExpectedResult = -1)]
-        public int FindMaximumItem_Array_MaxNumberInArray(int[] actual)
-            => ArrayExtension.FindMaximumItem(actual);
+        public int FindMaximumItem_Array_MaxNumberInInt32Array(int[] actual)
+            => ArrayExtension.FindMaximumItem(actual, new CompareInt32Generics());
+        
+        [TestCase(new double[] { 0, 15.32, 32.33, 125.01, 125.001}, ExpectedResult = 125.01)]
+        [TestCase(new double[] { 0, 15.32, 32.33, 125.00001, 125.0001}, ExpectedResult = 125.00001)]//Eps = 0.001
+        public double FindMaximumItem_Array_MaxNumberInDoubleArray(double[] actual)
+            => ArrayExtension.FindMaximumItem(actual, new CompareDoubleGenerics());
         
         [Test]
         public void FindMaximumItem_BigLengthArray_MaxNumberExpected()
@@ -29,7 +36,7 @@ namespace Filter.Tests.Tests
                 array[i] = rand.Next(0, 10000);  
 
             array[rand.Next(100, 100_000_000)] = 1010101; 
-            int actual = ArrayExtension.FindMaximumItem(array);
+            int actual = ArrayExtension.FindMaximumItem(array, new CompareInt32Generics());
             int expected = 1010101;
             Assert.AreEqual(expected, actual);
         }
@@ -38,14 +45,14 @@ namespace Filter.Tests.Tests
         public void FindMaximumItem_ZeroLengthArray_ArgumentException()
         {
             Assert.Throws(typeof(ArgumentException),
-                () => ArrayExtension.FindMaximumItem(new int[] { }));
+                () => ArrayExtension.FindMaximumItem(new int[] { }, new CompareInt32Generics()));
         }
 
         [Test]
         public void FindMaximumItem_ZeroLengthArray_ArgumentNullException()
         {
             Assert.Throws(typeof(ArgumentNullException),
-                () => ArrayExtension.FindMaximumItem<object>(null));
+                () => ArrayExtension.FindMaximumItem<object>(null, null));
         }
         
         // FILTER

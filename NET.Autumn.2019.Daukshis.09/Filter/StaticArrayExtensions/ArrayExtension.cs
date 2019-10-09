@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Filter.Comparator;
 using Filter.Interfaces;
 
 namespace Filter.StaticArrayExtensions
@@ -25,10 +24,10 @@ namespace Filter.StaticArrayExtensions
         /// </summary>
         /// <param name="numbers">The numbers.</param>
         /// <returns>Max value in array</returns>
-        public static TSource FindMaximumItem<TSource> (TSource[] numbers) 
+        public static TSource FindMaximumItem<TSource> (TSource[] numbers, IComparer<TSource> comparator) 
         {
             CheckInput(numbers);
-            return numbers.FindMax();
+            return numbers.FindMax(comparator);
         }
 
         /// <summary>
@@ -101,7 +100,7 @@ namespace Filter.StaticArrayExtensions
         /// </summary>
         /// <param name="array">The array.</param>
         /// <returns>Max value in array</returns>
-        public static TSource FindMax<TSource>(this TSource[] array) 
+        public static TSource FindMax<TSource>(this TSource[] array, IComparer<TSource> comparator) 
         {
             if (array.Length == 1)
                 return array[0];
@@ -122,7 +121,7 @@ namespace Filter.StaticArrayExtensions
 
             TSource FindBiggestNumberRecursive(ref TSource biggestNumber, int nextIndex, int subArrayLength, int currentIndex)
             {
-                if(new CompareGenerics().Compare(array[nextIndex], biggestNumber) == 1)
+                if(comparator.Compare(array[nextIndex], biggestNumber) == 1)
                     biggestNumber = array[nextIndex];
                 if (currentIndex == subArrayLength)
                     return biggestNumber;
