@@ -16,6 +16,7 @@ https://core2.me/me/?cv=28d.2u
    - [Day 7. 30.09.2019](#7) 
    - [Day 8. 01.10.2019](#8) 
    - [Day 9. 03.10.2019](#9)
+   - [Day 10. 07.10.2019](#10)
 
 ---
 [Up](#stages)
@@ -416,8 +417,8 @@ https://core2.me/me/?cv=28d.2u
 | -------- | -------- | --------| --------|  -------- |  -------- |  -------- |
 |**Списки** | | | | | | |
 |`T[]` | `System.Array` | - | No | Yes | Index | No |
-|`List<T>` | |  | | | | |
-|`LinkedList<T>` | |  | | | | |
+|`List<T>` | System.Collections.Generic |  | | | Index | No |
+|`LinkedList<T>` | System.Collections.Generic |  | | | | |
 |`Collection<T>` | |  | | | | |
 |`BindingList<T>` | |  | | | | |
 |`ObservableCollection<T>`  | |  | | | | |
@@ -440,13 +441,20 @@ https://core2.me/me/?cv=28d.2u
 * `**` ... .
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
-| -------- | -------- | --------| --------|  -------- |  -------- |   
+| -------- | -------- | --------| --------|  -------- |  -------- |
 | 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/tree/master/NET.Autumn.2019.Daukshis.09/Filter) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Filter.Tests/ArrayExtensionTests.cs) |change the return value to TResult|
 | 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/tree/master/NET.Autumn.2019.Daukshis.09/Filter) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Filter.Tests/ArrayExtensionTests.cs) 
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Fibonacci/NumberExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Fibonacci.Tests/FibonacciTests.cs)
 | 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/QueueProject/CollectionExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Queue.Tests/QueueTests.cs)| made cycling array|
 | 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  | 
 
+[Up](#stages)
+
+### <a name="10"></a> Day 10. 07.10.2019 
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 09.10.2019, 24.00**) Реализовать метод-генератор последовательности простых чисел. Разработать unit-тесты.
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 09.10.2019, 24.00**) Для заданной строки проверить правильность расстановки скобок '(', ')', '[', ']', '{', '}'. Разработать unit-тесты.
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 10.10.2019, 24.00**) Для заданной строки выделить все различные слова. Слова, отличающиеся только регистром букв, считать одинаковыми. Разработать unit-тесты.
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 11.10.2019, 24.00**) В кругу стоят N человек, пронумерованных от 1 до N. При ведении счета по кругу вычеркивается каждый k-ый человек, пока не останется один. Cмоделировать данный процесс. Разработать unit-тесты.
 
 
 

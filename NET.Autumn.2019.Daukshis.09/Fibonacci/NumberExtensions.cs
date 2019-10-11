@@ -34,7 +34,6 @@ namespace Fibonacci
                 yield return result;
                 x0 = x1;
                 x1 = result;
-                
             }
         }
     }
