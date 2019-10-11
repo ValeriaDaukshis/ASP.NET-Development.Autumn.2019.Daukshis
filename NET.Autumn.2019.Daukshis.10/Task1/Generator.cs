@@ -22,12 +22,20 @@ namespace Task1
                     continue;
                 } 
 
-                yield return p; 
+                yield return p;
 
-                for (ulong i = p * p; i < upperLimit; i += p)
+                try
                 {
-                    composite[i] = true;
+                    for (ulong i = checked(p * p); i < upperLimit; i = checked(i + p))
+                    {
+                        composite[i] = true;
+                    }
                 }
+                catch (StackOverflowException ex)
+                {
+                    Console.WriteLine(ex);
+                }
+               
             }
             
             for (ulong p = generatorLimit + 1; p < upperLimit; ++p) 
