@@ -452,10 +452,16 @@ https://core2.me/me/?cv=28d.2u
 
 ### <a name="10"></a> Day 10. 07.10.2019 
 1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 09.10.2019, 24.00**) Реализовать метод-генератор последовательности простых чисел. Разработать unit-тесты.
-1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 09.10.2019, 24.00**) Для заданной строки проверить правильность расстановки скобок '(', ')', '[', ']', '{', '}'. Разработать unit-тесты.
-1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 10.10.2019, 24.00**) Для заданной строки выделить все различные слова. Слова, отличающиеся только регистром букв, считать одинаковыми. Разработать unit-тесты.
-1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 11.10.2019, 24.00**) В кругу стоят N человек, пронумерованных от 1 до N. При ведении счета по кругу вычеркивается каждый k-ый человек, пока не останется один. Cмоделировать данный процесс. Разработать unit-тесты.
+2. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 09.10.2019, 24.00**) Для заданной строки проверить правильность расстановки скобок '(', ')', '[', ']', '{', '}'. Разработать unit-тесты.
+3. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 10.10.2019, 24.00**) Для заданной строки выделить все различные слова. Слова, отличающиеся только регистром букв, считать одинаковыми. Разработать unit-тесты.
+4. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 11.10.2019, 24.00**) В кругу стоят N человек, пронумерованных от 1 до N. При ведении счета по кругу вычеркивается каждый k-ый человек, пока не останется один. Cмоделировать данный процесс. Разработать unit-тесты.
 
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*]() | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*]() 
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*]() | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*]() 
+| 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*]() | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*]() 
+| 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*]() | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*]() 
 
 
 
