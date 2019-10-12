@@ -5,8 +5,16 @@ namespace Task3
 {
     public static class StringExtensions
     {
+        /// <summary>
+        /// GetWords
+        /// </summary>
+        /// <param name="text">init string</param>
+        /// <returns>array of uniq words</returns>
         public static string[] GetWords(string text)
         {
+            if(string.IsNullOrEmpty(text))
+                throw new ArgumentException();
+            
             HashSet<string> uniqWordsSet = new HashSet<string>();
             char[] punctuation = {' ', ',', '!', '.', '-', ';', ':', '—', '-' };
             string[] words = text.Split(punctuation);
