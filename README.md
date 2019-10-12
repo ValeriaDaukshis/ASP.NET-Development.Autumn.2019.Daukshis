@@ -392,12 +392,12 @@ https://core2.me/me/?cv=28d.2u
 | `T[]` | O(1) | -  | O(n) | O(n) | O(n) | Elements + additional info (like array's length) |
 | `List<T>` | O(1) | - | O(n) | O(1) | O(n) | Automatically resizable array |
 |`LinkedList<T>`  | - | - | O(n) | O(1) | O(1) | Doubly-linked list |
-|`Collection<T>`  | O(1) | - | O(n) | O(1) | O(n) |  |
-|`BindingList<T>`  | O(1) | - | O(n) | O(1) | O(n) |  |
-|`ObservableCollection<T>`  | O(1) | - | O(n) | O(1) | O(n) |  |
-|`KeyCollection<TKey, TItem>`  | O(1) | O(1) | O(1) | O(1) | O(1) |  |
+|`Collection<T>`  | O(1) | - | O(n) | O(1) | O(n) | base class for collections ??? |
+|`BindingList<T>`  | O(1) | - | O(n) | O(1) | O(n) | Automatically resizable array |
+|`ObservableCollection<T>`  | O(1) | - | O(n) | O(1) | O(n) | Automatically resizable array |
+|`KeyCollection<TKey, TItem>`  | O(1) | O(1) | O(1) | O(1) | O(1) | list of keys |
 |`ReadOnlyCollection<T>`  | O(1) | - | O(n) | - | - |  |
-|`ReadOnlyObservableCollection<T>` | O(1) | - | O(n) | - | - |  |
+|`ReadOnlyObservableCollection<T>` | O(1) | - | O(n) | - | - | readOnly array |
 |**Словари** | | | | | | |
 |`Dictionary<TKey, TValue>`  | O(1) | O(1) | O(1) | O(1) | O(1) | Hash table |
 |`SortedList<TKey, TValue>`  | O(1) | O(1) | O(log n) | O(n) | O(n) | Sorted resizable array |
@@ -416,26 +416,26 @@ https://core2.me/me/?cv=28d.2u
 |Collection | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection |
 | -------- | -------- | --------| --------|  -------- |  -------- |  -------- |
 |**Списки** | | | | | | |
-|`T[]` | `System.Array` | - | No | Yes | Index | No |
-|`List<T>` | System.Collections.Generic |  | | | Index | No |
-|`LinkedList<T>` | System.Collections.Generic |  | | | | |
-|`Collection<T>` | |  | | | | |
-|`BindingList<T>` | |  | | | | |
-|`ObservableCollection<T>`  | |  | | | | |
-|`KeyCollection<TKey, TItem>`  | |  | | | | |
-|`ReadOnlyCollection<T>` | |  | | | | |
-|`ReadOnlyObservableCollection<T>`  | |  | | | | |
+|`T[]` | `System.Array` | - | No | Yes | [index] | No |
+|`List<T>` | System.Collections.Generic | by index, by predicate<> | No | Yes | [index] + enumerator | No |
+|`LinkedList<T>` | System.Collections.Generic | node by value, findLast | No | No | Node + enumerator | No |
+|`Collection<T>` | System.Collections.ObjectModel | Contains | No | Yes | [index] + enumerator | No |
+|`BindingList<T>` | System.ComponentModel | Contains | No | Yes | [index] + enumerator | No |
+|`ObservableCollection<T>`  | System.Collections.ObjectModel | Contains | Yes | Yes | [index] + enumerator | No |
+|`KeyCollection<TKey, TItem>`  | System.Collections.ObjectModel | contains(LINQ) | Yes | Yes | Enumerator (foreach) | Yes |
+|`ReadOnlyCollection<T>` | System.Collections.ObjectModel | IndexOf, contains | No | Yes | [index] + enumerator | No |
+|`ReadOnlyObservableCollection<T>`  | System.Collections.ObjectModel | IndexOf, contains, | Yes | Yes | [index] + enumerator | No |
 |**Словари** | | | | | | |
-|`Dictionary<TKey, TValue>` | |  | | | | |
-|`SortedList<TKey, TValue>`  | |  | | | | |
-|`SortedDictionary<TKey, TValue>`  | |  | | | | |
-|`ReadOnlyDictionary<TKey, TValue>`  | |  | | | | |
-|**Множества** | | | | | | |
-|`HashSet<T>` | |  | | | | |
-|`SortedSet<T>`  | |  | | | | |
+|`Dictionary<TKey, TValue>` | System.Collections.Generic | ContainsKey, ContainsValue | Yes | Yes | [key] + enumerator | Yes |
+|`SortedList<TKey, TValue>`  | System.Collections.Generic | ContainsKey, ContainsValue, IndexOfKey, IndexOfValue | Yes | Yes | [key] + enumerator | Yes |
+|`SortedDictionary<TKey, TValue>`  | System.Collections.Generic | ContainsKey, ContainsValue | Yes | Yes | [key] + enumerator | Yes |
+|`ReadOnlyDictionary<TKey, TValue>`  | System.Collections.ObjectModel | ContainsKey | Yes | Yes | [key] + enumerator | Yes |
+|**Множества** |  | | | | | |
+|`HashSet<T>` | System.Collections.Generic | Contains | No | Yes | enumerator | No |
+|`SortedSet<T>`  | System.Collections.Generic | Contains | No | Yes | enumerator | No |
 |**Очередь, стек** | | | | | | |
-|`Queue<T>` | |  | | | | |
-|`Stack<T>` | |  | | | | |
+|`Queue<T>` | System.Collections.Generic | Contains | No | No | enumerator, Peek | No |
+|`Stack<T>` | System.Collections.Generic | Contains | No | No | enumerator, Pop, Peek | No |
 
 * `*` ... .
 * `**` ... .
@@ -446,7 +446,7 @@ https://core2.me/me/?cv=28d.2u
 | 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/tree/master/NET.Autumn.2019.Daukshis.09/Filter) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Filter.Tests/ArrayExtensionTests.cs) 
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Fibonacci/NumberExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Fibonacci.Tests/FibonacciTests.cs)
 | 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/QueueProject/CollectionExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.09/Queue.Tests/QueueTests.cs)| made cycling array|
-| 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  | 
+| 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  | done 12.10|
 
 [Up](#stages)
 
@@ -458,10 +458,10 @@ https://core2.me/me/?cv=28d.2u
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |
-| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task1/Generator.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Generator.Tests/GeneratorTests.cs) 
-| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task2/MathFunctions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/MathFunctions.Tests/MathFunctionsTests.cs) 
-| 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task3/StringExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/StringExtensions.Tests/StringExtensionsTests.cs) 
-| 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task4/MathExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task4.Tests/Task4Tests.cs) 
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task1/Generator.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Generator.Tests/GeneratorTests.cs) | done 11.10|
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task2/MathFunctions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/MathFunctions.Tests/MathFunctionsTests.cs) | done 11.10|
+| 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task3/StringExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/StringExtensions.Tests/StringExtensionsTests.cs) |done 12.10|
+| 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task4/MathExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.10/Task4.Tests/Task4Tests.cs) |done 12.10|
 
 
 
