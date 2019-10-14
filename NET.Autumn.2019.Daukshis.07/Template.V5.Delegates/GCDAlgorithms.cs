@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace Template.V5.Delegates
@@ -182,22 +183,35 @@ namespace Template.V5.Delegates
         #region Helper methods
 
         private static int Gcd(int first, int second, Func<int, int, int> algorithm)
-            => algorithm(first,second);
+        {
+            if(first == 0 && second == 0)
+                throw new ArgumentException();
+            return algorithm(first, second);
+        }
 
         private static int Gcd(int first, int second, out long milliseconds, Func<int, int, int> algorithm)
         {
+            if(first == 0 && second == 0)
+                throw new ArgumentException();
             Stopwatch time = Stopwatch.StartNew();
             int result = algorithm(first, second);
             time.Stop();
             milliseconds = time.ElapsedMilliseconds;
             return result;
         }
-        
+
         private static int Gcd(int first, int second, int third, Func<int, int, int> algorithm)
-            =>algorithm(algorithm(first,second),third);
+        {
+            if(first == 0 && third == 0 && second == 0)
+                throw new ArgumentException();
+            return algorithm(algorithm(first,second),third);
+        }
 
         private static int Gcd(int first, int second, int third, out long milliseconds, Func<int, int, int> algorithm)
         {
+            if(first == 0 && third == 0 && second == 0)
+                throw new ArgumentException();
+            
             Stopwatch time = Stopwatch.StartNew();
             int result  = algorithm(algorithm(first,second),third);
             time.Stop();
@@ -207,6 +221,10 @@ namespace Template.V5.Delegates
         
         private static int Gcd(Func<int, int, int> algorithm, params int[] numbers)
         {
+            HashSet<int> set = new HashSet<int>(numbers);
+            if(set.Count == 1 && numbers[0] == 0)
+                throw new ArgumentException();
+            
             int result = numbers[0];
             for(int i = 1 ; i < numbers.Length; i++)
                 result = algorithm(result, numbers[i]);
@@ -214,6 +232,10 @@ namespace Template.V5.Delegates
         }
         private static int Gcd(Func<int, int, int> algorithm, out long milliseconds, params int[] numbers)
         { 
+            HashSet<int> set = new HashSet<int>(numbers);
+            if(set.Count == 1 && numbers[0] == 0)
+                throw new ArgumentException();
+            
             int result = numbers[0];
             Stopwatch time = Stopwatch.StartNew();
             for(int i = 1 ; i < numbers.Length; i++)
