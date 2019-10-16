@@ -11,27 +11,22 @@ namespace Fibonacci
         /// </summary>
         /// <param name="limit">count of numbers</param>
         /// <returns>Fibonacci number</returns>
-        public static IEnumerable<ulong> GetFibonacciNumbers(int limit)
+        public static IEnumerable<BigInteger> GetFibonacciNumbers(int limit)
         {
-            if(limit <= 0)
+            if (limit <= 0)
+            {
                 throw new ArgumentException();
+            }
             
-            ulong x0 = 0, x1 = 1;
+            BigInteger x0 = 0, x1 = 1;
             yield return x0;
             yield return x1;
             for (int i = 2; i < limit; i++)
             {
-                ulong result = x1;
-                try
-                {
-                    result = checked(x0 + x1);
-                }
-                catch (StackOverflowException e)
-                {
-                    Console.WriteLine(e);
-                }
-                    
+                BigInteger result = x1;
+                result = x0 + x1;
                 yield return result;
+                
                 x0 = x1;
                 x1 = result;
             }

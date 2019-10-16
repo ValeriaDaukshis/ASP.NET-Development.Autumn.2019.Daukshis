@@ -5,77 +5,6 @@ using Filter.Interfaces;
 
 namespace Filter.StaticArrayExtensions
 {
-    public static class ArrayExtension
-    {
-        /// <summary>
-        /// Filters the specified numbers.
-        /// </summary>
-        /// <param name="numbers">The numbers.</param>
-        /// <param name="criterion">The criterion.</param>
-        /// <returns>Filtered array</returns>
-        public static TSource[] Filter<TSource>(TSource[] numbers, IPredicate<TSource> criterion) 
-        {
-            CheckInput(numbers);
-            return numbers.FilterArray(criterion);
-        }
-
-        /// <summary>
-        /// Finds the maximum item.
-        /// </summary>
-        /// <param name="numbers">The numbers.</param>
-        /// <returns>Max value in array</returns>
-        public static TSource FindMaximumItem<TSource> (TSource[] numbers, IComparer<TSource> comparator) 
-        {
-            CheckInput(numbers);
-            return numbers.FindMax(comparator);
-        }
-
-        /// <summary>
-        /// Transforms the specified array.
-        /// </summary>
-        /// <param name="array">The array.</param>
-        /// <param name="transformer">The transformer.</param>
-        /// <returns>Array of values in string representation</returns>
-        /// <exception cref="ArgumentNullException">Array is null</exception>
-        /// <exception cref="ArgumentException">Array has zero length</exception>
-        public static TResult[] Transform<TSource,TResult>(TSource[] array, ITransformer<TSource,TResult> transformer) 
-        {
-            CheckInput(array);
-            return array.TransformToWords(transformer);
-        }
-
-        /// <summary>
-        /// Orders the according to.
-        /// </summary>
-        /// <param name="array">The array.</param>
-        /// <param name="comparator">The comparator.</param>
-        public static void OrderAccordingTo<TSource>(TSource[] array, IComparer<TSource> comparator)
-        {
-            CheckInput(array);
-            array.SortWithComparator(comparator);
-        }
-        /// <summary>
-        /// TypedArray
-        /// </summary>
-        /// <param name="array"></param>
-        /// <typeparam name="TSource"></typeparam>
-        /// <typeparam name="TResult"></typeparam>
-        /// <returns>typed array</returns>
-        public static TResult[] TypedArray<TSource,TResult>(TSource[] array) 
-        {
-            CheckInput(array);
-            return array.GetTypedArray<TSource,TResult>();
-        }
-        
-        private static void CheckInput<TSource>(TSource[] array)
-        {
-            if (array == null)
-                throw new ArgumentNullException("Array is null ");
-            if (array.Length == 0)
-                throw new ArgumentException("Array has zero length");
-        }
-    }
-    
     public static class MethodsExtensions
     {
         /// <summary>
@@ -84,8 +13,9 @@ namespace Filter.StaticArrayExtensions
         /// <param name="numbers">The numbers.</param>
         /// <param name="criterion">The criterion.</param>
         /// <returns>Filtered array with predicate</returns>
-        public static TSource[] FilterArray<TSource>(this TSource[] numbers, IPredicate<TSource> criterion) 
+        public static TSource[] Filter<TSource>(this TSource[] numbers, IPredicate<TSource> criterion)
         {
+            CheckInput(numbers);
             var filteredList = new List<TSource>(numbers.Length);
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -100,8 +30,10 @@ namespace Filter.StaticArrayExtensions
         /// </summary>
         /// <param name="array">The array.</param>
         /// <returns>Max value in array</returns>
-        public static TSource FindMax<TSource>(this TSource[] array, IComparer<TSource> comparator) 
+        public static TSource FindMaximumItem<TSource>(this TSource[] array)
         {
+            CheckInput(array);
+            Comparer<TSource> comparator = Comparer<TSource>.Default;
             if (array.Length == 1)
                 return array[0];
             int count = array.Length > 100_000 ? 10_000 : 1;
@@ -136,8 +68,9 @@ namespace Filter.StaticArrayExtensions
         /// <param name="array">The array.</param>
         /// <param name="transformer">The transformer.</param>
         /// <returns>Array of double in string representation</returns>
-        public static TResult[] TransformToWords<TSource, TResult>(this TSource[] array, ITransformer<TSource,TResult> transformer) 
+        public static TResult[] Transform<TSource, TResult>(this TSource[] array, ITransformer<TSource,TResult> transformer) 
         {
+            CheckInput(array);
             TResult[] transformedArray = new TResult[array.Length];
             for (int i = 0; i < transformedArray.Length; i++)
                 transformedArray[i] = transformer.TransformToWord(array[i]);
@@ -149,9 +82,10 @@ namespace Filter.StaticArrayExtensions
         /// </summary>
         /// <param name="array">The array.</param>
         /// <param name="comparator">The comparator.</param>
-        public static void SortWithComparator<TSource>(this TSource[] array, IComparer<TSource> comparator)
+        public static void OrderAccordingTo<TSource>(this TSource[] array)
         {
-             Array.Sort(array, comparator);
+            CheckInput(array);
+             Array.Sort(array, Comparer<TSource>.Default);
         }
         
         /// <summary>
@@ -161,8 +95,9 @@ namespace Filter.StaticArrayExtensions
         /// <typeparam name="TSource"></typeparam>
         /// <typeparam name="TResult"></typeparam>
         /// <returns>typed array</returns>
-        public static TResult[] GetTypedArray<TSource, TResult>(this TSource[] array)
+        public static TResult[] TypedArray<TSource, TResult>(this TSource[] array)
         {
+            CheckInput(array);
             var list = Activator.CreateInstance(typeof(List<>).MakeGenericType(typeof(TResult)));
             for (int i = 0 ; i < array.Length; i++)
                 if (array[i].GetType() == typeof(TResult))
@@ -170,8 +105,14 @@ namespace Filter.StaticArrayExtensions
             TResult[] a = new TResult[((IList)list).Count];
             ((IList)list).CopyTo(a, 0);
             return a;
-
         }
         
+        private static void CheckInput<TSource>(TSource[] array)
+        {
+            if (array == null)
+                throw new ArgumentNullException("Array is null ");
+            if (array.Length == 0)
+                throw new IndexOutOfRangeException("Array has zero length");
+        }
     }
 }

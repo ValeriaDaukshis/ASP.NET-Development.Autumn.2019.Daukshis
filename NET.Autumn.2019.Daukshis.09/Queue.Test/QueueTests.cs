@@ -62,6 +62,13 @@ namespace Queue.Test
         }
         
         [Test]
+        public void CollectionExtensions_TestContains()
+        {
+            Setup();
+            Assert.AreEqual(_queue.Contains(65), true);
+        }
+        
+        [Test]
         public void CollectionExtensions_TestDeQueue()
         {
             Setup();
@@ -78,21 +85,9 @@ namespace Queue.Test
         }
         
         [Test]
-        public void CollectionExtensions_TestEquals()
-        {
-            int[] array = {5, 15, 25};
-            QueueProject.Queue<int> newQueue = new QueueProject.Queue<int>(array);
-            QueueProject.Queue<int> queue = new QueueProject.Queue<int>(array);
-
-            bool isEquals = newQueue.Equals(queue);
-            Assert.AreEqual(true, isEquals);
-        }
-        
-        [Test]
         public void CollectionExtensions_TestForeachWithEnqueue()
         {
-            Assert.Throws<InvalidOperationException>(
-                delegate
+            Assert.Throws<InvalidOperationException>(() =>
                 {
                     foreach(var element in _queue)
                     {

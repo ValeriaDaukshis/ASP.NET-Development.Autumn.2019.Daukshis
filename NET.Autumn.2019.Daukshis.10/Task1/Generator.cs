@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Task1
@@ -10,12 +11,12 @@ namespace Task1
         /// </summary>
         /// <param name="upperLimit">limit</param>
         /// <returns>Simple numbers from 1 to upperLimit</returns>
-        public static IEnumerable<ulong> GenerateSimpleNumbers(ulong upperLimit)
+        public static IEnumerable<int> GenerateSimpleNumbers(int upperLimit)
         {
-            bool[] composite = new bool[upperLimit];
+            BitArray composite = new BitArray(upperLimit);
             
-            ulong generatorLimit= (ulong)Math.Sqrt(upperLimit);
-            for (ulong p = 2; p <= generatorLimit; ++p) 
+            int generatorLimit= (int)Math.Sqrt(upperLimit);
+            for (int p = 2; p <= generatorLimit; ++p) 
             {
                 if (composite[p])
                 {
@@ -24,21 +25,14 @@ namespace Task1
 
                 yield return p;
 
-                try
+                for (int i = p * p; i < upperLimit; i = i + p)
                 {
-                    for (ulong i = checked(p * p); i < upperLimit; i = checked(i + p))
-                    {
-                        composite[i] = true;
-                    }
+                    composite.Set(i, true);
+                    composite[i] = true;
                 }
-                catch (StackOverflowException ex)
-                {
-                    Console.WriteLine(ex);
-                }
-               
             }
             
-            for (ulong p = generatorLimit + 1; p < upperLimit; ++p) 
+            for (int p = generatorLimit + 1; p < upperLimit; ++p) 
             {
                 if (!composite[p]) 
                     yield return p;

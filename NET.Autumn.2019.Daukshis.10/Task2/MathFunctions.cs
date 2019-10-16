@@ -20,9 +20,7 @@ namespace Task2
             {')' , '('},
             {']', '['}
         };
-        
-        private static Stack<char> bracketsStack = new Stack<char>();
-        
+
         /// <summary>
         /// CheckBrackets
         /// </summary>
@@ -30,13 +28,10 @@ namespace Task2
         /// <returns>true if brackets have correct positions</returns>
         public static bool CheckBrackets(string brackets)
         {
-            if (brackets.Length % 2 != 0)
-            {
-                return false;
-            }
-            
+            Stack<char> bracketsStack = new Stack<char>();
+         
             int i = -1;
-            while (++i < brackets.Length - 1)
+            while (++i < brackets.Length)
             {
                 if (openBrackets.ContainsKey(brackets[i]))
                 {
@@ -45,15 +40,16 @@ namespace Task2
                 } 
                 if (closeBrackets.ContainsKey(brackets[i]))
                 {
-                    bracketsStack.TryPop(out char value);
+                    char value = bracketsStack.Pop();
                     if (closeBrackets[brackets[i]] != value)
                     {
                         return false;
                     }
                 }
-                
             }
 
+            if (bracketsStack.Count != 0)
+                return false;
             return true;
         }
     }

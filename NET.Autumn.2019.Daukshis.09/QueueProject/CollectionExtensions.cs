@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace QueueProject
 {
-    public class Queue<T> : IEnumerable<T>, ICollection, IEquatable<Queue<T>>
+    public class Queue<T> : IEnumerable<T>
     {
         private T[] array;
         private int head = 0;
@@ -14,8 +14,6 @@ namespace QueueProject
         private int capacity = 4;
         private int size = 0;
         public int Count => size;
-        public bool IsSynchronized { get; }
-        public object SyncRoot { get; }
 
         public Queue()
         {
@@ -45,7 +43,7 @@ namespace QueueProject
         /// </summary>
         public void Clear()
         {
-            if(head < tail)
+            if (head < tail)
                 Array.Clear(array, head, tail);
             else
             {
@@ -69,7 +67,7 @@ namespace QueueProject
             int headPointer = head;
             while (count-- > 0)
             {
-                if (item != null && array[count].Equals(item))
+                if (headPointer != null && array[count].Equals(array[headPointer]))
                     return true;
                
                 headPointer = (headPointer + 1) % array.Length;
@@ -108,7 +106,6 @@ namespace QueueProject
             {
                 Array.Copy(array, head, newArray, 0, array.Length - head);
                 Array.Copy(array, 0, newArray, array.Length - head, tail);
-
             }
             array = newArray;
             head = 0;
@@ -131,7 +128,7 @@ namespace QueueProject
         /// <returns>Head element.</returns>
         public T DeQueue()
         {
-            if(size == 0)
+            if (size == 0)
                 throw new InvalidOperationException("The queue size is zero");
             T element = array[head];
             array[head] = default(T);
@@ -146,7 +143,7 @@ namespace QueueProject
         /// </summary>
         /// <param name="array">Source array.</param>
         /// <param name="index">Index in the array at which storing begins.</param>
-        public void CopyTo(Array array, int index)
+        public void CopyTo(T[] array, int index)
         {
             if(array == null)
                 throw new ArgumentNullException("Array is null");
@@ -158,81 +155,61 @@ namespace QueueProject
             Array.Copy(this.array, head, array, index, numOfElements);
             if(size - numOfElements > 0)
                 Array.Copy(this.array, 0, array, index + this.array.Length - head, size - numOfElements);
-
         }
-
-        /// <summary>
-        /// Check if collections are equal.
-        /// </summary>
-        /// <param name="other">Collection to compare.</param>
-        /// <returns>True if collections are equal, otherwise false.</returns>
-        public bool Equals(Queue<T> other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
-            if (array.Length != other.array.Length)
-                return false;
-            for (int i = 0; i < array.Length; i++)
-                if (!array[i].Equals(other.array[i]))
-                    return false;
-            return true;
-        }
-
+        
         /// <summary>
         /// Get the enumerator of collection.
         /// </summary>
         /// <returns>Collection enumerator.</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            int version2 = version;
-            for (int i = head; i < tail; i++)
-            {
-                if (version2 != version)
-                {
-                    throw new InvalidOperationException("Enqueue is not valid");
-                    //yield break;
-                }
-                yield return array[i];
-            }
+           return new CustomIterator(this);
         }
-
-        /// <summary>
-        /// Check if collection and the object are equal.
-        /// </summary>
-        /// <param name="obj">Object to compare.</param>
-        /// <returns>True if collection and  the object are equal, otherwise false.</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((Queue<T>) obj);
-        }
-
-        /// <summary>
-        /// Get hash code of collection.
-        /// </summary>
-        /// <returns>Hash code of collection.</returns>
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = (array != null ? array.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ head;
-                hashCode = (hashCode * 397) ^ tail;
-                hashCode = (hashCode * 397) ^ version;
-                hashCode = (hashCode * 397) ^ capacity;
-                hashCode = (hashCode * 397) ^ size;
-                hashCode = (hashCode * 397) ^ Count;
-                hashCode = (hashCode * 397) ^ IsSynchronized.GetHashCode();
-                hashCode = (hashCode * 397) ^ SyncRoot.GetHashCode();
-                return hashCode;
-            }
-        }
-
+        
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+        
+        private struct CustomIterator : IEnumerator<T>
+        {
+            private Queue<T> collection;
+            private int currentIndex;
+            private int version2;
+
+            public CustomIterator(Queue<T> list)
+            {
+                collection = list;
+                currentIndex = -1;
+                version2 = list.version;
+            }
+
+            public bool MoveNext()
+            {
+                return ++currentIndex < collection.Count;
+            }
+
+            public void Reset()
+            {
+                currentIndex = -1;
+            }
+
+            public T Current
+            {
+                get
+                {
+                    if (currentIndex == -1 || currentIndex == collection.Count || version2 != collection.version)
+                    {
+                        throw new InvalidOperationException();
+                    }
+                    return collection.array[(collection.head + currentIndex) % collection.array.Length];
+                }
+            }
+
+            object IEnumerator.Current => Current;
+
+            public void Dispose()
+            { }
         }
     }
 }

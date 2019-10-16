@@ -11,29 +11,28 @@ namespace Task4
         /// <param name="array">init array</param>
         /// <param name="step">step</param>
         /// <returns></returns>
-        public static int Circle(int[] array, int step)
+        public static T Circle<T>(LinkedList<T> numbers, int step)
         {
             if(step <= 0)
             {
                 throw new ArgumentException($"nameof{step} is less than zero");
             }
-            if(array == null)
+            if(numbers == null)
             {
                 throw new ArgumentNullException();
             }
-            if(array.Length == 0)
+            if(numbers.Count == 0)
             {
                 throw new ArgumentException();
             }
-            if (array.Length == 1)
+            if (numbers.Count == 1)
             {
-                return array[0];
+                return numbers.First.Value;
             }
             
-            LinkedList<int> numbers = new LinkedList<int>(array);
-            LinkedListNode<int> current = numbers.First;
-            LinkedListNode<int> last = numbers.Last;
-            LinkedListNode<int> first = current;
+            LinkedListNode<T> current = numbers.First;
+            LinkedListNode<T> last = numbers.Last;
+            LinkedListNode<T> first = current;
             do{
                 for (int i = 0; i < step; i++)
                 {
@@ -47,7 +46,7 @@ namespace Task4
                     }
                 }
 
-                LinkedListNode<int> removedElement = current;
+                LinkedListNode<T> removedElement = current;
                 if (current == first)
                 {
                     first = current.Next;
@@ -62,7 +61,6 @@ namespace Task4
                     current = current.Previous;
                 
                 numbers.Remove(removedElement);
-                
             }
             while (numbers.Count > 1) ;
 
