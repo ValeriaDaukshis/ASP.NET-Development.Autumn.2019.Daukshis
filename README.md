@@ -471,8 +471,91 @@ https://core2.me/me/?cv=28d.2u
 
 [Up](#stages)
 
-### <a name="12"></a> Day 12. 14.10.2019 
-[*Task and solution*](https://github.com/ValeriaDaukshis/14.10.2019.1)
+[Up](#stages)
+
+### <a name="12"></a> Day 12. 14.10.2019 (Workshop)  
+#### Материалы
+- [C# in Depth. Jon Skeet. Manning Publications Co. 2013](https://www.manning.com/books/c-sharp-in-depth-third-edition)
+   - *Chapter 5.* [Fast-tracked delegates.](https://livebook.manning.com/#!/book/c-sharp-in-depth-third-edition/chapter-5/)
+   - *Chapter 9.* [Lambda expressions and expression trees.](https://livebook.manning.com/#!/book/c-sharp-in-depth-third-edition/chapter-9/)
+- [C# 5.0 Unleashed. Bart De Smet. Sams Publishing. 2013](https://www.goodreads.com/book/show/16284093-c-5-0-unleashed)
+   - *Chapter 17.* Delegates.
+- [Programming C# 5.0. Ian Griffiths. O'Reilly Media. 2012.](http://shop.oreilly.com/product/0636920024064.do) 
+   - *Chapter 9.* Delegates, Lambdas and Events. [Download Example Code](https://resources.oreilly.com/examples/0636920024064/blob/master/Ch09.zip)
+- [CLR via C#. Jeffrey Richter. Microsoft Press. 2010](https://www.goodreads.com/book/show/7121415-clr-via-c)
+
+#### <a name="12-Tasks"></a> Задачи	
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 16.10.2019, 24.00**) [Workshop](https://github.com/AnzhelikaKravchuk/14.10.2019.1)
+2. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 16.10.2019, 24.00**) Некто L начал разработку библиотеки [Algorithms.V5](https://github.com/AnzhelikaKravchuk/.NET-Training.-Autumn-2019/tree/master/Day%2012.%2014.10.2019) для алгебраических вычислений. Согласно требованию библиотека должна быть реализована как статический класс с удобными для использования для различного рода расчетов статическими методами, в частности, методами, реализующими подсчет НОД-а для двух, трех, четырех и т.д. целых чисел алгоритмом Евклида (Стайна), включая возможность подсчета времени вычислений.   	 Завершите разработку библиотеки, начатой L, добавив недостающий функционал, *не изменяя сигнутуры существующих в типах методов*.   
+	Какие класс (классы) необходимо будет изменить в случае, если появиться необходимость добавить реализацию еще одного алгоритма Евклида? Обоснуйте целесообразность использования подхода, предложенного L, с точки зрения трудозатрат при добавлении такой функциональности.    
+	
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
+| 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
+
+---
+
+[Up](#stages)
+
+### <a name="13"></a> Day 13. 15.10.2019 (Workshop)  
+#### Материалы
+- [C# in Depth. Jon Skeet. Manning Publications Co. 2013](https://www.manning.com/books/c-sharp-in-depth-third-edition)
+   - *Chapter 11.* [Query expressions and LINQ to Objects.](https://livebook.manning.com/#!/book/c-sharp-in-depth-third-edition/chapter-11/)
+   - *Appendix A.* [LINQ standard query operators.](https://livebook.manning.com/#!/book/c-sharp-in-depth-third-edition/appendix-A/)
+- [C# 6.0 in a Nutshell. Joseph Albahari, Ben Albahari. O'Reilly Media. 2015.](http://shop.oreilly.com/product/0636920040323.do)
+   - *Chapter 8.* LINQ Queries. [Code Listings](http://www.albahari.com/nutshell/ch08.aspx)
+   - *Chapter 9.* LINQ Operators. [Code Listings](http://www.albahari.com/nutshell/ch09.aspx)
+- [C# 5.0 Unleashed. Bart De Smet. Sams Publishing. 2013](https://www.goodreads.com/book/show/16284093-c-5-0-unleashed)
+   - *Chapter 19.* Language Integrated Query Essentials.
+   - *Chapter 20.* Language Integrated Query Internals
+- [101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
+
+#### <a name="13-Tasks"></a> Задачи
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 17.10.2019, 24.00**) Как альтернативу классу [EnumerableExtension](https://github.com/AnzhelikaKravchuk/23.04.2019.1/blob/master/PseudoEnumerable/EnumerableExtension.cs) создать класс [Enumerable](https://github.com/AnzhelikaKravchuk/15.10.2019.Workshop), в который добавить следующие методы расширения интерфеса `IEnumerable<T>`:
+  - методы для фильтрации Filter и трансформации Transform последовательности, использующие в качестве параметров соответсвующие версии типа делегат [`Func<T>`](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=netframework-4.8);
+  - метод SortBy, использующий стратегию сортировки по ключу (сортировка по возрастанию) (*не стратегию сравнения двух элементов!*);
+  - метод SortBy, использующий стратегию сравнения двух ключей (сортировка по возрастанию);
+  - метод CastTo, получающий на основе последовательности нетипизированных элементов типизированную последовательность, при этом в случае невозможности приведения хотя бы одного элемента в последовательности, выбрасывается исключение InvalidCastException;
+  - метод ForAll, определяющий соответствие всех элементов последовательности заданному предикату;
+  - метод SortByDescending, использующий стратегию сортировки по ключу (сортировка по убыванию);
+  - метод SortByDescending, использующий стратегию сравнения двух ключей (сортировка по убыванию);
+  - метод-генератор Range последовательности count целых чисел, начиная с некоторого целочисленного значения start;
+  - метод Reverse для получения обратного порядка исходной последовательности;
+  - метод Count для получения количества элементов последовательности, удовлеворяющих хаданному предикату;
+  - метод Count для получения количества элементов последовательности.   
+  
+  Проверить работу разработанных методов, используя различные типы данных.    
+
+2. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 20.10.2019, 24.00**) Скачать архив [*LINQ - Sample Queries.zip*](https://github.com/AnzhelikaKravchuk/.NET-Training.-Autumn-2019/tree/master/Day%2013.%2015.10.2019) демонстрационного приложения для изучения LINQ.
+
+- Запустить приложение (папка C#, SampleQueries.sln), изучить основные запросы LINQ to Object - **101 LINQ Query Samples** (код находится в классе *LinqSamples*).
+ 
+ ![](https://github.com/AnzhelikaKravchuk/Materials/blob/master/Pictures/101%20LINQ%20Query%20Samples.png)
+ 
+- Добавить в приложение класс *CustomSamples* производный от класса *SampleHarness*, класс декорировать атрибутами 
+    > [Title("LINQ Query Samples")]   
+    > [Prefix("Linq")]
+    
+ - Добавить в класс *CustomSamples* методы, каждый из которых является решением соответствующего пункта задания, методы именовать по шаблону *LinqQueryN* где N номер задания по порядку (01,02...). Методы декорировать атрибутами 
+    > [Category("Category method here...")]`(опционально)   
+    > [Title("Title method here...")]    
+    > [Description("Description method here...")]  
+    
+  - Проверить результ, запуская приложение и просматривая полученный результат.
+
+| # | Task | Solution Status | Solution Link |
+| -------- | -------- | --------| --------| 
+| 1 | Получить список всех клиентов, сумма всех заказов которых превосходит некоторую заданную величину. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
+| 2 | Для каждого клиента получить список поставщиков, находящихся в той же стране и том же городе. Задание выполнить, как используя операцию группировки, так и без нее. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
+| 3 | Получить список тех клиентов, заказы которых превосходят по сумме заданную величину. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
+| 4 | Получить список всех клиентов в отсортированном виде по году, месяцу певого заказа клиента, оборотам клиента (от максимального к минимальному) и имени клиента. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
+| 5 | Получить список тех клиентов, у которых указан нецифровой почтовый код или не заполнен регион или в телефоне не указан код оператора (что равнозначно «нет круглых скобок в начале»). |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
+| 6 | Сгруппировать все продукты по категориям, внутри – по наличию на складе, внутри последней группы - по стоимости. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 	
+| 7 | Сгруппировать все товары по группам «дешевые», «средняя цена», «дорогие», определив границы каждой группы произвольным образом. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 	
+| 8 | Рассчитать среднюю сумму заказа по всем клиентам из данного города и среднее количество заказов, приходящееся на клиента из каждого города. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |    	
+| 9 | Cоставить свои запросы (не менее 5) к наборам данных, описанных классами Product, Customer, Supplier, Order. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |   
+
 
 
 
