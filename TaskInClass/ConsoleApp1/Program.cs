@@ -78,9 +78,9 @@ namespace ConsoleApp1
         public static IEnumerable<TResult> Transform<TSource, TResult>(this IEnumerable<TSource> source,
             Func<TSource, TResult> transformer)
         {
-            if(source is null)
+            if (source is null)
                 throw new ArgumentNullException();
-            if(transformer is null)
+            if (transformer is null)
                 throw new ArgumentNullException();
 
             foreach (var numbers in source)

@@ -1,4 +1,5 @@
-﻿using Algorithms.V4.Interfaces;
+﻿using NLog;
+using ILogger = Algorithms.V4.Interfaces.ILogger;
 
 namespace Algorithms.V4.LoggerImplementation
 {
@@ -11,7 +12,7 @@ namespace Algorithms.V4.LoggerImplementation
         /// </summary>
         public Logger()
         {
-            _logger = NLog.LogManager.GetCurrentClassLogger();
+            _logger = LogManager.GetCurrentClassLogger();
         }
 
         /// <summary>

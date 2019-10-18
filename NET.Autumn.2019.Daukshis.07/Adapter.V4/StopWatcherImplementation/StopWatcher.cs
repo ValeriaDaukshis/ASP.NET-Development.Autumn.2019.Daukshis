@@ -5,28 +5,33 @@ namespace Algorithms.V4.StopWatcherImplementation
 {
     public class StopWatcher : IStopWatcher
     {
-        public long TimeInMilliseconds => _timer.ElapsedTicks;
-        private Stopwatch _timer;
+        /// <inheritdoc/>
+        public long TimeInMilliseconds => this.timer.ElapsedTicks;
+
+        private readonly Stopwatch timer;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="StopWatcher"/> class.
         /// </summary>
         public StopWatcher()
         {
-            _timer = new Stopwatch();
+            this.timer = new Stopwatch();
         }
+
         /// <summary>
         /// Starts this instance.
         /// </summary>
         public void Start()
         {
-            _timer.Start();
+            this.timer.Start();
         }
+
         /// <summary>
         /// Stops this instance.
         /// </summary>
         public void Stop()
         {
-            _timer.Stop();
+            this.timer.Stop();
         }
     }
 }

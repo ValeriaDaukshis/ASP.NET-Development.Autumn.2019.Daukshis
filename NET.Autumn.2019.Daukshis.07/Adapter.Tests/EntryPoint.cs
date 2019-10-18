@@ -1,7 +1,6 @@
 ﻿using System;
 using Algorithms.V4.GcdImplementations;
 using Algorithms.V4.Interfaces;
-using Algorithms.V4.StaticClasses;
 using Algorithms.V4.StopWatcherImplementation;
 using Logger = Algorithms.V4.LoggerImplementation.Logger;
 

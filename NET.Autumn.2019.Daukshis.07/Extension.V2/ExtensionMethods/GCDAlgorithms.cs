@@ -6,31 +6,6 @@ namespace Algorithms.V2.ExtensionMethods
 {
     public static class GCDAlgorithms
     {
-        #region Euclidean Algorithms (API)
-        
-        public static int FindGcdByEuclidean(int first, int second)
-            => new EuclideanAlgorithm().Gcd(first, second); 
-        
-        public static int FindGcdByEuclidean(int first, int second, int third)
-            => new EuclideanAlgorithm().Gcd(first, second, third);
-        
-        public static int FindGcdByEuclidean(params int[] numbers)
-            => new EuclideanAlgorithm().Gcd( numbers); 
-        
-        public static int FindGcdByEuclidean(out long milliseconds, int first, int second)
-            => new EuclideanAlgorithm().Gcd(first, second, out milliseconds);
-        
-        public static int FindGcdByEuclidean(out long milliseconds, int first, int second, int third)
-            => new EuclideanAlgorithm().Gcd(first, second, third, out milliseconds);
-        
-        public static int FindGcdByEuclidean(out long milliseconds, params int[] numbers)
-            => new EuclideanAlgorithm().Gcd(out milliseconds, numbers); 
-        
-        #endregion 
-    }
-
-    public static class MethodsExtension
-    {
         /// <summary>
         /// GCDs the specified first.
         /// </summary>
@@ -39,7 +14,7 @@ namespace Algorithms.V2.ExtensionMethods
         /// <param name="second">The second.</param>
         /// <returns>Calculates GCD of 2 numbers by Euclidean</returns>
         public static int Gcd(this IAlgorithm algorithm, int first, int second)
-            => algorithm.Calculate(first,second);
+            => algorithm.Calculate(first, second);
 
         /// <summary>
         /// GCDs the specified first.

@@ -23,15 +23,15 @@ namespace V4.Tests
         [Test]
         public void CalculateDecorator_WithTwoParamsAndStopWatcherAndLogger()
         {
-            var gcd = new EuclideanAlgorithmDecorator(_algorithm, _logger);
+            var gcd = new EuclideanAlgorithmDecorator(_algorithm, _logger, _stopWatcher);
             gcd.Calculate(1, 3);
             Mock<IAlgorithm> mockAlgorithm = Mock.Get(_algorithm);
             mockAlgorithm.Verify(
                 a => a.Calculate(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
 
-//            Mock<IStopWatcher> mockStopWatcher = new Mock<IStopWatcher>(_stopWatcher);
-//            mockStopWatcher.Verify(a => a.Start());
-//            mockStopWatcher.Verify(a => a.Stop());
+            Mock<IStopWatcher> mockStopWatcher = new Mock<IStopWatcher>(_stopWatcher);
+            mockStopWatcher.Verify(a => a.Start());
+            mockStopWatcher.Verify(a => a.Stop());
         }
     }
 }

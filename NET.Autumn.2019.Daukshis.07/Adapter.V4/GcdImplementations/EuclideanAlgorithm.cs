@@ -4,7 +4,7 @@ using Logger = Algorithms.V4.LoggerImplementation.Logger;
 
 namespace Algorithms.V4.GcdImplementations
 {
-    public class EuclideanAlgorithm : Logger, IAlgorithm
+    public class EuclideanAlgorithm : IAlgorithm
     {
         /// <summary>
         /// Calculates the specified number1.
@@ -37,12 +37,16 @@ namespace Algorithms.V4.GcdImplementations
 
     public class EuclideanAlgorithmDecorator : EuclideanAlgorithm
     {
-        private IAlgorithm _algorithm;
-        private ILogger _logger;
-        public EuclideanAlgorithmDecorator(IAlgorithm algorithm,ILogger logger)
+        private readonly IAlgorithm algorithm;
+        private ILogger logger;
+        private IStopWatcher stopWatcher;
+        private long Milliseconds { set; get; }
+
+        public EuclideanAlgorithmDecorator(IAlgorithm algorithm, ILogger logger, IStopWatcher stopWatcher)
         {
-            _algorithm = algorithm;
-            _logger = logger;
+            this.algorithm = algorithm;
+            this.logger = logger;
+            this.stopWatcher = stopWatcher;
         }
 
         /// <summary>
@@ -53,17 +57,23 @@ namespace Algorithms.V4.GcdImplementations
         /// <returns>
         /// Calculates GCD of 2 numbers by Euclidean
         /// </returns>
-        public override int Calculate(int number1, int number2)
+        public int Calculate(int number1, int number2)
         {
-            _logger = new Logger();
+            this.logger = new Logger();
             int result = 0;
             try
             {
-                result = _algorithm.Calculate(number1, number2);
+                this.stopWatcher.Start();
+                result = this.algorithm.Calculate(number1, number2);
             }
             catch (Exception ex)
             {
-                _logger.Error(ex.Message);
+                this.logger.Error(ex.Message);
+            }
+            finally
+            {
+                this.stopWatcher.Stop();
+                this.Milliseconds = this.stopWatcher.TimeInMilliseconds;
             }
 
             return result;

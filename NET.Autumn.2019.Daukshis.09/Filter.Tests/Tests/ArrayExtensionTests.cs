@@ -20,19 +20,19 @@ namespace Filter.Tests.Tests
             => actual.FindMaximumItem();
         
         
-//        [Test]
-//        public void FindMaximumItem_BigLengthArray_MaxNumberExpected()
-//        {
-//            int[] array = new int[100_000_000];
-//            Random rand = new Random();
-//            for (int i = 0; i < 100_000_000; i++) 
-//                array[i] = rand.Next(0, 10000);  
-//
-//            array[rand.Next(100, 100_000_000)] = 1010101; 
-//            int actual = array.FindMaximumItem();
-//            int expected = 1010101;
-//            Assert.AreEqual(expected, actual);
-//        }
+        [Test]
+        public void FindMaximumItem_BigLengthArray_MaxNumberExpected()
+        {
+            int[] array = new int[100_000_000];
+            Random rand = new Random();
+            for (int i = 0; i < 100_000_000; i++) 
+                array[i] = rand.Next(0, 10000);  
+
+            array[rand.Next(100, 100_000_000)] = 1010101; 
+            int actual = array.FindMaximumItem();
+            int expected = 1010101;
+            Assert.AreEqual(expected, actual);
+        }
 
         [Test]
         public void FindMaximumItem_ZeroLengthArray_ArgumentException()

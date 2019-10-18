@@ -12,8 +12,6 @@ namespace Algorithms.V3.GcdImplementations
                 return Math.Abs(number2);
             if (number2 == 0 & number1 != 0)
                 return Math.Abs(number1);
-            if (number1 == number2 & number1 == 0)
-                return 0;
 
             number1 = Math.Abs(number1);
             number2 = Math.Abs(number2);
@@ -33,7 +31,8 @@ namespace Algorithms.V3.GcdImplementations
     public class EuclideanAlgorithmDecorator : IAlgorithm
     {
         private readonly EuclideanAlgorithm _algorithm;
-        public long Milliseconds { set; get; }
+
+        private long Milliseconds { set; get; }
         
         public EuclideanAlgorithmDecorator(EuclideanAlgorithm algorithm)
         {
@@ -50,5 +49,4 @@ namespace Algorithms.V3.GcdImplementations
             return result; 
         }
     }
-    
 }
