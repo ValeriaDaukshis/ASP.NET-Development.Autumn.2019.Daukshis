@@ -18,6 +18,7 @@ https://core2.me/me/?cv=28d.2u
    - [Day 9. 03.10.2019](#9)
    - [Day 10. 07.10.2019](#10)
    - [Day 12. 14.10.2019](#12)
+   - [Day 13. 15.10.2019](#13)
 
 ---
 [Up](#stages)
@@ -523,7 +524,12 @@ https://core2.me/me/?cv=28d.2u
   - метод Count для получения количества элементов последовательности, удовлеворяющих хаданному предикату;
   - метод Count для получения количества элементов последовательности.   
   
-  Проверить работу разработанных методов, используя различные типы данных.    
+  Проверить работу разработанных методов, используя различные типы данных.   
+  
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable/EnumerableExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable.Tests/EnumerableTests.cs) 
+  
 
 2. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 20.10.2019, 24.00**) Скачать архив [*LINQ - Sample Queries.zip*](https://github.com/AnzhelikaKravchuk/.NET-Training.-Autumn-2019/tree/master/Day%2013.%2015.10.2019) демонстрационного приложения для изучения LINQ.
 
