@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherStation.Interfaces", "WeatherStation.Interfaces\WeatherStation.Interfaces.csproj", "{983C2CF5-A20C-4C54-976F-83BF0AE9DDE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherStation.Events", "WeatherStation.Events\WeatherStation.Events.csproj", "{6C947596-E1B8-4685-A5C2-5A5B654C1EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clocks", "Clocks\Clocks.csproj", "{2A67979A-3CE4-4100-9446-F28AE492088E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternObserverViaInterfaces.Solution.1", "..\..\PatternObserver\PatternObserverViaInterfaces.Solution.1\PatternObserverViaInterfaces.Solution.1.csproj", "{8FABB0DE-FC75-4D53-942C-C7D78A87D712}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternObserverViaEventHandler", "..\..\PatternObserver\PatternObserverViaEventHandler\PatternObserverViaEventHandler.csproj", "{13B68BE1-854A-4285-99B0-1F3A5369D482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternObserverViaActionDelegate", "..\..\PatternObserver\PatternObserverViaActionDelegate\PatternObserverViaActionDelegate.csproj", "{08C7EB21-379C-4C8B-B89A-F4E0D9FCBC6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{983C2CF5-A20C-4C54-976F-83BF0AE9DDE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983C2CF5-A20C-4C54-976F-83BF0AE9DDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983C2CF5-A20C-4C54-976F-83BF0AE9DDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983C2CF5-A20C-4C54-976F-83BF0AE9DDE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C947596-E1B8-4685-A5C2-5A5B654C1EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C947596-E1B8-4685-A5C2-5A5B654C1EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C947596-E1B8-4685-A5C2-5A5B654C1EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C947596-E1B8-4685-A5C2-5A5B654C1EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A67979A-3CE4-4100-9446-F28AE492088E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A67979A-3CE4-4100-9446-F28AE492088E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A67979A-3CE4-4100-9446-F28AE492088E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A67979A-3CE4-4100-9446-F28AE492088E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FABB0DE-FC75-4D53-942C-C7D78A87D712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FABB0DE-FC75-4D53-942C-C7D78A87D712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FABB0DE-FC75-4D53-942C-C7D78A87D712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FABB0DE-FC75-4D53-942C-C7D78A87D712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13B68BE1-854A-4285-99B0-1F3A5369D482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B68BE1-854A-4285-99B0-1F3A5369D482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B68BE1-854A-4285-99B0-1F3A5369D482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B68BE1-854A-4285-99B0-1F3A5369D482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C7EB21-379C-4C8B-B89A-F4E0D9FCBC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C7EB21-379C-4C8B-B89A-F4E0D9FCBC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C7EB21-379C-4C8B-B89A-F4E0D9FCBC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C7EB21-379C-4C8B-B89A-F4E0D9FCBC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
