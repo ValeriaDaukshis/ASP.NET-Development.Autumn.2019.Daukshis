@@ -560,8 +560,28 @@ https://core2.me/me/?cv=28d.2u
 | 8 | Рассчитать среднюю сумму заказа по всем клиентам из данного города и среднее количество заказов, приходящееся на клиента из каждого города. |![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Linq_101Sample/CustomSamples.cs) |    	
 | 9 | Cоставить свои запросы (не менее 5) к наборам данных, описанных классами Product, Customer, Supplier, Order. |![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Linq_101Sample/CustomSamples.cs) |   
 
+---
 
+[Up](#stages)
 
+#### <a name="14-Tasks"></a> Задачи
 
+1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 24.10.2019, 24.00**) Workshop
 
+2. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 24.10.2019, 24.00**) Метеостанция WeatherStation работает на базе запатентовнного объекта WeatherData, отслеживающего текущие погодные условия (температура (Temperature), влажность (Humidity), атмосферное давление (Pressure)).
+	- Разработать систему классов для создания текущей сводки (CurrentConditionsReport) и статистики (StatisticReport). Все данные должны обновляться в режиме реального времени, по мере того, как объект WeatherData получает данные последних изменений.
+	- Предложить два варианта решения (интерфейсы + event).
+	- Смоделировать работу метеостанции в консольном приложении.
+
+3. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 24.10.2019, 24.00**) Разработать класс для имитации часов с обратным отсчетом (только через event), реализующий возможность по истечении назначенного времени (время ожидания предоставляется классу пользователем) передавать сообщение и дополнительную информацию о событии любому подписавшемуся на событие типу. Продемонстрировать работу класса в консольном приложении.
+
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Interface*]() | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console*]() 
+|   | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Delegate*]() | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console*]() 
+|   | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Event*]() | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console*]() 
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Interface*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/tree/master/NET.Autumn.2019.Daukshis.15/WeatherStation.Interfaces) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/WeatherStation.Interfaces/Program.cs) 
+|   | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Event*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/WeatherStation.Events/CurrentConditionsReport.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/WeatherStation.Events/Program.cs) 
+| 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/Clocks/MinuteHand.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/Clocks/Program.cs) 
+ 
 
