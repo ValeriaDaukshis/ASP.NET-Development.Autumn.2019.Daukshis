@@ -20,6 +20,7 @@ https://core2.me/me/?cv=28d.2u
    - [Day 12. 14.10.2019](#12)
    - [Day 13. 15.10.2019](#13)
    - [Day 14. 17.10.2019](#14)
+   - [Day 15. 21.10.2019](#15)
 
 ---
 [Up](#stages)
@@ -569,6 +570,20 @@ https://core2.me/me/?cv=28d.2u
 
 #### <a name="14-Tasks"></a> Задачи
 
+1. Разработать обобщенный класс-коллекцию BinarySearchTree (бинарное дерево поиска). Предусмотреть возможности использования подключаемого интерфейса для реализации отношения порядка. Реализовать три способа обхода дерева: прямой (preorder), поперечный (inorder), обратный (postorder): для реализации обходов использовать блок-итератор (yield). Протестировать разработанный класс, используя следующие типы:
+	- System.Int32 (использовать сравнение по умолчанию и подключаемый компаратор);
+	- System.String (использовать сравнение по умолчанию и подключаемый компаратор);
+	- пользовательский класс Book, для объектов которого реализовано отношения порядка (использовать сравнение по умолчанию и подключаемый компаратор);
+	- пользовательскую структуру Point, для объектов которого не реализовано отношения порядка (использовать подключаемый компаратор).
+
+---
+
+[Up](#stages)
+
+### <a name="15"></a> Day 15
+
+#### <a name="15-Tasks"></a> Задачи
+
 1. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 24.10.2019, 24.00**) Workshop
 
 2. (**![deadline](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons8-stopwatch-64.png) - 24.10.2019, 24.00**) Метеостанция WeatherStation работает на базе запатентовнного объекта WeatherData, отслеживающего текущие погодные условия (температура (Temperature), влажность (Humidity), атмосферное давление (Pressure)).
@@ -587,4 +602,57 @@ https://core2.me/me/?cv=28d.2u
 |   | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Event*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/WeatherStation.Events/CurrentConditionsReport.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/WeatherStation.Events/Program.cs) 
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/Clocks/MinuteHand.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Console*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.15/Clocks/Program.cs) 
  
+ ---
 
+[Up](#stages)
+
+### <a name="16"></a> Day 16
+
+#### <a name="16-Tasks"></a> Задачи
+
+1. Реализовать метод, который принимает на вход строку source и количество итераций count (проект StringExtension).
+
+  public string Convert(string source, int count)
+  
+На каждой итерации метода объединяются нечетные символы строки и переносятся в ее начало, и четные символы, которые переносяться в конец.
+
+Пример (строка «Привет Эпам!»):
+
+ >1 итерация: «Пие пмрвтЭа!»
+ >2 итерация: «Пепртаи мвЭ!»
+ >...
+
+Результат работы метода – результат склеек символов через count итераций.
+
+При реализации алгоритма учесть, что входная строка может содержать очень большое количество символов, а количество итераций может быть огромным. Оптимизировать код с точки зрения быстродействия и потребления ресурсов.
+
+Проверить аргументы на валидность:
+
+Запрещается передавать пустые строки, строки из пробелов, null.
+	- Количество итераций должно быть больше 0.
+	- При нарушении этих условий метод генерирует исключение.
+
+Проверить работу метода с помощью модульных тестов (проект StringExtension.Tests), к предложенным тест кейсам добавить дополнительные.
+
+Проверить возможность работы разработанного метода с большими строками и большим количеством итераций (проект StringExtensionWithFiles), замерить время счета.
+
+2. (deadline - 26.10.2019, 24.00) Для объектов класса Book, у которого есть свойства Title, Author, Year, PublishingHous, Edition, Pages и Price (за основу можно взять класс, разработанный ранее) реализовать возможность строкового представления различного вида. Например, для объекта со значениями Title = "C# in Depth", Author = "Jon Skeet", Year = 2019, PublishingHous = "Manning", Edition = 4, Pages = 900, Price = 40$. могут быть следующие варианты:
+	- Book record: Jon Skeet, C# in Depth, 2019, "Manning",
+	- Book record: Jon Skeet, C# in Depth, 2019
+	- Book record: Jon Skeet, C# in Depth
+	- Book record: C# in Depth, 2019, "Manning"
+	- Book record: C# in Depth и т.д.
+	
+Разработать модульные тесты.
+
+3. (deadline - 26.10.2019, 24.00) Не изменяя класс Book, добавить для объектов данного класса дополнительную (любую не существующую у класса изначально) возможность форматирования, не предусмотренную классом. Разработать модульные тесты.
+
+4. (deadline - 26.10.2019, 24.00) Реализовать решение задачи Day 6. 26.09.2019. Task 2 в виде дополнительной возможности форматного вывода вещественного числа. Разработать модульные тесты.
+
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable/EnumerableExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable.Tests/EnumerableTests.cs) 
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable/EnumerableExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable.Tests/EnumerableTests.cs) 
+| 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable/EnumerableExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable.Tests/EnumerableTests.cs) 
+| 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable/EnumerableExtensions.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](https://github.com/ValeriaDaukshis/ASP.NET-Development.Autumn.2019.Daukshis/blob/master/NET.Autumn.2019.Daukshis.13/Enumerable.Tests/EnumerableTests.cs) 
+  
