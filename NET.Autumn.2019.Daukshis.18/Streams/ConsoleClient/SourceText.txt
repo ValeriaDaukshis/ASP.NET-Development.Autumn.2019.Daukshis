@@ -1,0 +1,7 @@
+﻿Using Settings in C#
+
+Visual Studio 2005
+ 
+Matt Stoecker
+Microsoft Corporation
+August 2006
