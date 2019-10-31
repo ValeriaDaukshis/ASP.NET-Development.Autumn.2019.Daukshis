@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
-using Excel = Microsoft.Office.Interop.Excel;
+using OfficeOpenXml;
 
 namespace Streams
 {
@@ -23,56 +24,29 @@ namespace Streams
 		/// <returns>Sequence of PlanetInfo</returns>
 		public static IEnumerable<PlanetInfo> ReadPlanetInfoFromXlsx(string xlsxFileName)
 		{
-			Excel.Application ex = new Excel.Application();
-			ex.Workbooks.Open(xlsxFileName,
-				Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-				Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-				Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-				Type.Missing, Type.Missing);
-			Excel.Worksheet sheet = (Excel.Worksheet)ex.Worksheets.get_Item(1);
-			int min_i = 1, min_j = 1;
-			while (string.IsNullOrEmpty(sheet.Cells[min_i, 1].ToString()))
+			List<string> excelData = new List<string>();
+			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+			using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(xlsxFileName)))
 			{
-				min_i++;
-			}
-
-			while (string.IsNullOrEmpty(sheet.Cells[1, min_j].ToString()))
-			{
-				min_j++;
-			}
-			
-			var max_i = min_i;
-			var max_j = min_j;
-			
-			while (!string.IsNullOrEmpty(sheet.Cells[max_i, 1].ToString()))
-			{
-				max_i++;
-			}
-
-			while (!string.IsNullOrEmpty(sheet.Cells[1, max_j].ToString()))
-			{
-				max_j++;
-			}
-
-			for (int i = min_i; i <= max_i; i++)
-			{
-				for (int j = min_j; j <= max_j; j++)
+				var worksheet = excelPackage.Workbook.Worksheets.First();
+				int count = GetPropCount();
+               
+				for (int i = worksheet.Dimension.Start.Row; i <= worksheet.Dimension.End.Row; i++)
 				{
-					if(sheet.Cells[i, j].ToString() == null)
-						break;
-				
+					for (int j = worksheet.Dimension.Start.Column; j <= worksheet.Dimension.End.Column; j++)
+					{
+						if (worksheet.Cells[i, j].Value != null)
+						{
+							excelData.Add(worksheet.Cells[i, j].Value.ToString()); 
+						}
+					}
+
+					PlanetInfo info = WriteToPlanetInfo(excelData, count);
+					if (info != null)
+						yield return info;
+					excelData.Clear();
 				}
 			}
-			
-			// TODO : Implement ReadPlanetInfoFromXlsx method using System.IO.Packaging + Linq-2-Xml
-
-			// HINT : Please be as simple & clear as possible.
-			//        No complex and common use cases, just this specified file.
-			//        Required data are stored in Planets.xlsx archive in 2 files:
-			//         /xl/sharedStrings.xml      - dictionary of all string values
-			//         /xl/worksheets/sheet1.xml  - main worksheet
-
-			throw new NotImplementedException();
 		}
 
 		/// <summary>
@@ -161,6 +135,22 @@ namespace Streams
 			byte[] byteText = unicode.GetBytes(initText);
 			string encodedText = unicode.GetString(byteText);
 			return encodedText;
+		}
+		
+		private static PlanetInfo WriteToPlanetInfo(List<string> excelData, int count)
+		{
+			if (excelData.Count != count)
+				return null;
+
+			if (!Double.TryParse(excelData[1], out var a))
+				return null;
+
+			return new PlanetInfo { Name = excelData[0], MeanRadius = Double.Parse(excelData[1]) };
+		}
+
+		private static int GetPropCount()
+		{
+			return typeof(PlanetInfo).GetProperties().Length;
 		}
 	}
 }
