@@ -156,15 +156,17 @@ namespace StreamDemo
         public static int ByLineCopy(string sourcePath, string destinationPath)
         {
             InputValidation(sourcePath, destinationPath);
-
+            
+            var UTF8 = new UTF8Encoding(true);
             int countOfLines = 0;
-            using (StreamWriter destinationStream = new StreamWriter(destinationPath)) 
-            using (StreamReader sourceStream = new StreamReader(sourcePath))
+            using (StreamWriter destinationStream = new StreamWriter(destinationPath, true, UTF8)) 
+            using (StreamReader sourceStream = new StreamReader(sourcePath, UTF8))
             {
                 string line;
                 while ((line = sourceStream.ReadLine()) != null)
                 {
-                    destinationStream.WriteLine(line);
+                    destinationStream.Write(line);
+                    destinationStream.Write("\n");
                     countOfLines++;
                 }
             }

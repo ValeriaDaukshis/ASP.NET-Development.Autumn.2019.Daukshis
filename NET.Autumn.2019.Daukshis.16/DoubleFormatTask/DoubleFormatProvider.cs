@@ -63,15 +63,15 @@ namespace DoubleFormatTask
         {
             Number num = new Number(doubleNumber);
             long value = num.longValue;
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < 64; i++)
+            StringBuilder builder = new StringBuilder(64);
+            for (int i = 63; i >= 0; i--)
             {
-                string digit = (value & 1).ToString();
-                builder.Insert(0, digit);
-                value >>= 1;
+                string digit = ((value & (1 << 63)) >> 63).ToString() == "0" ? "0" : "1";
+                builder.Append(digit);
+                value <<= 1;
             }
 
-            return builder.ToString(); 
+            return builder.ToString();
         }  
         
         [StructLayout(LayoutKind.Explicit)]

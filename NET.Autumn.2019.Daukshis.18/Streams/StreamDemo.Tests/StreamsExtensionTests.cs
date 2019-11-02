@@ -89,7 +89,7 @@ namespace StreamDemo.Tests
 
             Assert.IsTrue(AreEqualByLength(SourceFileName, DestinationFileName));
             Assert.IsTrue(AreEqualByContent(SourceFileName, DestinationFileName));
-            Assert.IsTrue(AreEqualByBytes(SourceFileName,DestinationFileName));
+            Assert.IsTrue(AreEqualByBytes(SourceFileName, DestinationFileName));
 
             CheckFileIsClosed(SourceFileName);
             CheckFileIsClosed(DestinationFileName);
