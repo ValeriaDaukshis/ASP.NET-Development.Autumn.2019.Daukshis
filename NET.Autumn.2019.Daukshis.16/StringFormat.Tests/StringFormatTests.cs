@@ -10,7 +10,7 @@ namespace StringFormatTests
     {
         private Book book = new Book("C# in Depth", "Jon Skeet", 2019, "Manning", 4, 900, 40);
         private IFormatProvider _formatProviders = new BookFormatProviders();
-        private IFormatProvider _formatProvider = new BookFormatProvider(CultureInfo.InvariantCulture);
+        private IFormatProvider _formatProvider = new BookFormatProvider();
 
         [Test]
         public void StringFormat_Author()

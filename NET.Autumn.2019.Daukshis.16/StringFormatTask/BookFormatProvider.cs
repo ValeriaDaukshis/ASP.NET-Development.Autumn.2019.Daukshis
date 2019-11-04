@@ -11,6 +11,13 @@ namespace StringFormatTask
     public class BookFormatProvider : IFormatProvider, ICustomFormatter
     {
         IFormatProvider _parent;
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BookFormatProvider"/> class.
+        /// </summary>
+        public BookFormatProvider() : this(CultureInfo.InvariantCulture)
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BookFormatProvider"/> class.
@@ -19,18 +26,6 @@ namespace StringFormatTask
         public BookFormatProvider(IFormatProvider parent)
         {
             _parent = parent;
-        }
-
-        /// <summary>
-        /// Returns an object that provides formatting services for the specified type.
-        /// </summary>
-        /// <param name="formatType">An object that specifies the type of format object to return.</param>
-        /// <returns>
-        /// An instance of the object specified by <paramref name="formatType">formatType</paramref>, if the <see cref="System.IFormatProvider"></see> implementation can supply that type of object; otherwise, null.
-        /// </returns>
-        public object GetFormat(Type formatType)
-        {
-            return formatType == typeof(ICustomFormatter) ? this : null;
         }
 
         public string Format(string format, object arg, IFormatProvider formatProvider)
@@ -49,6 +44,11 @@ namespace StringFormatTask
             builder.Append(obj.Price);
             
             return builder.ToString();
+        }
+
+        public object GetFormat(Type formatType)
+        {
+            return formatType == typeof(ICustomFormatter) ? this : null;
         }
     }
 }
