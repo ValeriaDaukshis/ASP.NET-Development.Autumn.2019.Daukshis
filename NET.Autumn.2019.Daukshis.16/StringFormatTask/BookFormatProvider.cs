@@ -12,16 +12,6 @@ namespace StringFormatTask
     {
         IFormatProvider _parent;
 
-        private Dictionary<string, Func<Book, string>> availableFormats = new Dictionary<string, Func<Book, string>>();
-        private static CultureInfo culture = CultureInfo.InvariantCulture;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BookFormatProvider"/> class.
-        /// </summary>
-        public BookFormatProvider() : this(CultureInfo.InvariantCulture)
-        {
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="BookFormatProvider"/> class.
         /// </summary>
@@ -29,7 +19,6 @@ namespace StringFormatTask
         public BookFormatProvider(IFormatProvider parent)
         {
             _parent = parent;
-            InitializeDictionary();
         }
 
         /// <summary>
@@ -44,76 +33,22 @@ namespace StringFormatTask
             return formatType == typeof(ICustomFormatter) ? this : null;
         }
 
-        /// <summary>
-        /// Converts the value of a specified object to an equivalent string representation using specified format and culture-specific formatting information.
-        /// </summary>
-        /// <param name="format">A format string containing formatting specifications.</param>
-        /// <param name="arg">An object to format.</param>
-        /// <param name="formatProvider">An object that supplies format information about the current instance.</param>
-        /// <returns>
-        /// The string representation of the value of <paramref name="arg">arg</paramref>, formatted as specified by <paramref name="format">format</paramref> and <paramref name="formatProvider">formatProvider</paramref>.
-        /// </returns>
         public string Format(string format, object arg, IFormatProvider formatProvider)
         {
-            if (arg is null || !availableFormats.ContainsKey(format) || !(arg is Book))
+            if (arg is null || (format != "NAYP") || !(arg is Book))
                 return string.Format(_parent, "{0}", arg);
 
-            return availableFormats[format].Invoke(arg as Book);
+            Book obj = (Book)arg;
+            StringBuilder builder = new StringBuilder(7);
+            builder.Append(obj.Title);
+            builder.Append(", ");
+            builder.Append(obj.Author);
+            builder.Append(", ");
+            builder.Append(obj.Year);
+            builder.Append(", ");
+            builder.Append(obj.Price);
+            
+            return builder.ToString();
         }
-
-        private void InitializeDictionary()
-        {
-            availableFormats.Add("N", NameFormat);
-            availableFormats.Add("A", AuthorFormat);
-            availableFormats.Add("Y", YearFormat);
-            availableFormats.Add("P", PriceFormat);
-            availableFormats.Add("Ph", PublishingHousFormat);
-            availableFormats.Add("NA", NameAuthorFormat);
-            availableFormats.Add("NAY", NameAuthorYearFormat);
-            availableFormats.Add("NAP", NameAuthorPriceFormat);
-            availableFormats.Add("NAYP", NameAuthorYearPriceFormat);
-        }
-        
-        private static readonly Func<Book, string> NameFormat = (obj) => obj.Title;
-        private static readonly Func<Book, string> AuthorFormat = (obj) => obj.Author;
-        private static readonly Func<Book, string> YearFormat = (obj) => obj.Year.ToString(culture);
-        private static readonly Func<Book, string> PriceFormat = (obj) => obj.Price.ToString(culture);
-        private static readonly Func<Book, string> PublishingHousFormat = (obj) => obj.PublishingHous;
-
-        private static readonly Func<Book, string> NameAuthorFormat = (obj) =>
-        {
-            StringBuilder builder = new StringBuilder(3);
-            builder.Append(NameFormat.Invoke(obj));
-            builder.Append(", ");
-            builder.Append(AuthorFormat.Invoke(obj));
-            return builder.ToString();
-        };
-
-        private static readonly Func<Book, string> NameAuthorYearFormat = (obj) =>
-        {
-            StringBuilder builder = new StringBuilder(3);
-            builder.Append(NameAuthorFormat.Invoke(obj));
-            builder.Append(", ");
-            builder.Append(YearFormat.Invoke(obj));
-            return builder.ToString();
-        };
-
-        private static readonly Func<Book, string> NameAuthorYearPriceFormat = (obj) =>
-        {
-            StringBuilder builder = new StringBuilder(3);
-            builder.Append(NameAuthorYearFormat.Invoke(obj));
-            builder.Append(", ");
-            builder.Append(PriceFormat.Invoke(obj));
-            return builder.ToString();
-        };
-
-        private static readonly Func<Book, string> NameAuthorPriceFormat = (obj) =>
-        {
-            StringBuilder builder = new StringBuilder(3);
-            builder.Append(NameAuthorFormat.Invoke(obj));
-            builder.Append(", ");
-            builder.Append(PriceFormat.Invoke(obj));
-            return builder.ToString();
-        };
     }
 }
