@@ -17,6 +17,8 @@ namespace StringFormatTask
         public int Edition { get; private set; }
         public int Pages { get; private set; }
         public int Price { get; private set; }
+        
+        private Dictionary<string, Func<Book, string>> availableFormats = new Dictionary<string, Func<Book, string>>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Book"/> class.
@@ -37,6 +39,11 @@ namespace StringFormatTask
             this.Edition = edition;
             this.Pages = pages;
             this.Price = price;
+        }
+
+        public string ToString(string format, IFormatProvider provider)
+        {
+            return string.Format(provider, "Book record: {0:A}", this, format);
         }
     }
 }

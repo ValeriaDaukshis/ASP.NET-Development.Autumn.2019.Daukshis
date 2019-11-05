@@ -21,6 +21,14 @@ namespace StringFormatTests
         }
         
         [Test]
+        public void StringFormat_Author2()
+        {
+            string actual = book.ToString("A",_formatProviders);
+            string expected = "Book record: Jon Skeet";
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [Test]
         public void StringFormat_Name()
         {
             string actual = string.Format(_formatProviders, "Book record: {0:N}", book);
