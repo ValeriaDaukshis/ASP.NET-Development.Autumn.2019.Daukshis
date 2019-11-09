@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Xml;
+using System.Xml.Linq;
 using Bll.Contract;
 
 namespace Bll.Implementation2
 {
-    public class FileSystemXmlDocStorage : XmlDocStorage
+    public class FileSystemXmlDocStorage : XDocStorage
     {
         private readonly string _sourceFilPath;
         private readonly string _destinationFilPath;
@@ -37,7 +38,7 @@ namespace Bll.Implementation2
             return sourceStreamReader.ReadToEnd();
         }
 
-        public override void SaveData(XmlDocument data)
+        public override void SaveData(XDocument data)
         {
             data.Save(_destinationFilPath);
         }

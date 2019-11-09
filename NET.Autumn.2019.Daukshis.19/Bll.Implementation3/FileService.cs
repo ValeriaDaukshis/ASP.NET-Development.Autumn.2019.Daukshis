@@ -4,12 +4,12 @@ namespace Bll.Implementation3
 {
     public class FileService : IDocumentService
     {
-        private readonly XDocStorage _xDocStorage;
+        private readonly XmlDocStorage _xDocStorage;
         private readonly ICsvDeserializer _deserializer;
-        private readonly IXDocSerializer _xDocSerializer;
+        private readonly IXmlDocSerializer _xDocSerializer;
         private readonly IUrlParser _parser;
 
-        public FileService(XDocStorage xDocStorage, IXDocSerializer xDocSerializer, ICsvDeserializer deserializer, IUrlParser parser)
+        public FileService(XmlDocStorage xDocStorage, IXmlDocSerializer xDocSerializer, ICsvDeserializer deserializer, IUrlParser parser)
         {
             this._xDocStorage = xDocStorage;
             this._deserializer = deserializer;

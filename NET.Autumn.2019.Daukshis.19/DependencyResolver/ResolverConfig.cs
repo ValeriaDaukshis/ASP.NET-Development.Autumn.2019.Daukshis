@@ -31,6 +31,7 @@ namespace DependencyResolver
                 .AddTransient<XDocStorage>(s => new FileSystemXDocStorage(sourceFilePath, targetFilePath))
                 .AddTransient<IDocumentService, FileService>()
                 .AddTransient<IUrlParser, DocumentCsvParser>()
+                .AddSingleton<IDocumentLogger, Logger>()
                 .BuildServiceProvider();
         }
 

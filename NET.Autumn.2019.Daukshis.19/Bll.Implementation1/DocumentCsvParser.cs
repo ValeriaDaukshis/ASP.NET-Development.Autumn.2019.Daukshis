@@ -6,20 +6,34 @@ namespace Bll.Implementation1
 {
     public class DocumentCsvParser : IUrlParser
     {
+        private IDocumentLogger _logger;
+        public DocumentCsvParser(IDocumentLogger logger)
+        {
+            this._logger = logger;
+        }
+
         public DocumentRecord[] ParseUrl(string[] url)
         {
             List<DocumentRecord> records = new List<DocumentRecord>();
-            foreach (var value in url)
+            try
             {
-                records.Add(ReadUrl(new Uri(value)));
+                foreach (var value in url)
+                {
+                    records.Add(ReadUrl(new Uri(value)));
+                }
             }
-
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "invalid format");
+            }               
+                    
             return records.ToArray();
         }
 
         private DocumentRecord ReadUrl(Uri uri)
         {
             DocumentRecord record = new DocumentRecord();
+         
             record.HostName = uri.Host;
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             if (uri.Query.Length > 0)
