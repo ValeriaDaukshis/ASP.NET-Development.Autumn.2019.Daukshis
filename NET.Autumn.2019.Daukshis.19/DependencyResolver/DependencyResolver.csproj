@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0-preview2.19525.4" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0-preview2.19525.4" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0-preview2.19525.4" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.0-preview2.19525.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Bll.Contract\Bll.Contract.csproj" />
+      <ProjectReference Include="..\Bll.Implementation1\Bll.Implementation1.csproj" />
+      <ProjectReference Include="..\Bll.Implementation2\Bll.Implementation2.csproj" />
+      <ProjectReference Include="..\Bll.Implementation3\Bll.Implementation3.csproj" />
+    </ItemGroup>
+
+</Project>
