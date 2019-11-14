@@ -7,6 +7,11 @@ namespace Bll.Contract.Records
     [XmlRoot("urlAddresses")]
     public class DocumentRecords
     {
+        public DocumentRecords()
+        {
+            this.Record = new List<Record>();
+        }
+        
         public DocumentRecords(Record[] records)
         {
             this.Record = records.ToList();

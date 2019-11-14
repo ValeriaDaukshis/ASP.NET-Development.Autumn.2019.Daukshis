@@ -28,7 +28,7 @@ namespace DependencyResolver
             
             var a = new ServiceCollection()
                 .AddSingleton<ICsvFileReader, DocumentCsvFileReader>()
-                .AddTransient<IXmlSerializer>(s => new ImportToXml(new StreamWriter(File.OpenWrite(sourceFilePath))))
+                .AddTransient<IXmlSerializer>(s => new ImportToXml(sourceFilePath))
                 .AddTransient<IFileReader>(s => new FileSystemStorage(sourceFilePath, targetFilePath))
                 .AddTransient<IDocumentService, FileService>()
                 .AddTransient<IUrlRecordParser, DocumentParser>()

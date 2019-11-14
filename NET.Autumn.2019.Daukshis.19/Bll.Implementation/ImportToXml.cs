@@ -7,19 +7,19 @@ namespace Bll.Implementation
 {
     public class ImportToXml : IXmlSerializer
     {
-        private readonly StreamWriter _writer;
-        public ImportToXml(StreamWriter writer)
+        private readonly string _path;
+        public ImportToXml(string path)
         {
-            this._writer = writer;
+            this._path = path;
         }
         
         public void Serialize(DocumentRecords record)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(DocumentRecords));
 
-            using (_writer)
+            using (var writer = new StreamWriter(File.OpenWrite(_path)))
             {
-                formatter.Serialize(_writer, record);
+                formatter.Serialize(writer, record);
             }
         }
     }
