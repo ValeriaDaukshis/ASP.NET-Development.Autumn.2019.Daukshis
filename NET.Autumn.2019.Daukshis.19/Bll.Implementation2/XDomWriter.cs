@@ -28,10 +28,10 @@ namespace Bll.Implementation2
 
         public XDocument CombineComponents(IEnumerable<XElement> elements)
         {
-            var a = new XDocument(new XElement("urlAddresses",
+            var a = new XDocument(
+                new XElement("urlAddresses",
                 from n in elements
                 select n));
-            a.Save(@"C:\Users\dauks\ASP.NET\NET.Autumn.2019.Daukshis.19\ConsoleClient.aaa.xml");
             return a;
         }
     }

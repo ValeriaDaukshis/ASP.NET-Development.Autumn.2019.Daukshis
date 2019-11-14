@@ -1,8 +1,8 @@
 ﻿using System.Xml;
 
-namespace Bll.Contract
+namespace Bll.Contract.Writers
 {
-    public interface IXmlDataWriter
+    public interface IXmlDocumentWriter
     {
         void SaveData(XmlDocument data);
     }

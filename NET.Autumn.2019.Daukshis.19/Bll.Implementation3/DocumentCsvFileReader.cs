@@ -2,7 +2,7 @@
 
 namespace Bll.Implementation3
 {
-    public class DocumentCsvDeserializer : ICsvDeserializer
+    public class DocumentCsvFileReader : ICsvFileReader
     {
         public string[] Deserialize(string path)
         {

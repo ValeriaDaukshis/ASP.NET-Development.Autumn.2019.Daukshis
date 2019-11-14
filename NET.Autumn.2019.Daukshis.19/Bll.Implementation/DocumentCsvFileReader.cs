@@ -1,8 +1,8 @@
 ﻿using Bll.Contract;
 
-namespace Bll.Implementation2
+namespace Bll.Implementation
 {
-    public class DocumentCsvDeserializer : ICsvDeserializer
+    public class DocumentCsvFileReader : ICsvFileReader
     {
         public string[] Deserialize(string path)
         {

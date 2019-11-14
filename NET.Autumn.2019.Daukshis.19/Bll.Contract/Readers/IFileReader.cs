@@ -1,6 +1,6 @@
 ﻿namespace Bll.Contract
 {
-    public interface IDataReader
+    public interface IFileReader
     {
         string GetData();
     }

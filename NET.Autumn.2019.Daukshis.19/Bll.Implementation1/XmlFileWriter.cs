@@ -9,15 +9,15 @@ namespace Bll.Implementation1
     public class XmlFileWriter
     {
         private XmlWriter _xmlFileWriter;
-        private XDocument doc;
+        private XDocument _doc;
 
         public void WriteHeader()
         {
-            doc = new XDocument { Declaration = new XDeclaration("1.0", "UTF-8", "true") };
+            _doc = new XDocument { Declaration = new XDeclaration("1.0", "UTF-8", "true") };
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.Encoding = Encoding.UTF8;
-            this._xmlFileWriter = doc.CreateWriter();
+            this._xmlFileWriter = _doc.CreateWriter();
             this._xmlFileWriter.WriteStartElement("urlAddresses");
         }
         
@@ -43,7 +43,7 @@ namespace Bll.Implementation1
             this._xmlFileWriter.WriteEndElement();
             this._xmlFileWriter.Dispose();
             this._xmlFileWriter.Close();
-            return doc;
+            return _doc;
         }
 
         private void WriteSegments(DocumentRecord record)

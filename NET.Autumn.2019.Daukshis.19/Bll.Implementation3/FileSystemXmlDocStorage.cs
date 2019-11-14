@@ -3,13 +3,14 @@ using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 using Bll.Contract;
+using Bll.Contract.Storages;
 
 namespace Bll.Implementation3
 {
     public class FileSystemXmlDocStorage : XmlDocStorage
     {
-        private readonly string _sourceFilPath;
-        private readonly string _destinationFilPath;
+        private readonly string _sourceFilePath;
+        private readonly string _destinationFilePath;
 
         public FileSystemXmlDocStorage(string sourceFilePath, string destinationFilePath)
         {
@@ -28,19 +29,19 @@ namespace Bll.Implementation3
                 throw new FileNotFoundException(nameof(sourceFilePath));
             }
             
-            this._sourceFilPath = sourceFilePath;
-            this._destinationFilPath = destinationFilePath;
+            this._sourceFilePath = sourceFilePath;
+            this._destinationFilePath = destinationFilePath;
         }
         
         public override string GetData()
         {
-            using var sourceStreamReader = new StreamReader(File.OpenRead(_sourceFilPath));
+            using var sourceStreamReader = new StreamReader(File.OpenRead(_sourceFilePath));
             return sourceStreamReader.ReadToEnd();
         }
 
         public override void SaveData(XmlDocument data)
         {
-            data.Save(_destinationFilPath);
+            data.Save(_destinationFilePath);
         }
     }
 }

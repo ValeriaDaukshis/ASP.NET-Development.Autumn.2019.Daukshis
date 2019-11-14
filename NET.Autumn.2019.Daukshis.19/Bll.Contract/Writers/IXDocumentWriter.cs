@@ -1,8 +1,8 @@
 ﻿using System.Xml.Linq;
 
-namespace Bll.Contract
+namespace Bll.Contract.Writers
 {
-    public interface IDataWriter
+    public interface IXDocumentWriter
     {
         void SaveData(XDocument data);
     }

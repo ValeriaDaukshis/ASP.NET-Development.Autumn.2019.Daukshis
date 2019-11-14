@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 using Bll.Contract;
+using Bll.Contract.Storages;
 
 namespace Bll.Implementation2
 {

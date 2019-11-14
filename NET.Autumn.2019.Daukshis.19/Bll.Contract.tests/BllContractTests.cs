@@ -1,4 +1,6 @@
 using System.Xml.Linq;
+using Bll.Contract.Storages;
+using Bll.Contract.Writers;
 using Moq;
 using NUnit.Framework;
 
@@ -11,13 +13,13 @@ namespace Bll.Contract.tests
         {
             string expected = "Test string for reading.";
             
-            var mockDataWriter = new Mock<IDataReader>();
+            var mockDataWriter = new Mock<IFileReader>();
             
             mockDataWriter.Setup(s => s.GetData()).Returns(expected);
 
-            IDataReader dataWriter = mockDataWriter.Object;
+            IFileReader fileWriter = mockDataWriter.Object;
 
-            string actual = dataWriter.GetData();
+            string actual = fileWriter.GetData();
 
             Assert.AreEqual(expected, actual);
 
@@ -27,11 +29,11 @@ namespace Bll.Contract.tests
         [Test]
         public void SaveDataMockTest()
         {
-            var mockDataWriter = new Mock<IDataWriter>();
+            var mockDataWriter = new Mock<IXDocumentWriter>();
 
-            IDataWriter dataWriter = mockDataWriter.Object;
+            IXDocumentWriter ixDocumentWriter = mockDataWriter.Object;
 
-            dataWriter.SaveData(It.IsAny<XDocument>());
+            ixDocumentWriter.SaveData(It.IsAny<XDocument>());
 
             mockDataWriter.Verify();
         }

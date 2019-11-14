@@ -1,6 +1,6 @@
 ﻿namespace Bll.Contract
 {
-    public interface ICsvDeserializer
+    public interface ICsvFileReader
     {
         string[] Deserialize(string path);
     }

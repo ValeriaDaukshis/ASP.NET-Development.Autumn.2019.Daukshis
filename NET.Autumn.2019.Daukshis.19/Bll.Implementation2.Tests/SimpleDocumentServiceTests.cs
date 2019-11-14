@@ -1,6 +1,7 @@
 using System.Xml;
 using System.Xml.Linq;
 using Bll.Contract;
+using Bll.Contract.Storages;
 using Moq;
 using NUnit.Framework;
 
@@ -11,7 +12,7 @@ namespace Bll.Implementation2.Tests
     {
         private Mock<XDocStorage> _storageMock;
 
-        private Mock<ICsvDeserializer> _deserializerMock;
+        private Mock<ICsvFileReader> _deserializerMock;
 
         private Mock<IXDocSerializer> _serializeMock;
         
@@ -24,7 +25,7 @@ namespace Bll.Implementation2.Tests
         {
             _storageMock = new Mock<XDocStorage>();
 
-            _deserializerMock = new Mock<ICsvDeserializer>();
+            _deserializerMock = new Mock<ICsvFileReader>();
 
             _serializeMock = new Mock<IXDocSerializer>();
             

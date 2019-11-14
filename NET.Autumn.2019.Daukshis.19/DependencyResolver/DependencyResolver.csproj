@@ -16,6 +16,7 @@
       <ProjectReference Include="..\Bll.Implementation1\Bll.Implementation1.csproj" />
       <ProjectReference Include="..\Bll.Implementation2\Bll.Implementation2.csproj" />
       <ProjectReference Include="..\Bll.Implementation3\Bll.Implementation3.csproj" />
+      <ProjectReference Include="..\Bll.Implementation\Bll.Implementation.csproj" />
     </ItemGroup>
 
 </Project>
